@@ -7,6 +7,7 @@
 
 
 // Base
+@import 'normalize'; @include normalize();
 @import './base/variables';
 @import './base/base';
 
@@ -15,4 +16,6 @@
 
 
 // General
-@import './components/layout/header';
+@import './components/layout/header/header';
+@import './components/layout/header/navigation';
+@import './components/layout/header/site-logo';

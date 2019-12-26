@@ -52,3 +52,16 @@ button:disabled {
     color: red;
     font-style: normal;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 3.6rem;
+}
+
+.overlay {
+    display: none;
+}

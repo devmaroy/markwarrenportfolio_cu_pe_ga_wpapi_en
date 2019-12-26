@@ -7,7 +7,12 @@ module.exports = {
 		author: '@marekmatejovic'
 	},
 	plugins: [
-		`gatsby-plugin-sass`,
+		{
+			resolve: `gatsby-plugin-sass`,
+			options: {
+				includePaths: [ 'node_modules/normalize-scss/sass' ],
+			}
+		},
 		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,

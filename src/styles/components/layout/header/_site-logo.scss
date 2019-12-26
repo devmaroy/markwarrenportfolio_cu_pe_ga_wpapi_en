@@ -1,0 +1,22 @@
+/*------------------------------------*\
+    # Site Logo
+\*------------------------------------*/
+
+
+.site-logo {
+    grid-column: 1;
+}
+
+.site-logo__link {
+    text-decoration: none;
+    color: $black;
+}
+
+.site-logo__text {
+    margin: 0;
+    font-family: $font-family-primary;
+
+    span {
+        color: $primary;
+    }
+}
