@@ -6,6 +6,13 @@
 .site-logo__link {
     text-decoration: none;
     color: $black;
+
+    transition: all $transition-base;
+
+    &:hover,
+    &:focus {
+        color: $primary;
+    }
 }
 
 .site-logo__text {
