@@ -6,10 +6,12 @@ import Navigation from './navigation';
 const Header = () => {
     return (
         <header className="header">
-            <div className="grid">
-                <SiteLogo />
-                <Navigation />
-                <div className="overlay"></div>
+            <div className="container">
+                <div className="header__inner">
+                    <SiteLogo />
+                    <Navigation />
+                    <div className="overlay"></div>
+                </div>
             </div>
         </header>
     );

@@ -18,7 +18,7 @@ html {
 
 body {
     color: red;
-    font-family: sans-serif;
+    font-family: $font-family-primary;
     font-size: 1.6rem;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -53,15 +53,110 @@ button:disabled {
     font-style: normal;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 20px;
+.section-heading {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: $font-family-primary;
+    font-weight: $font-weight-bold;
+    font-size: 4.2rem;
+    color: $black;
+
+    span {
+        display: block;
+        font-family: $font-family-secondary;
+        font-size: 1.8rem;
+        color: $gray;
+    }
+}
+
+.container {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 3.6rem;
 }
 
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat( 12, 1fr );
+    grid-gap: 20px;
+}
+
+
+
 .overlay {
     display: none;
 }
+
+
+// udelej mixin s css grid nastavenimi a vzdy to includni do daneho obalovaciho elementu a tam si udelej template areas.
+// nedelej to komplet pro celou stranku
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+.container {
+    display: grid;
+    grid-template-columns: repeat( 12, 1fr );
+    grid-gap: 20px;
+    grid-template-areas:
+    "logo logo logo navigation navigation"
+    "nav nav main main"
+    "aside aside main main"
+    "section section section section"
+    "section section section section"
+    "footer footer footer footer";
+
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 3.6rem;
+}
+
+*/
+
+
+
+
+

@@ -3,10 +3,6 @@
 \*------------------------------------*/
 
 
-.site-logo {
-    grid-column: 1;
-}
-
 .site-logo__link {
     text-decoration: none;
     color: $black;
@@ -14,7 +10,8 @@
 
 .site-logo__text {
     margin: 0;
-    font-family: $font-family-primary;
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-bold;
 
     span {
         color: $primary;

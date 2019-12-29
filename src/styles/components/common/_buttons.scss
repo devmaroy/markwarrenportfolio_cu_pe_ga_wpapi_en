@@ -1,0 +1,42 @@
+/*------------------------------------*\
+    # Buttons
+\*------------------------------------*/
+
+
+.button {
+    margin: 0 2rem 0 0;
+    padding: 1.5rem 2.5rem;
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: $font-weight-bold;
+    border-radius: $border-radius;
+    text-transform: uppercase;
+    transition: all $transition-base;
+}
+
+.button--primary {
+    background: $primary;
+    color: $white;
+    border: .1rem solid $primary;
+    box-shadow: 0rem 1rem 1rem -1rem $primary;
+
+    &:hover,
+    &:focus {
+        box-shadow: none;
+        background: none;
+        color: $primary;
+        border: .1rem solid $primary;
+    }
+}
+
+.button--secondary {
+    border: .1rem solid $primary;
+    color: $primary;
+
+    &:hover,
+    &:focus {
+        background: $primary;
+        color: $white;
+        box-shadow: 0rem 1rem 1rem -1rem $primary;
+    }
+}

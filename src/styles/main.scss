@@ -6,16 +6,34 @@
 \*------------------------------------*/
 
 
+// Utilities
+@import './utilities/variables';
+//@import './utilities/mixins';
+
+
+
 // Base
 @import 'normalize'; @include normalize();
-@import './base/variables';
 @import './base/base';
 
 
 // Components
 
+// Common
+@import './components/common/buttons';
 
-// General
-@import './components/layout/header/header';
-@import './components/layout/header/navigation';
-@import './components/layout/header/site-logo';
+
+// Hero
+@import './components/hero/hero';
+
+
+
+// Layout
+
+// Header
+@import './layout/header/header';
+@import './layout/header/navigation';
+@import './layout/header/site-logo';
+
+
+

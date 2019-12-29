@@ -1,0 +1,43 @@
+/*------------------------------------*\
+    # Hero
+\*------------------------------------*/
+
+.hero {
+    margin-top: 10rem;
+    
+}
+
+/* Hero Info */
+
+.hero-info {
+    grid-column: 1 / 6;
+}
+
+.hero-info__title {
+    margin: 0;
+    line-height: 1;
+    font-family: $font-family-secondary;
+    font-size: 5.8rem;
+    font-weight: $font-weight-bold;
+    color: $black;
+}
+
+.hero-info__subtitle {
+    margin: 1.5rem 0 0 0;
+    font-size: 2.2rem;
+    color: $gray;
+}
+
+.hero-info-text {
+    margin: 3rem 0 6rem 0; 
+    color: $gray;
+    line-height: 2.9rem;
+}
+
+
+
+/* Hero Image */
+
+.hero-img {
+    grid-column: 7 / -1;
+}
