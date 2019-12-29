@@ -53,6 +53,16 @@ button:disabled {
     font-style: normal;
 }
 
+.shape::before {
+    content: '';
+    background: url( '../images/dots.svg') no-repeat;
+    display: inline-block;
+    width: 10rem;
+    height: 6rem;
+
+    position: absolute;
+}
+
 .section-heading {
     text-transform: uppercase;
     text-align: center;

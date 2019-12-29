@@ -3,15 +3,31 @@
 \*------------------------------------*/
 
 .hero {
-    margin-top: 10rem;
-    
+    margin-top: 10rem; 
+    position: relative;  
 }
 
 /* Hero Info */
 
 .hero-info {
     grid-column: 1 / 6;
+    
+   .shape {
+        &::before {
+            top: 50%;
+        }
+
+        &:nth-child(1)::before {
+            left: -3.5rem;
+        }
+
+        &:nth-child(2)::before {
+            left: 1rem;
+            margin-top: 10rem;
+        }
+   }
 }
+
 
 .hero-info__title {
     margin: 0;
@@ -39,5 +55,22 @@
 /* Hero Image */
 
 .hero-img {
+    position: relative;
     grid-column: 7 / -1;
+
+    .shape {
+        &::before {
+            z-index: -1;
+        }
+
+        &:nth-child(1)::before {
+            top: 8rem;
+            left: 10rem;
+        }
+
+        &:nth-child(2)::before {
+            bottom: 5rem;
+            left: 10rem;
+        }
+   }
 }
