@@ -41,6 +41,10 @@ button:disabled {
     cursor: default;
 }
 
+section {
+    margin-top: 10rem;
+}
+
 .list-unstyled {
     padding: 0;
     margin: 0;
@@ -90,7 +94,7 @@ button:disabled {
 .grid-container {
     display: grid;
     grid-template-columns: repeat( 12, 1fr );
-    grid-gap: 2rem;
+    grid-gap: 0 3rem;
 }
 
 

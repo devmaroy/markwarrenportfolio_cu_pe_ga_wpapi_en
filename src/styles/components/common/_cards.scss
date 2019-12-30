@@ -1,0 +1,46 @@
+/*------------------------------------*\
+    # Cards
+\*------------------------------------*/
+
+
+.card {
+    padding: 4rem;
+    background: $white;
+    border-radius: $border-radius;
+    box-shadow: 1px 4px 20px 1px transparentize( #A9B1D1, 0.75 );
+
+    transition: all $transition-base;
+
+    &:hover,
+    &:focus {
+        transform: scale(1.05);
+    }
+}
+
+.card__meta {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 4rem 0;
+}
+
+.card__number {
+    font-family: $font-family-secondary;
+    font-size: 4.2rem;
+    font-weight: $font-weight-bold;
+    color: $primary;
+    opacity: 30%;
+}
+
+.card__title {
+    font-family: $font-family-secondary;
+    font-size: 2.6rem;
+    font-weight: $font-weight-bold;
+    line-height: 2.9rem;
+    margin-bottom: 0 0 2rem 0;
+    color: $black;   
+}
+
+.card__text {
+    color: $gray;
+    line-height: 2.6rem;
+}
