@@ -1,5 +1,6 @@
 import React from 'react';
 import Heading from '../common/heading';
+import addIcon from '../../images/icons/add.svg';
 import portfolioOneImg from '../../images/portfolio/portfolio-1.jpg';
 import portfolioTwoImg from '../../images/portfolio/portfolio-2.jpg';
 import portfolioThreeImg from '../../images/portfolio/portfolio-3.jpg';
@@ -32,30 +33,107 @@ const Portfolio = () => {
 
                     <div className="portfolio__items">
                         <div className="portfolio__item">
-                            <img src={ portfolioOneImg } alt="" />
+                            <img src={ portfolioOneImg } className="portfolio__img" alt="" />
 
                             <div className="portfolio__overlay">
-                                <h3 className="portfolio__heading">Danish sweet lemon</h3>
-                                <div className="portfolio__text">
-                                    <p>Muffin icing croissant sesame snaps biscuit. Topping croissant pie icing tart plum sesame.</p>
+                                <div className="portfolio__overlay-header">
+                                    <img src={ addIcon } className="portfolio__icon" />
+                                </div>
+
+                                <div className="portfolio__overlay-content">
+                                    <h3 className="portfolio__heading">Danish sweet lemon</h3>
+                                    <div className="portfolio__text">
+                                        <p>Muffin icing croissant sesame snaps biscuit. Topping croissant pie icing tart plum sesame.</p>
+                                    </div>
                                 </div>
                             </div>    
                         </div>
+                        
                         <div className="portfolio__item">
-                            <img src={ portfolioTwoImg } alt="" />
+                            <img src={ portfolioTwoImg } className="portfolio__img" alt="" />
+
+                            <div className="portfolio__overlay">
+                                <div className="portfolio__overlay-header">
+                                    <img src={ addIcon } className="portfolio__icon" />
+                                </div>
+
+                                <div className="portfolio__overlay-content">
+                                    <h3 className="portfolio__heading">Danish sweet lemon</h3>
+                                    <div className="portfolio__text">
+                                        <p>Muffin icing croissant sesame snaps biscuit. Topping croissant pie icing tart plum sesame.</p>
+                                    </div>
+                                </div>
+                            </div>    
                         </div>
+
                         <div className="portfolio__item">
-                            <img src={ portfolioThreeImg } alt="" />
+                            <img src={ portfolioThreeImg } className="portfolio__img" alt="" />
+
+                            <div className="portfolio__overlay">
+                                <div className="portfolio__overlay-header">
+                                    <img src={ addIcon } className="portfolio__icon" />
+                                </div>
+
+                                <div className="portfolio__overlay-content">
+                                    <h3 className="portfolio__heading">Danish sweet lemon</h3>
+                                    <div className="portfolio__text">
+                                        <p>Muffin icing croissant sesame snaps biscuit. Topping croissant pie icing tart plum sesame.</p>
+                                    </div>
+                                </div>
+                            </div>    
                         </div>
+
                         <div className="portfolio__item">
-                            <img src={ portfolioFourImg } alt="" />
+                            <img src={ portfolioFourImg } className="portfolio__img" alt="" />
+
+                            <div className="portfolio__overlay">
+                                <div className="portfolio__overlay-header">
+                                    <img src={ addIcon } className="portfolio__icon" />
+                                </div>
+
+                                <div className="portfolio__overlay-content">
+                                    <h3 className="portfolio__heading">Danish sweet lemon</h3>
+                                    <div className="portfolio__text">
+                                        <p>Muffin icing croissant sesame snaps biscuit. Topping croissant pie icing tart plum sesame.</p>
+                                    </div>
+                                </div>
+                            </div>    
                         </div>
+
                         <div className="portfolio__item">
-                            <img src={ portfolioFiveImg } alt="" />
+                            <img src={ portfolioFiveImg } className="portfolio__img" alt="" />
+
+                            <div className="portfolio__overlay">
+                                <div className="portfolio__overlay-header">
+                                    <img src={ addIcon } className="portfolio__icon" />
+                                </div>
+
+                                <div className="portfolio__overlay-content">
+                                    <h3 className="portfolio__heading">Danish sweet lemon</h3>
+                                    <div className="portfolio__text">
+                                        <p>Muffin icing croissant sesame snaps biscuit. Topping croissant pie icing tart plum sesame.</p>
+                                    </div>
+                                </div>
+                            </div>    
                         </div>
+
                         <div className="portfolio__item">
-                            <img src={ portfolioSixImg } alt="" />
+                            <img src={ portfolioSixImg } className="portfolio__img" alt="" />
+
+                            <div className="portfolio__overlay">
+                                <div className="portfolio__overlay-header">
+                                    <img src={ addIcon } className="portfolio__icon" />
+                                </div>
+
+                                <div className="portfolio__overlay-content">
+                                    <h3 className="portfolio__heading">Danish sweet lemon</h3>
+                                    <div className="portfolio__text">
+                                        <p>Muffin icing croissant sesame snaps biscuit. Topping croissant pie icing tart plum sesame.</p>
+                                    </div>
+                                </div>
+                            </div>    
                         </div>
+                        
                     </div>
                 </div>
             </div>

@@ -44,32 +44,72 @@
     grid-column: 1 / -1;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat( 4, 1fr );
     grid-gap: 3rem;
 }
 
 .portfolio__item {
+    position: relative;
+    height: 30rem;
+    cursor: pointer;
+    overflow: hidden;
 
-    &:first-child {
+    &:first-child,
+    &:last-child {
         grid-column: span 2;
     }
-
-    img {
-        width: 100%;
-        height: 30rem;
-        object-fit: cover;
-        border-radius: $border-radius;
+    
+    &:hover,
+    &:focus {
+        .portfolio__overlay {
+            transform: translateY(0);
+        }
     }
+}
+
+.portfolio__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $border-radius;
 }
 
 .portfolio__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+
     padding: 2rem;
-    background: $primary;
+    border-radius: $border-radius;
+    background: transparentize( $primary, 0.25 );
+    transform: translate3d( 0, 30rem, 0 );
+
+    transition: all $transition-base;
+}
+
+.portfolio__overlay-header {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio__icon {
+    width: 4rem;
+    height: 4rem;
 }
 
 .portfolio__heading {
+    font-family: $font-family-secondary;
     font-size: 1.8rem;
+    font-weight: $font-weight-bold;
     line-height: 2.6rem;
+    margin: 0 0 .5rem 0;
     color: $white;
 }
 
@@ -77,4 +117,8 @@
     font-size: 1.4rem;
     line-height: 2rem;
     color: $white;
+
+    p:first-child {
+        margin: 0;
+    }
 }
