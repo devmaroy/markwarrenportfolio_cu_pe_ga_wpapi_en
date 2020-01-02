@@ -2,12 +2,33 @@
     # Navigation
 \*------------------------------------*/
 
-
 .hamburger-menu {
     line-height: 0;
-}
-
-.navigation__inner {
     display: none;
 }
 
+.menu-list {
+    @include list-unstyled;
+}
+
+.menu-list__item {
+    display: inline-block;
+
+    &:not( :last-child ) {
+        margin-right: 2rem;
+    }
+}
+
+.menu-list__link {
+    font-weight: $font-weight-bold;
+    text-decoration: none;
+    color: $gray;
+
+    transition: all $transition-base;
+
+    &:hover,
+    &:focus,
+    &.active {
+        color: $primary;
+    }
+}

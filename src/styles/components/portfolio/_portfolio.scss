@@ -1,0 +1,80 @@
+/*------------------------------------*\
+    # Portfolio
+\*------------------------------------*/
+
+
+.portfolio {
+    margin-bottom: 200rem;
+
+    .section-heading {
+        grid-column: 1 / -1;
+    }
+}
+
+.portfolio__navigation {
+    @include list-unstyled;
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin: 0 0 6rem 0;
+
+    li {
+        display: inline-block;
+        @include dot-pseudo( $color: $primary-light, $margin: 0 1.5rem );
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: $font-weight-bold;
+        color: $gray;
+
+        transition: $transition-base;
+
+        &:hover,
+        &:focus {
+            color: $primary;
+        }
+
+        &.active {
+            color: $primary;
+        }
+    }
+}
+
+.portfolio__items {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 3rem;
+}
+
+.portfolio__item {
+
+    &:first-child {
+        grid-column: span 2;
+    }
+
+    img {
+        width: 100%;
+        height: 30rem;
+        object-fit: cover;
+        border-radius: $border-radius;
+    }
+}
+
+.portfolio__overlay {
+    padding: 2rem;
+    background: $primary;
+}
+
+.portfolio__heading {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    color: $white;
+}
+
+.portfolio__text {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: $white;
+}

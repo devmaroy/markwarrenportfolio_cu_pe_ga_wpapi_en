@@ -67,23 +67,6 @@ section {
     position: absolute;
 }
 
-.section-heading {
-    margin-bottom: 6rem;
-    text-transform: uppercase;
-    text-align: center;
-    font-family: $font-family-secondary;
-    font-weight: $font-weight-bold;
-    font-size: 4.2rem;
-    color: $black;
-
-    span {
-        display: block;
-        font-family: $font-family-primary;
-        font-size: 1.8rem;
-        color: $gray;
-    }
-}
-
 .container {
     max-width: 1280px;
     margin: 0 auto;

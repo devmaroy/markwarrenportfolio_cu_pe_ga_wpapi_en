@@ -1,4 +1,5 @@
 import React from 'react';
+import Heading from '../common/heading';
 import aboutImg from '../../images/me-about.jpg';
 
 
@@ -7,10 +8,7 @@ const About = () => {
         <section className="about">
             <div className="container">
                 <div className="about__inner grid-container">
-                    <div className="section-heading">
-                        <span>About</span>
-                        Just a Little
-                    </div>
+                    <Heading main="Just a Little" sub="About" />
 
                     <div className="about-img">
                         <img src={ aboutImg } alt="Picture of me" />

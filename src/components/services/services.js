@@ -1,4 +1,5 @@
 import React from 'react';
+import Heading from '../common/heading';
 import servicesOneImg from '../../images/icons/services-01.svg';
 import servicesTwoImg from '../../images/icons/services-02.svg';
 import servicesThreeImg from '../../images/icons/services-03.svg';
@@ -8,10 +9,7 @@ const Services = () => {
         <section className="services">
             <div className="container">
                 <div className="services__inner grid-container">
-                    <div className="section-heading">
-                        <span>Services</span>
-                        What I Do
-                    </div>
+                    <Heading main="What I Do" sub="Services" />
 
                     <div className="card">
                         <div className="card__meta">

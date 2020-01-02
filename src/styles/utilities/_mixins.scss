@@ -7,3 +7,19 @@
     margin: 0;
     list-style: none;
 }
+
+@mixin dot-pseudo ( $color, $margin ) {
+    &:not( :last-child ) {
+        &::after {
+            content: '';
+            position: relative;
+            bottom: 2px;
+            display: inline-block;
+            margin: $margin;
+            width: .6rem;
+            height: .6rem;
+            background: $color;
+            border-radius: 50%;
+        }
+    }
+}
