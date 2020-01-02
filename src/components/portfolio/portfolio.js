@@ -133,7 +133,10 @@ const Portfolio = () => {
                                 </div>
                             </div>    
                         </div>
-                        
+                    </div>
+
+                    <div className="portfolio__meta">
+                        <button className="button button--primary">Load more</button>
                     </div>
                 </div>
             </div>
