@@ -1,0 +1,23 @@
+/*------------------------------------*\
+    # Form
+\*------------------------------------*/
+
+.form__group {
+    margin: 0 0 2rem 0;
+}
+
+.form__field {
+    border: .1rem solid $input-border-color;
+    border-radius: $border-radius;
+    padding: 1.5rem 2rem;
+    width: 100%;
+
+    @at-root textarea#{&} {
+        height: 18rem;
+    }
+}
+
+.form__meta {
+    margin: 4rem 0 0 0;
+    text-align: right;
+}

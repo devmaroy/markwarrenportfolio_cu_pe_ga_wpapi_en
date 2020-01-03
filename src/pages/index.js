@@ -6,6 +6,7 @@ import Services from '../components/services/services';
 import Portfolio from '../components/portfolio/portfolio';
 import CTA from '../components/common/cta';
 import Testimonials from '../components/testimonials/testimonials';
+import Contact from '../components/contact/contact';
 
 
 const IndexPage = () => {
@@ -17,6 +18,7 @@ const IndexPage = () => {
            <Portfolio />
            <CTA />
            <Testimonials />
+           <Contact />
         </Layout>
     );
 };
