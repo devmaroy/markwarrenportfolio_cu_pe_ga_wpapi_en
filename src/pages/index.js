@@ -7,6 +7,7 @@ import Portfolio from '../components/portfolio/portfolio';
 import CTA from '../components/common/cta';
 import Testimonials from '../components/testimonials/testimonials';
 import Contact from '../components/contact/contact';
+import RecentArticles from '../components/recentArticles/recentArticles';
 
 
 const IndexPage = () => {
@@ -19,6 +20,7 @@ const IndexPage = () => {
            <CTA />
            <Testimonials />
            <Contact />
+           <RecentArticles />
         </Layout>
     );
 };
