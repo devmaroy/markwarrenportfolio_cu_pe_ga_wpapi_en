@@ -1,0 +1,35 @@
+/*------------------------------------*\
+    # CTA
+\*------------------------------------*/
+
+.cta {
+    margin-top: 10rem;
+    margin-bottom: 100rem;
+}
+
+.cta-box {
+    grid-column: 1 / -1;
+
+    border-radius: $border-radius;
+    text-align: center;
+    padding: 6rem;
+    background: url( '../images/cta/cta.svg' );
+    background-size: cover;
+}
+
+.cta-box__heading {
+    margin: 0 0 2rem 0;
+    font-family: $font-family-secondary;
+    font-size: 4.2rem;
+    color: $white;
+}
+
+.cta-box__content {
+    max-width: 60rem;
+    margin: 0 auto 4rem auto;
+    color: $white;
+
+    p:first-child {
+        margin: 0;
+    }
+}

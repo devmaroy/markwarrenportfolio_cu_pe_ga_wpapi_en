@@ -18,7 +18,7 @@ const Hero = () => {
                         </div>
 
                         <button className="button button--primary">Download CV</button>
-                        <button className="button button--secondary">See Projects</button>
+                        <button className="button button--outline-primary">See Projects</button>
 
                         <div className="shapes">
                             <div className="shape"></div>

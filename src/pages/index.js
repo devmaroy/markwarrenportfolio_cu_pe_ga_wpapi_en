@@ -4,6 +4,7 @@ import Hero from '../components/hero/hero';
 import About from '../components/about/about';
 import Services from '../components/services/services';
 import Portfolio from '../components/portfolio/portfolio';
+import CTA from '../components/common/cta';
 
 
 const IndexPage = () => {
@@ -13,6 +14,7 @@ const IndexPage = () => {
            <About />
            <Services />
            <Portfolio />
+           <CTA />
         </Layout>
     );
 };

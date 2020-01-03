@@ -7,6 +7,7 @@
     margin: 0 0 0 0;
     padding: 1.5rem 2.5rem;
     display: inline-block;
+    font-family: $font-family-primary;
     font-size: 1.6rem;
     font-weight: $font-weight-bold;
     border-radius: $border-radius;
@@ -33,7 +34,22 @@
     }
 }
 
-.button--secondary {
+.button--secondary  {
+    background: $white;
+    color: $primary;
+    border: .1rem solid $white;
+    box-shadow: 0rem 1rem 1rem -1rem $black;
+
+    &:hover,
+    &:focus {
+        box-shadow: none;
+        background: none;
+        color: $white;
+        border: .1rem solid $white;
+    }
+}
+
+.button--outline-primary {
     border: .1rem solid $primary;
     color: $primary;
 
