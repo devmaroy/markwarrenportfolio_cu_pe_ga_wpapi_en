@@ -1,0 +1,13 @@
+/*------------------------------------*\
+    # Testimonials
+\*------------------------------------*/
+
+.testimonials {
+    .section-heading {
+        grid-column: 1 / -1;
+    }
+
+    .card {
+        grid-column: span 4;
+    }
+}

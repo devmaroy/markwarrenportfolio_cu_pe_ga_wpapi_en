@@ -17,6 +17,27 @@
     }
 }
 
+.card--testimonials {
+    .card__meta {
+        justify-content: center;
+    }
+
+    .card__text {
+        font-style: italic;
+        p {
+            quotes: "“ " " ”" " ‘" " ’";
+
+            &::before {
+                content: open-quote;
+            }
+
+            &::after {
+                content: close-quote;
+            }
+        }
+    }
+}
+
 .card__meta {
     display: flex;
     justify-content: space-between;
@@ -44,3 +65,39 @@
     color: $gray;
     line-height: 2.6rem;
 }
+
+.card__footer {
+    display: flex;
+    margin: 4rem 0 0 0;
+
+    img {
+        width: 4rem;
+        height: 4rem;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+.card__person {
+    margin: 0 0 0 2rem;
+}
+
+.card__person-name {
+    margin: 0;
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-bold;
+    font-size: 1.4rem;
+    color: $black;
+}
+
+.card__person-career {
+    margin: 0;
+    font-family: $font-family-secondary;
+    font-size: 1.2rem;
+    color: $gray;
+
+    strong {
+        font-weight: $font-weight-medium;
+    }
+}
+

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cta = () => {
+const CTA = () => {
     return (
         <section className="cta">
             <div className="container">
@@ -21,4 +21,4 @@ const Cta = () => {
     );
 };
 
-export default Cta;
+export default CTA;
