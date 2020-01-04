@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    # Instagram Feed
+\*------------------------------------*/
+
+
+.instagram-feed {
+    margin-bottom: 80rem;
+}
+
+.instragram-feed__list {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat( 5, 1fr );
+    grid-gap: 3rem;
+
+    img {
+        width: 100%;
+        object-fit: fill;
+        height: 314px;
+    }
+}

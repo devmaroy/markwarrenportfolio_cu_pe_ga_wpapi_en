@@ -8,6 +8,7 @@ import CTA from '../components/common/cta';
 import Testimonials from '../components/testimonials/testimonials';
 import Contact from '../components/contact/contact';
 import RecentArticles from '../components/recentArticles/recentArticles';
+import InstagramFeed from '../components/instagramFeed/instagramFeed';
 
 
 const IndexPage = () => {
@@ -21,6 +22,7 @@ const IndexPage = () => {
            <Testimonials />
            <Contact />
            <RecentArticles />
+           <InstagramFeed />
         </Layout>
     );
 };
