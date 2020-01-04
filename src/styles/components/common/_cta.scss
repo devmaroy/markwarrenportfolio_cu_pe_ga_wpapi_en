@@ -21,11 +21,12 @@
 }
 
 .cta-box__content {
-    max-width: 60rem;
-    margin: 0 auto 4rem auto;
+    text-align: center;
     color: $white;
 
-    p:first-child {
-        margin: 0;
+    p {
+        max-width: 48.6rem;
+        margin: 0 auto 4rem auto; 
+        opacity: .9;  
     }
 }

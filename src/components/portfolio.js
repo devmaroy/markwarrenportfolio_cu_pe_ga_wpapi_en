@@ -1,12 +1,12 @@
 import React from 'react';
-import Heading from '../common/heading';
-import addIcon from '../../images/icons/add.svg';
-import portfolioOneImg from '../../images/portfolio/portfolio-1.jpg';
-import portfolioTwoImg from '../../images/portfolio/portfolio-2.jpg';
-import portfolioThreeImg from '../../images/portfolio/portfolio-3.jpg';
-import portfolioFourImg from '../../images/portfolio/portfolio-4.jpg';
-import portfolioFiveImg from '../../images/portfolio/portfolio-5.jpg';
-import portfolioSixImg from '../../images/portfolio/portfolio-6.jpg';
+import Heading from './common/heading';
+import addIcon from '../images/icons/add.svg';
+import portfolioOneImg from '../images/portfolio/portfolio-1.jpg';
+import portfolioTwoImg from '../images/portfolio/portfolio-2.jpg';
+import portfolioThreeImg from '../images/portfolio/portfolio-3.jpg';
+import portfolioFourImg from '../images/portfolio/portfolio-4.jpg';
+import portfolioFiveImg from '../images/portfolio/portfolio-5.jpg';
+import portfolioSixImg from '../images/portfolio/portfolio-6.jpg';
 
 
 const Portfolio = () => {

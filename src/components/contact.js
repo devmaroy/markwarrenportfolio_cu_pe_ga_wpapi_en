@@ -1,5 +1,5 @@
 import React from 'react';
-import contactImg from '../../images/contact.jpg';
+import contactImg from '../images/contact.jpg';
 
 const Contact = () => {
     return (

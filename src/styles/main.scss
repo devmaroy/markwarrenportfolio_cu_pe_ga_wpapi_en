@@ -27,15 +27,16 @@
 @import './components/common/form';
 
 
-// Pages
-@import './components/hero/hero';
-@import './components/about/about';
-@import './components/services/services';
-@import './components/portfolio/portfolio';
-@import './components/testimonials/testimonials';
-@import './components/contact/contact';
-@import './components/recent-articles/recent-articles';
-@import './components/instagramFeed/instagramFeed';
+// Page
+@import './components/hero';
+@import './components/about';
+@import './components/services';
+@import './components/portfolio';
+@import './components/testimonials';
+@import './components/contact';
+@import './components/recent-articles';
+@import './components/instagram-feed';
+@import './components/newsletter-cta';
 
 
 

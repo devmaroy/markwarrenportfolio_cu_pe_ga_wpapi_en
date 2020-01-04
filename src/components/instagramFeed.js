@@ -1,10 +1,10 @@
 import React from 'react';
-import Heading from '../common/heading';
-import feedImg1 from '../../images/instagram-feed/feed-1.jpg';
-import feedImg2 from '../../images/instagram-feed/feed-2.jpg';
-import feedImg3 from '../../images/instagram-feed/feed-3.jpg';
-import feedImg4 from '../../images/instagram-feed/feed-4.jpg';
-import feedImg5 from '../../images/instagram-feed/feed-5.jpg';
+import Heading from './common/heading';
+import feedImg1 from '../images/instagram-feed/feed-1.jpg';
+import feedImg2 from '../images/instagram-feed/feed-2.jpg';
+import feedImg3 from '../images/instagram-feed/feed-3.jpg';
+import feedImg4 from '../images/instagram-feed/feed-4.jpg';
+import feedImg5 from '../images/instagram-feed/feed-5.jpg';
 
 const InstagramFeed = () => {
     return (
