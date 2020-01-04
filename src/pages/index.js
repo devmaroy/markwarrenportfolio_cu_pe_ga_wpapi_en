@@ -11,7 +11,6 @@ import RecentArticles from '../components/recentArticles';
 import InstagramFeed from '../components/instagramFeed';
 import NewsletterCTA from '../components/NewsletterCTA';
 
-
 const IndexPage = () => {
     return (
         <Layout>

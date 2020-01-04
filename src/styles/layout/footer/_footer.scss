@@ -1,0 +1,49 @@
+/*------------------------------------*\
+    # Footer
+\*------------------------------------*/
+
+.footer {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+
+    .site-logo__text {
+       font-size: 2.4rem;
+    }
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__copyright {
+    color: $gray;   
+
+    p {
+        margin: 0;
+    }
+}
+
+.social-list {
+    @include list-unstyled;
+}
+
+.social-list__item {
+    display: inline-block;
+
+    &:not( :last-child ) {
+        margin-right: 1rem;
+    }
+}
+
+.social-list__link {
+    color: $black;
+
+    transition: all $transition-base;
+
+    &:hover,
+    &:focus {
+        color: $primary;
+    }
+}
