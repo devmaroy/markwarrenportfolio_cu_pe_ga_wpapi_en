@@ -35,4 +35,12 @@
     font-weight: $font-weight-bold;
     background: $white;
     color: $primary;
+
+    transition: all $transition-base;
+
+    &:hover,
+    &:focus {
+        background: none;
+        color: $white;
+    }
 }
