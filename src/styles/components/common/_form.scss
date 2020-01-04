@@ -6,14 +6,21 @@
     margin: 0 0 2rem 0;
 }
 
-.form__field {
+.form__control {
     border: .1rem solid $input-border-color;
     border-radius: $border-radius;
     padding: 1.5rem 2rem;
+    font-size: 1.4rem;
     width: 100%;
+    color: $black;
 
     @at-root textarea#{&} {
         height: 18rem;
+        resize: vertical;
+    }
+
+    &::placeholder {
+        color: $gray;
     }
 }
 

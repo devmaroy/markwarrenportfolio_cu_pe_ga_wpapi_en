@@ -17,19 +17,19 @@ const Contact = () => {
 
                         <form className="form">
                             <div className="form__group">
-                                <input type="text" placeholder="First Name *" className="form__field" />
+                                <input type="text" placeholder="First Name *" className="form__control" />
                             </div>
                             <div className="form__group">
-                                <input type="text" placeholder="Last Name *" className="form__field" />
+                                <input type="text" placeholder="Last Name *" className="form__control" />
                             </div>
                             <div className="form__group">
-                                <input type="text" placeholder="Email Address *" className="form__field" />
+                                <input type="text" placeholder="Email Address *" className="form__control" />
                             </div>
                             <div className="form__group">
-                                <input type="text" placeholder="Subject *" className="form__field" />
+                                <input type="text" placeholder="Subject *" className="form__control" />
                             </div>
                             <div className="form__group">
-                                <textarea placeholder="Message *" className="form__field" rows="20"></textarea>
+                                <textarea placeholder="Message *" className="form__control"></textarea>
                             </div>
 
                             <div className="form__meta">
