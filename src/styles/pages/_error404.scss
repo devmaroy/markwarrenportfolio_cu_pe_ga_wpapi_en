@@ -1,0 +1,54 @@
+/*------------------------------------*\
+    # Error - 404 Not Found
+\*------------------------------------*/
+
+.error {
+    margin-top: 10rem;
+}
+
+.error__heading {
+    font-family: $font-family-secondary;
+    font-size: 10rem;
+    margin: 0 0 2rem 0;
+    color: #FF495C;
+
+    text-shadow: .6rem .3rem .1rem #F6E8EA;
+}
+
+.error__subheading {
+    font-family: $font-family-secondary;
+    font-size: 4rem;
+    margin: 0;
+    color: transparentize( #FF495C, .3 );
+}
+
+.error__text {
+    font-size: 1.8rem;
+    margin: 6rem 0;
+    max-width: 90rem;
+    line-height: 3.2rem;
+    color: $black;
+}
+
+.error__link {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: $font-weight-bold;
+    font-size: 2rem;
+    color: $primary;
+    
+    &:hover,
+    &:focus {
+        color: #FF495C;
+    }
+
+    svg {
+        position: relative;
+        top: 1px;
+        animation: jump 2s infinite;
+    }
+
+    @keyframes jump {
+        0% { transform: translateX(-5px); } 50% { transform: translateX(0); } 100% { transform: translateX(-5px); }
+    }
+}

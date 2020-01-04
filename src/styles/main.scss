@@ -26,8 +26,7 @@
 @import './components/common/cards';
 @import './components/common/form';
 
-
-// Page
+// Other Components
 @import './components/hero';
 @import './components/about';
 @import './components/services';
@@ -39,6 +38,9 @@
 @import './components/newsletter-cta';
 
 
+
+// Page
+@import './pages/error404';
 
 
 // Layout
