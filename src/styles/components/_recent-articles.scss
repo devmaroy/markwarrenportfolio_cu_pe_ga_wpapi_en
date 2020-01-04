@@ -15,6 +15,14 @@
 
 .recent-article__img {
     border-radius: $border-radius;
+    cursor: pointer;
+
+    transition: all $transition-base;
+
+    &:hover,
+    &:focus {
+        opacity: .8;
+    }
 }
 
 .recent-article__meta {
@@ -42,7 +50,7 @@
 
     &:hover,
     &:focus {
-        color: lighten( $black, 10% );
+        color: lighten( $black, 13% );
     }
 }
 
