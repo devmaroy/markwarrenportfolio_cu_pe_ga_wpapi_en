@@ -2,7 +2,7 @@ import React from 'react';
 
 const CTA = ( { title, children } ) => {
     return (
-        <section className="cta">
+        <section className="cta divider-space">
             <div className="container">
                 <div className="cta__inner grid-container">
                     <div className="cta-box">

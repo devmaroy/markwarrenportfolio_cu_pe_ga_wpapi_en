@@ -41,10 +41,6 @@ button:disabled {
     cursor: default;
 }
 
-section {
-    margin-top: 15rem;
-}
-
 .list-unstyled {
     padding: 0;
     margin: 0;
@@ -73,88 +69,16 @@ section {
     padding: 0 3.6rem;
 }
 
-
 .grid-container {
     display: grid;
     grid-template-columns: repeat( 12, 1fr );
     grid-gap: 0 3rem;
 }
 
-
+.divider-space {
+    margin-top: 15rem;
+}
 
 .overlay {
     display: none;
 }
-
-
-// udelej mixin s css grid nastavenimi a vzdy to includni do daneho obalovaciho elementu a tam si udelej template areas.
-// nedelej to komplet pro celou stranku
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-.container {
-    display: grid;
-    grid-template-columns: repeat( 12, 1fr );
-    grid-gap: 20px;
-    grid-template-areas:
-    "logo logo logo navigation navigation"
-    "nav nav main main"
-    "aside aside main main"
-    "section section section section"
-    "section section section section"
-    "footer footer footer footer";
-
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 3.6rem;
-}
-
-*/
-
-
-
-
-

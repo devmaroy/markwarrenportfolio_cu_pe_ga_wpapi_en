@@ -8,7 +8,7 @@ import feedImg5 from '../images/instagram-feed/feed-5.jpg';
 
 const InstagramFeed = () => {
     return (
-        <section className="instagram-feed">
+        <section className="instagram-feed divider-space">
             <div className="container">
                 <Heading main="Follow Me" sub="Instagram" /> 
             </div>

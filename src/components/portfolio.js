@@ -11,7 +11,7 @@ import portfolioSixImg from '../images/portfolio/portfolio-6.jpg';
 
 const Portfolio = () => {
     return (
-        <section className="portfolio">
+        <section className="portfolio divider-space">
             <div className="container">
                 <div className="portfolio__inner grid-container">
                     <Heading main="My Latest Projects" sub="Portfolio" />

@@ -6,7 +6,7 @@ import articleThreeImg from '../images/recent-articles/article-3.jpg';
 
 const RecentArticles = () => {
     return (
-        <section className="recent-articles">
+        <section className="recent-articles divider-space">
             <div className="container">
                 <div className="recent-articles__inner grid-container">
                     <Heading main="My Recent Articles" sub="Blog" />

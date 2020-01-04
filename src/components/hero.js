@@ -4,7 +4,7 @@ import personalImg from '../images/me-hero.svg';
 
 const Hero = () => {
     return (
-        <section className="hero">
+        <section className="hero divider-space">
             <div className="container">
                 <div className="hero__inner grid-container">
                    <div className="hero-info">

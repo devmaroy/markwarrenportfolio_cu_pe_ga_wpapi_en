@@ -5,7 +5,7 @@ import aboutImg from '../images/me-about.jpg';
 
 const About = () => {
     return (
-        <section className="about">
+        <section className="about divider-space">
             <div className="container">
                 <div className="about__inner grid-container">
                     <Heading main="Just a Little" sub="About" />
