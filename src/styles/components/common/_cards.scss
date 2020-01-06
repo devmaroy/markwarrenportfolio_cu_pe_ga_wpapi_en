@@ -38,6 +38,26 @@
     }
 }
 
+.card--onepage {
+    grid-column: span 12;
+
+    &:not( :last-child ) {
+        margin: 0 0 4rem 0;     
+         
+        @media ( min-width: $breakpoint-large ) {
+            margin: 0;
+        }
+    }
+
+    @media ( min-width: $breakpoint-small ) {
+        grid-column: span 6;
+    }
+    
+    @media ( min-width: $breakpoint-large ) {
+        grid-column: span 4;
+    }
+}
+
 .card__meta {
     display: flex;
     justify-content: space-between;
@@ -49,7 +69,7 @@
     font-size: 4.2rem;
     font-weight: $font-weight-bold;
     color: $primary;
-    opacity: 30%;
+    opacity: .3;
 }
 
 .card__title {

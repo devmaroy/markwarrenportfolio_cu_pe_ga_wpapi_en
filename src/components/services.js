@@ -11,7 +11,7 @@ const Services = () => {
                 <div className="services__inner grid-container">
                     <Heading main="What I Do" sub="Services" />
 
-                    <div className="card">
+                    <div className="card card--onepage">
                         <div className="card__meta">
                             <span className="card__number">01</span>
                             <img className="card__icon" src={ servicesOneImg } alt="Services icon" />
@@ -24,7 +24,7 @@ const Services = () => {
                         </div>
                     </div>
 
-                    <div className="card">
+                    <div className="card card--onepage">
                         <div className="card__meta">
                             <span className="card__number">02</span>
                             <img className="card__icon" src={ servicesTwoImg } alt="Services icon" />
@@ -37,7 +37,7 @@ const Services = () => {
                         </div>
                     </div>
 
-                    <div className="card">
+                    <div className="card card--onepage">
                         <div className="card__meta">
                             <span className="card__number">03</span>
                             <img className="card__icon" src={ servicesThreeImg } alt="Services icon" />

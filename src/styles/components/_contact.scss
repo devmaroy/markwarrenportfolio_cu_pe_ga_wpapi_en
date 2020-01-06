@@ -2,41 +2,57 @@
     # Contact
 \*------------------------------------*/
 
+.contact {
+    position: relative;
+}
+
 .contact__info {
-    grid-column: 1 / 7; 
+    grid-column: 1 / -1;
+    margin: 0 0 8rem 0;
+
+    @media ( min-width: $breakpoint-medium ) {
+        grid-column: 1 / 7;
+        margin: 0;
+    }
 }
 
 .contact__img {
-    grid-column: 8 / -1;
+    grid-column: 1 / -1;
     position: relative;
 
     img {
         border-radius: $border-radius;
     }
 
-    .shape {
-        &::before {
-            z-index: -1;
-            transform: rotate( 90deg );
-        }
+    .shape::after {
+        transform: rotate( 90deg );
+    }
 
-        &:nth-child(1)::before { 
-            top: 2.1rem;
-            left: -5.1rem;
-        }
+    .shape:nth-child(1)::after {
+        bottom: -1.2rem;
+        left: -4.6rem;
+    }
 
-        &:nth-child(2)::before {
-            right: -3.8rem;
-            top: 68.3rem;
-        }
-   }
+    .shape:nth-child(2)::after {
+        top: -.8rem;
+        right: -4rem;
+    }
+
+    @media ( min-width: $breakpoint-medium ) {
+        grid-column: 8 / -1;
+    }
 }
 
 .contact__heading {
-    font-size: 3.2rem;
-    line-height: 3.8rem;
+    font-size: 2.6rem;
+    line-height: 3.1rem;
     margin: 0 0 2rem 0;
     color: $black;
+
+    @media ( min-width: $breakpoint-medium ) {
+        font-size: 3.2rem;
+        line-height: 3.8rem;
+    }
 }
 
 .contact__text {

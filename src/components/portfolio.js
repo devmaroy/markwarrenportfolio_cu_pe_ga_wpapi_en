@@ -21,10 +21,10 @@ const Portfolio = () => {
                             <a href="/" className="active">All</a>
                         </li>
                         <li>
-                            <a href="/">UI/UX Design</a>
+                            <a href="/">Web Development</a>
                         </li>
                         <li>
-                            <a href="/">Web Development</a>
+                            <a href="/">UI/UX Design</a>
                         </li>
                         <li>
                             <a href="/">Web Design</a>
@@ -33,7 +33,7 @@ const Portfolio = () => {
 
                     <div className="portfolio__items">
                         <div className="portfolio__item">
-                            <img src={ portfolioOneImg } className="portfolio__img" alt="" />
+                            <img src={ portfolioOneImg } className="portfolio__img" alt="Portfolio project 1" />
 
                             <div className="portfolio__overlay">
                                 <div className="portfolio__overlay-header">
@@ -50,7 +50,7 @@ const Portfolio = () => {
                         </div>
                         
                         <div className="portfolio__item">
-                            <img src={ portfolioTwoImg } className="portfolio__img" alt="" />
+                            <img src={ portfolioTwoImg } className="portfolio__img" alt="Portfolio project 1" />
 
                             <div className="portfolio__overlay">
                                 <div className="portfolio__overlay-header">
@@ -67,7 +67,7 @@ const Portfolio = () => {
                         </div>
 
                         <div className="portfolio__item">
-                            <img src={ portfolioThreeImg } className="portfolio__img" alt="" />
+                            <img src={ portfolioThreeImg } className="portfolio__img" alt="Portfolio project 1" />
 
                             <div className="portfolio__overlay">
                                 <div className="portfolio__overlay-header">
@@ -84,7 +84,7 @@ const Portfolio = () => {
                         </div>
 
                         <div className="portfolio__item">
-                            <img src={ portfolioFourImg } className="portfolio__img" alt="" />
+                            <img src={ portfolioFourImg } className="portfolio__img" alt="Portfolio project 1" />
 
                             <div className="portfolio__overlay">
                                 <div className="portfolio__overlay-header">
@@ -101,7 +101,7 @@ const Portfolio = () => {
                         </div>
 
                         <div className="portfolio__item">
-                            <img src={ portfolioFiveImg } className="portfolio__img" alt="" />
+                            <img src={ portfolioFiveImg } className="portfolio__img" alt="Portfolio project 1" />
 
                             <div className="portfolio__overlay">
                                 <div className="portfolio__overlay-header">
@@ -118,7 +118,7 @@ const Portfolio = () => {
                         </div>
 
                         <div className="portfolio__item">
-                            <img src={ portfolioSixImg } className="portfolio__img" alt="" />
+                            <img src={ portfolioSixImg } className="portfolio__img" alt="Portfolio project 1" />
 
                             <div className="portfolio__overlay">
                                 <div className="portfolio__overlay-header">

@@ -1,56 +1,34 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React, { Component } from 'react';
+import Menu from './menu';
 import hamburgerMenuIcon from '../../images/icons/hamburger-menu.svg'
 
 
-const Navigation = () => {
-    return (
-        <div className="navigation">
-            <div className="hamburger-menu">
-                <img src={ hamburgerMenuIcon } alt="Hamburger menu icon" className="hamburger-menu__icon" />
+class Navigation extends Component {
+    constructor( props ) {
+        super( props );
+
+        this.state = { showMenu: false };
+    }
+
+    toggleMenu = () => {
+        this.setState(( { showMenu } ) => ( { showMenu: ! showMenu } ) );
+    }
+
+    render() {
+        return (
+            <div className="navigation">
+                <button className="hamburger-menu" onClick={ this.toggleMenu }>
+                    <img src={ hamburgerMenuIcon } alt="Hamburger menu icon" className="hamburger-menu__icon" />
+                </button>
+
+                <div className={ this.state.showMenu ? 'navigation__inner active' : 'navigation__inner' }>
+                    <Menu toggleMenu={ this.toggleMenu } />
+                    <button className="button button--primary header__button">Hire me</button>
+                </div>
             </div>
-            <nav>
-                <ul className="menu-list">
-                    <li className="menu-list__item">
-                        <Link to="#" className="menu-list__link active">
-                            Home
-                        </Link>
-                    </li>
-                    <li className="menu-list__item">
-                        <Link to="#" className="menu-list__link">
-                            About
-                        </Link>
-                    </li>
-                    <li className="menu-list__item">
-                        <Link to="#" className="menu-list__link">
-                            Services
-                        </Link>
-                    </li>
-                    <li className="menu-list__item">
-                        <Link to="#" className="menu-list__link">
-                            Portfolio
-                        </Link>
-                    </li>
-                    <li className="menu-list__item">
-                        <Link to="#" className="menu-list__link">
-                            Reviews
-                        </Link>
-                    </li>
-                    <li className="menu-list__item">
-                        <Link to="#" className="menu-list__link">
-                            Contact
-                        </Link>
-                    </li>
-                    <li className="menu-list__item">
-                        <Link to="#" className="menu-list__link">
-                            Blog
-                        </Link>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    );
-};
+        );
+    }
+}
 
 
 export default Navigation;

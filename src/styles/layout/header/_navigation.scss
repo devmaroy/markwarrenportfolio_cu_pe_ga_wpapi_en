@@ -2,26 +2,82 @@
     # Navigation
 \*------------------------------------*/
 
+
 .hamburger-menu {
+    appearance: none;
+    outline: none;
     line-height: 0;
-    display: none;
+    -webkit-tap-highlight-color: transparent;
+
+    @media ( min-width: $breakpoint-medium ) {
+        display: none;
+    }
+}
+
+.navigation__inner {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    z-index: 99;
+    padding: 4rem;
+    background: $white;
+
+    transition: all $transition-base;
+
+    &.active {
+        left: 0%;
+    }
+
+
+    @media ( min-width: $breakpoint-medium ) {
+        position: static;
+        padding: 0;
+
+        button {
+            display: none;
+        }
+    }
 }
 
 .menu-list {
     @include list-unstyled;
+    margin: 0 0 4rem 0;
+
+    @media ( min-width: $breakpoint-medium ) {
+        margin: 0;
+    }
 }
 
 .menu-list__item {
-    display: inline-block;
-
     &:not( :last-child ) {
-        margin-right: 2rem;
+        margin: 0 0 2rem 0;
+
+        @media ( min-width: $breakpoint-medium ) {
+            margin: 0 2rem 0 0;
+        }
+    }
+
+    &.close {
+        margin-bottom: 4rem;
+        text-align: right;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+
+        @media ( min-width: $breakpoint-medium ) {
+            display: none;
+        }
+    }
+
+    @media ( min-width: $breakpoint-medium ) {
+        display: inline-block;
     }
 }
 
 .menu-list__link {
-    font-weight: $font-weight-bold;
     text-decoration: none;
+    font-weight: $font-weight-bold;
     color: $gray;
 
     transition: all $transition-base;

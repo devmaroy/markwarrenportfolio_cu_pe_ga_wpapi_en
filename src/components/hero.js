@@ -11,7 +11,7 @@ const Hero = () => {
                         <h1 className="hero-info__title">Mark Warren</h1>
                         <h2 className="hero-info__subtitle">I'm front-end developer & designer</h2>
 
-                        <div className="hero-info-text">
+                        <div className="hero-info__text">
                             <p>Gingerbread carrot cake marshmallow. Jelly-o pie sweet marzipan 
                             bear claw sweet roll wafer. Sweet roll cheesecake oat cake wafer 
                             jelly chupa chups.</p>
@@ -21,18 +21,18 @@ const Hero = () => {
                         <button className="button button--outline-primary">See Projects</button>
 
                         <div className="shapes">
-                            <div className="shape"></div>
-                            <div className="shape"></div>
-                        </div>
+                            <div className="shape"></div>                        
+                            <div className="shape"></div>                        
+                        </div>                      
                    </div>
 
                    <div className="hero-img">
-                        <img src={ personalImg } alt="Picture of me"/>
+                        <img src={ personalImg } alt="Me"/>
 
                         <div className="shapes">
-                            <div className="shape"></div>
-                            <div className="shape"></div>
-                        </div>
+                            <div className="shape"></div>                        
+                            <div className="shape"></div>                        
+                        </div>       
                    </div>
                 </div>
             </div>

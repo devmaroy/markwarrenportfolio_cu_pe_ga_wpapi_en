@@ -11,21 +11,29 @@
 }
 
 .footer__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @media ( min-width: $breakpoint-small ) {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .footer__copyright {
+    margin: 2rem 0;
     color: $gray;   
 
     p {
         margin: 0;
     }
+
+    @media ( min-width: $breakpoint-small ) {
+        flex: 1;
+        margin: 2rem 0 2rem 4rem;
+    }
 }
 
 .social-list {
     @include list-unstyled;
+    margin-left: -.5rem;
 }
 
 .social-list__item {

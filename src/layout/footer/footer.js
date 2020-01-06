@@ -2,6 +2,7 @@ import React from 'react';
 import SiteLogo from '../header/siteLogo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+
 const Footer = () => {
     return (
         <footer className="footer divider-space">
@@ -47,5 +48,6 @@ const Footer = () => {
         </footer>
     );
 };
+
 
 export default Footer;

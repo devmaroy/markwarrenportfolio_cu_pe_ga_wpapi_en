@@ -5,17 +5,22 @@
 
 .button {
     margin: 0 0 0 0;
-    padding: 1.5rem 2.5rem;
+    padding: 1.2rem 2rem;
     display: inline-block;
     font-family: $font-family-primary;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: $font-weight-bold;
     border-radius: $border-radius;
     text-transform: uppercase;
     transition: all $transition-base;
 
     &:not(:last-of-type ) {
-        margin-right: 2rem;
+        margin: 0 2rem 2rem 0;
+    }
+
+    @media ( min-width: $breakpoint-medium ) {
+        font-size: 1.6rem;
+        padding: 1.5rem 2.5rem;
     }
 }
 

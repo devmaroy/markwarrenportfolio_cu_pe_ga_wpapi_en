@@ -24,6 +24,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.site-content {
+    overflow-x: hidden;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -52,14 +56,16 @@ button:disabled {
     font-style: normal;
 }
 
-.shape::before {
-    content: '';
-    background: url( '../images/dots.svg') no-repeat;
-    display: inline-block;
-    width: 10rem;
-    height: 6rem;
-
-    position: absolute;
+.shape {
+    &::after {
+        content: '';
+        background: url( '../images/dots.svg') no-repeat;
+        display: block;
+        width: 10rem;
+        height: 6rem;
+        position: absolute;
+        z-index: -99;
+    }
 }
 
 .container {
@@ -71,11 +77,19 @@ button:disabled {
 .grid-container {
     display: grid;
     grid-template-columns: repeat( 12, 1fr );
-    grid-gap: 0 3rem;
+    grid-gap: 0 1rem;
+
+    @media ( min-width: $breakpoint-small ) {
+        grid-gap: 0 3rem;
+    }
 }
 
 .divider-space {
-    margin-top: 15rem;
+    margin-top: 10rem;
+
+    @media ( min-width: $breakpoint-medium ) {
+        margin-top: 20rem;
+    }
 }
 
 .overlay {

@@ -3,20 +3,15 @@
 \*------------------------------------*/
 
 
-.portfolio {
-    .section-heading {
-        grid-column: 1 / -1;
-    }
-}
-
 .portfolio__navigation {
     @include list-unstyled;
     grid-column: 1 / -1;
     justify-self: center;
-    margin: 0 0 6rem 0;
+    margin: 0 0 4rem 0;
 
     li {
         display: inline-block;
+        margin: 0 0 2rem 0;
         @include dot-pseudo( $color: $primary-light, $margin: 0 1.5rem );
     }
 
@@ -43,7 +38,7 @@
 
     display: grid;
     grid-template-columns: repeat( 4, 1fr );
-    grid-gap: 3rem;
+    grid-gap: 1rem;
 }
 
 .portfolio__item {
@@ -52,16 +47,26 @@
     cursor: pointer;
     overflow: hidden;
 
+    grid-column: span 2;
+
     &:first-child,
     &:last-child {
-        grid-column: span 2;
+        grid-column: span 4;
+
+        @media ( min-width: $breakpoint-medium ) {
+            grid-column: span 2;
+        }
     }
     
     &:hover,
     &:focus {
         .portfolio__overlay {
-            transform: translateY(0);
+            transform: translateY( 0 );
         }
+    }
+
+    @media ( min-width: $breakpoint-medium ) {
+        grid-column: span 1;
     }
 }
 
@@ -87,7 +92,7 @@
     background: transparentize( $primary, 0.25 );
     transform: translate3d( 0, 30rem, 0 );
 
-    transition: all $transition-base;
+    transition: all 0.25s linear;
 }
 
 .portfolio__overlay-header {
@@ -115,6 +120,7 @@
     font-size: 1.4rem;
     line-height: 2rem;
     color: $white;
+    opacity: .8;
 
     p:first-child {
         margin: 0;
@@ -124,6 +130,6 @@
 .portfolio__meta {
     grid-column: 1 / -1;
 
-    margin-top: 6rem;
+    margin: 6rem 0 0 0;
     text-align: center;
 }

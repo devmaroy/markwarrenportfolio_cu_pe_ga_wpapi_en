@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
@@ -14,11 +14,13 @@ library.add( fab, faAngleDoubleLeft );
 
 const Layout = ( { children } ) => {
     return (
-        <Fragment>
+        <div className="site-content">
             <Header />
-            { children }
+            <main>
+                { children }
+            </main>
             <Footer />
-        </Fragment>
+        </div>
     );
 };
 

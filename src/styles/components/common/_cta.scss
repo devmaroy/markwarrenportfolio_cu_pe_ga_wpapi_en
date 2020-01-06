@@ -8,7 +8,7 @@
 
     border-radius: $border-radius;
     text-align: center;
-    padding: 6rem;
+    padding: 6rem 4rem;
     background: url( '../images/cta/cta.svg' );
     background-size: cover;
 }
@@ -16,8 +16,15 @@
 .cta-box__heading {
     margin: 0 0 2rem 0;
     font-family: $font-family-secondary;
-    font-size: 4.2rem;
+    font-weight: $font-weight-bold;
+    font-size: 3rem;
+    line-height: 3.6rem;
     color: $white;
+
+    @media ( min-width: $breakpoint-medium ) {
+        font-size: 4.2rem;
+        line-height: 5rem;
+    }
 }
 
 .cta-box__content {
@@ -25,8 +32,14 @@
     color: $white;
 
     p {
-        max-width: 48.6rem;
-        margin: 0 auto 4rem auto; 
+        margin: 0 0 4rem 0; 
         opacity: .9;  
+        font-size: 1.6rem;
+        line-height: 2.9rem;
+
+        @media ( min-width: $breakpoint-medium ) {
+            max-width: 50rem;
+            margin: 0 auto 4rem auto;
+        }
     }
 }

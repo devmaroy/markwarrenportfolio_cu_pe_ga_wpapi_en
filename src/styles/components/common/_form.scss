@@ -7,10 +7,13 @@
 }
 
 .form__control {
+    appearance: none;
+    outline: none;
+    box-shadow: none;
     border: .1rem solid $input-border-color;
     border-radius: $border-radius;
     padding: 1.5rem 2rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     width: 100%;
     color: $black;
 
@@ -21,6 +24,10 @@
 
     &::placeholder {
         color: $gray;
+    }
+
+    @media ( min-width: $breakpoint-medium ) {
+        font-size: 1.4rem;
     }
 }
 

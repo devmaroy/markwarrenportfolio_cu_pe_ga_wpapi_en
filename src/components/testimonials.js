@@ -13,7 +13,7 @@ const Testimonials = () => {
                 <div className="testimonials__inner grid-container">
                     <Heading main="What My Cliens Say" sub="Testimonials" />
 
-                    <div className="card card--testimonials">
+                    <div className="card card--testimonials card--onepage">
                         <div className="card__meta">
                             <img className="card__icon" src={ starsIcon } alt="Services icon" />
                         </div>
@@ -32,7 +32,7 @@ const Testimonials = () => {
                         </div>
                     </div>
 
-                    <div className="card card--testimonials">
+                    <div className="card card--testimonials card--onepage">
                         <div className="card__meta">
                             <img className="card__icon" src={ starsIcon } alt="Services icon" />
                         </div>
@@ -51,7 +51,7 @@ const Testimonials = () => {
                         </div>
                     </div>
 
-                    <div className="card card--testimonials">
+                    <div className="card card--testimonials card--onepage">
                         <div className="card__meta">
                             <img className="card__icon" src={ starsIcon } alt="Services icon" />
                         </div>

@@ -4,11 +4,19 @@
 
 
 .header {
-    margin-top: 6rem;
+    margin-top: 4rem;
 }
 
 .header__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.header__button {
+    display: none;
+
+    @media ( min-width: $breakpoint-medium ) {
+        display: block;
+    }
 }

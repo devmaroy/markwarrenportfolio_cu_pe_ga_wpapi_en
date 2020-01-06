@@ -10,7 +10,7 @@ const Header = () => {
                 <div className="header__inner">
                     <SiteLogo />
                     <Navigation />
-                    <button className="button button--primary">Hire me</button>
+                    <button className="button button--primary header__button">Hire me</button>
                     <div className="overlay"></div>
                 </div>
             </div>
