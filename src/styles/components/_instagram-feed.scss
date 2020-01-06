@@ -2,15 +2,14 @@
     # Instagram Feed
 \*------------------------------------*/
 
-
-.instragram-feed__list {
-    display: grid;
-    grid-template-columns: repeat( 5, 1fr );
-    grid-gap: 3rem;
-
+.instagram-feed__item {
     img {
-        width: 100%;
-        object-fit: fill;
-        height: 314px;
+        height: 31.4rem;
+        object-fit: cover;
+        border-radius: .6rem;
     }
+}
+
+.slick-slide {
+    padding: 0 15px;
 }
