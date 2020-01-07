@@ -34,6 +34,7 @@
                 border-radius: 50%;
                 width: 1.6rem;
                 height: 1.6rem;
+                transition: all $transition-base;
             }
         }
     }
@@ -50,6 +51,7 @@
         &::before {
             font-size: 2rem;
             color: $primary;
+            transition: all $transition-base;
         }
     }
 }

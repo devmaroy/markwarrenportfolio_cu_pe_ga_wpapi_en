@@ -51,6 +51,11 @@
     font-weight: $font-weight-bold;
     text-transform: uppercase;
     color: $primary;
+
+    &:hover,
+    &:focus {
+        color: darken( $primary, 13% );
+    }
 }
 
 .recent-article__heading {
