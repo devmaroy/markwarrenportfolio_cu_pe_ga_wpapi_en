@@ -18,21 +18,13 @@ const Hero = () => {
                         </div>
 
                         <button className="button button--primary">Download CV</button>
-                        <button className="button button--outline-primary">See Projects</button>
-
-                        <div className="shapes">
-                            <div className="shape"></div>                        
-                            <div className="shape"></div>                        
-                        </div>                      
+                        <button className="button button--outline-primary">See Projects</button>                    
                    </div>
 
                    <div className="hero-img">
-                        <img src={ personalImg } alt="Me"/>
-
-                        <div className="shapes">
-                            <div className="shape"></div>                        
-                            <div className="shape"></div>                        
-                        </div>       
+                        <div className="hero-img__inner">
+                            <img src={ personalImg } alt="Me"/>    
+                        </div>   
                    </div>
                 </div>
             </div>

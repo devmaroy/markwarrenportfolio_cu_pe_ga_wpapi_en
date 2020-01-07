@@ -7,6 +7,7 @@ import feedImg3 from '../images/instagram-feed/feed-3.jpg';
 import feedImg4 from '../images/instagram-feed/feed-4.jpg';
 import feedImg5 from '../images/instagram-feed/feed-5.jpg';
 
+
 const InstagramFeed = () => {
     const sliderSettings = {
         dots: true,
@@ -15,7 +16,23 @@ const InstagramFeed = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         centerMode: true,
-    }
+        customPaging: function(i) {
+            return (
+                <button></button>
+            );
+        },
+        responsive: [
+            {
+              breakpoint: 720,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+              }
+            },
+        ],
+    };
 
     return (
         <section className="instagram-feed divider-space">

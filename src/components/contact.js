@@ -6,10 +6,10 @@ const Contact = () => {
         <section className="contact divider-space">
             <div className="container">
                 <div className="contact__inner grid-container">
-                    <div className="contact__info">
-                        <h2 className="contact__heading">Sugar pie gingerbread sugar plum biscuit tootsie oat cake.</h2>
+                    <div className="contact-info">
+                        <h2 className="contact-info__heading">Sugar pie gingerbread sugar plum biscuit tootsie oat cake.</h2>
 
-                        <div className="contact__text">
+                        <div className="contact-info__text">
                             <p>Toffee gummies pie macaroon sweet. Tiramisu carrot  jelly beans 
                             candy canes. Donut carrot chocolate cheesecake cheesecake ice 
                             brownie sugar plum donut.</p>
@@ -38,11 +38,9 @@ const Contact = () => {
                         </form>
                     </div>
 
-                    <div className="contact__img">
-                        <img src={ contactImg } alt="Me working on macbook" />
-                        <div className="shapes">
-                            <div className="shape"></div>
-                            <div className="shape"></div>
+                    <div className="contact-img">
+                        <div className="contact-img__inner">
+                            <img src={ contactImg } alt="Me working on macbook" />
                         </div>
                     </div>
                 </div>

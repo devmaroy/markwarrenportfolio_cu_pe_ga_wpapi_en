@@ -2,48 +2,18 @@
     # Contact
 \*------------------------------------*/
 
-.contact {
-    position: relative;
-}
 
-.contact__info {
+.contact-info {
     grid-column: 1 / -1;
     margin: 0 0 8rem 0;
 
-    @media ( min-width: $breakpoint-medium ) {
+    @media ( min-width: $breakpoint-small ) {
         grid-column: 1 / 7;
         margin: 0;
     }
 }
 
-.contact__img {
-    grid-column: 1 / -1;
-    position: relative;
-
-    img {
-        border-radius: $border-radius;
-    }
-
-    .shape::after {
-        transform: rotate( 90deg );
-    }
-
-    .shape:nth-child(1)::after {
-        bottom: -1.2rem;
-        left: -4.6rem;
-    }
-
-    .shape:nth-child(2)::after {
-        top: -.8rem;
-        right: -4rem;
-    }
-
-    @media ( min-width: $breakpoint-medium ) {
-        grid-column: 8 / -1;
-    }
-}
-
-.contact__heading {
+.contact-info__heading {
     font-size: 2.6rem;
     line-height: 3.1rem;
     margin: 0 0 2rem 0;
@@ -55,7 +25,36 @@
     }
 }
 
-.contact__text {
+.contact-info__text {
     margin: 0 0 4rem 0;
     color: $gray;
+}
+
+
+.contact-img {
+    grid-column: 1 / -1;
+
+    img {
+        border-radius: $border-radius;
+    }
+
+    @media ( min-width: $breakpoint-small ) {
+        grid-column: 8 / -1;
+    }
+}
+
+.contact-img__inner {
+    position: relative;
+
+    @include dotted-shapes( $rotate: 90deg ) {
+        &::after {
+            bottom: 0;
+            right: -3.5rem;
+        }
+
+        &::before {
+            top: 0;
+            left: -4.5rem;
+        }
+    }
 }

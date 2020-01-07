@@ -2,27 +2,194 @@
     # Hero
 \*------------------------------------*/
 
-
-// Hero Info
-
 .hero {
     position: relative;
+
+    @media ( min-width: $breakpoint-medium ) {
+        position: static;
+    }
 }
 
 .hero-info {
     grid-column: 1 / - 1;
+    position: relative;
 
-    .shape:nth-child(1)::after {
-        bottom: 4rem;
-        left: -8rem;
+    @include dotted-shapes {
+        &::before {
+            top: 23rem;
+            left: -11rem;
+    
+            @media ( min-width: $breakpoint-medium ) {
+                top: 25.5rem;
+            }
+    
+            @media ( min-width: 1420px ) {    
+                left: -14.3rem;
+            }
+        }
+
+        &::after {
+            top: 33rem;
+            left: -8rem;
+    
+            @media ( min-width: 1420px ) {
+                left: -9.5rem;
+            }
+        }
+    };
+
+    @media ( min-width: $breakpoint-medium ) {
+        grid-column: 1 / 7;
     }
+}
 
-    .shape:nth-child(2)::after {
-        top: 0;
-        right: -8.3rem;
+.hero-info__title {
+    margin: 0 0 1.5rem 0;
+    font-family: $font-family-secondary;
+    font-size: 5.2rem;
+    line-height: 6.2rem;
+    font-weight: $font-weight-bold;
+    color: $black;
+
+    @media ( min-width: $breakpoint-medium ) {
+        font-size: 5.8rem;
+        line-height: 7rem;
+    }
+}
+
+.hero-info__subtitle {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 2.9rem;
+    color: $gray;
+
+    @media ( min-width: $breakpoint-medium ) {
+        font-size: 2.2rem;
+        line-height: 2.6rem;
+    }
+}
+
+.hero-info__text {
+    margin: 3rem 0 6rem 0; 
+    font-size: 1.6rem;
+    line-height: 2.9rem;
+    color: $gray;
+}
+
+
+.hero-img {
+    img {
+        display: none;
+
+        @media ( min-width: $breakpoint-medium ) {
+            display: block;
+        }
     }
 
     @media ( min-width: $breakpoint-medium ) {
+        grid-column: 7 / -1;
+    }
+}
+
+.hero-img__inner {
+    @include dotted-shapes {
+        &::before {
+            top: 0;
+            right: -7rem;
+
+            @media ( min-width: $breakpoint-medium ) {
+                top: 4rem;
+                left: 6rem;
+            }
+    
+            @media ( min-width: 1200px ) {
+                left: 12rem;
+            }
+        }
+
+        &::after {
+            top: 23rem; 
+            right: -4.5rem;
+            
+            @media ( min-width: $breakpoint-medium ) {
+                top: 30rem;
+                left: 12rem;
+            }
+    
+            @media ( min-width: 1040px ) {
+                top: 34rem;
+                left: 12rem;
+            }
+    
+            @media ( min-width: 1200px ) {
+                top: 36rem;
+                left: 8rem;
+            }
+        }
+    };
+
+    @media ( min-width: $breakpoint-medium ) {
+        position: relative;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+// Hero Info
+
+.hero {
+   position: relative;
+
+   @media ( min-width: $breakpoint-medium ) {
+       position: static;
+   }
+}
+
+.hero-info {
+    grid-column: 1 / - 1;
+    
+    .shape:nth-child(1)::after {
+        top: 24rem;
+        left: -7rem;
+
+        @media ( min-width: $breakpoint-medium ) {
+            top: 25.5rem;
+            left: -11rem;
+        }
+
+        @media ( min-width: 1420px ) {    
+            left: -14.3rem;
+        }
+    }
+
+    .shape:nth-child(2)::after {
+        top: 35.5rem;
+        left: -4rem;
+
+        @media ( min-width: $breakpoint-medium ) {
+            left: -8rem;
+        }
+
+        @media ( min-width: 1420px ) {
+            left: -9.5rem;
+        }
+    }
+
+    @media ( min-width: $breakpoint-medium ) {
+        position: relative;
         grid-column: 1 / 7;
     }
 }
@@ -65,14 +232,39 @@
 // Hero Image
 
 .hero-img {
-    .shape:nth-child(1)::after {
-        bottom: -4rem;
-        left: -6.5rem;
+    .shape:nth-child(1)::after {  
+        top:0;
+        right: -8rem;
+  
+        @media ( min-width: $breakpoint-medium ) {
+            top: 4rem;
+            left: 6rem;
+        }
+
+        @media ( min-width: 1200px ) {
+            left: 12rem;
+        }
     }
 
     .shape:nth-child(2)::after {
-        bottom: 10rem;
-        right: -7.4rem;
+        top: 23rem; 
+        right: -5.5rem;
+
+        
+        @media ( min-width: $breakpoint-medium ) {
+            top: 30rem;
+            left: 12rem;
+        }
+
+        @media ( min-width: 1040px ) {
+            top: 34rem;
+            left: 12rem;
+        }
+
+        @media ( min-width: 1200px ) {
+            top: 36rem;
+            left: 8rem;
+        }
     }
 
     img {
@@ -84,6 +276,10 @@
     }
 
     @media ( min-width: $breakpoint-medium ) {
+        position: relative;
         grid-column: 7 / -1;
     }
 }
+
+
+*/

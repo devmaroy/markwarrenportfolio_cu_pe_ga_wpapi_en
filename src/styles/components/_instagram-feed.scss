@@ -2,14 +2,63 @@
     # Instagram Feed
 \*------------------------------------*/
 
-.instagram-feed__item {
-    img {
-        height: 31.4rem;
-        object-fit: cover;
-        border-radius: .6rem;
+.instagram-feed {
+    .slick-track {
+        display: flex !important; // Fix for same height - slick slider
+    }
+    
+    .slick-slide {
+        padding: 0 .6rem;
+        height: inherit !important; // Fix for same height - slick slider
+    }
+    
+    .slick-slide > div {
+        height: 100% !important; // Fix for same height - slick slider
+        display: flex !important; // Fix for same height - slick slider
+    }
+    
+    .slick-dots {
+        position: static;
+        margin: 2rem 0 0 0;
+    
+        li {
+            &.slick-active {
+                button::before {
+                    background: $primary;
+                }
+            }
+    
+            button::before {
+                content: '';
+                border: .1rem solid $primary;
+                border-radius: 50%;
+                width: 1.6rem;
+                height: 1.6rem;
+            }
+        }
+    }
+
+    .slick-arrow {
+        &.slick-prev {
+            left: -50px;
+        }
+    
+        &.slick-next {
+            right: -50px;
+        }
+    
+        &::before {
+            font-size: 2rem;
+            color: $primary;
+        }
     }
 }
 
-.slick-slide {
-    padding: 0 15px;
+.instagram-feed__item {
+    display: flex !important; // Fix for same height - slick slider
+
+    img {
+        object-fit: cover;
+        border-radius: .6rem;
+    }
 }

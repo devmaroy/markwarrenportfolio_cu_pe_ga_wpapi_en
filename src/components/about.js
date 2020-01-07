@@ -11,9 +11,8 @@ const About = () => {
                     <Heading main="Just a Little" sub="About" />
 
                     <div className="about-img">
-                        <img src={ aboutImg } alt="Me" />
-                        <div className="shapes">
-                            <div className="shape"></div>
+                        <div className="about-img__inner">
+                            <img src={ aboutImg } alt="Me" />
                         </div>
                     </div>
 
