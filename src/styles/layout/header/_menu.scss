@@ -1,0 +1,52 @@
+/*------------------------------------*\
+    # Menu
+\*------------------------------------*/
+
+
+.menu-list {
+    @include list-unstyled;
+    margin: 0 0 4rem 0;
+
+    @media ( min-width: $breakpoint-medium ) {
+        margin: 0;
+    }
+}
+
+.menu-list__item {
+    &:not( :last-child ) {
+        margin: 0 0 2rem 0;
+
+        @media ( min-width: $breakpoint-medium ) {
+            margin: 0 2rem 0 0;
+        }
+    }
+
+    &.close {
+        margin-bottom: 4rem;
+        text-align: right;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+
+        @media ( min-width: $breakpoint-medium ) {
+            display: none;
+        }
+    }
+
+    @media ( min-width: $breakpoint-medium ) {
+        display: inline-block;
+    }
+}
+
+.menu-list__link {
+    text-decoration: none;
+    font-weight: $font-weight-bold;
+    color: $gray;
+
+    transition: all $transition-base;
+
+    &:hover,
+    &:focus,
+    &.active {
+        color: $primary;
+    }
+}
