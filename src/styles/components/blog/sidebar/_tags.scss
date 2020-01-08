@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    # Blog Sidebar - Tags
+\*------------------------------------*/
+
+
+.blog-sidebar-tags {
+    margin-top: 6rem;
+}
+
+.blog-sidebar-tags__list {
+    @include list-unstyled;
+}
+
+.blog-sidebar-tags__item {
+    display: inline-block;
+
+    &:not( :last-child ) {
+        margin: 0 1rem 1.5rem 0;
+    }
+}

@@ -42,6 +42,17 @@
     }
 }
 
+.button--primary-light {
+    background: $primary-light;
+    border-color: $primary-light;
+
+    &:hover,
+    &:focus {
+        color: $primary-light;
+        border-color: $primary-light;
+    }
+}
+
 .button--secondary  {
     background: $white;
     color: $primary;
@@ -67,4 +78,8 @@
         color: $white;
         box-shadow: 0rem 1rem 1rem -1rem $primary;
     }
+}
+
+.button--noshadow {
+    box-shadow: none;
 }
