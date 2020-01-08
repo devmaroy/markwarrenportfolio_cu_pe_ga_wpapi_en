@@ -90,7 +90,9 @@
         font-size: 1.6rem;
         font-weight: $font-weight-bold;
         color: $primary;
-        
-        @include dot-pseudo( $color: $off-gray, $margin: 0 1.5rem );
-    }
+
+        &:not( :last-child ) {
+            @include dot-pseudo( $color: $off-gray, $margin: 0 1.5rem );
+        }
+   }
 }

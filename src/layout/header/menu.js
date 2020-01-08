@@ -41,7 +41,7 @@ const Menu = ( { toggleMenu } ) => {
                     </Link>
                 </li>
                 <li className="menu-list__item">
-                    <Link to="#" className="menu-list__link">
+                    <Link to="/blog" className="menu-list__link">
                         Blog
                     </Link>
                 </li>

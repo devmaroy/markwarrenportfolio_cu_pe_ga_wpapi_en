@@ -52,6 +52,8 @@
     text-transform: uppercase;
     color: $primary;
 
+    @include dot-pseudo( $color: $primary-light, $margin: 0 1.5rem );
+
     &:hover,
     &:focus {
         color: darken( $primary, 13% );

@@ -10,8 +10,11 @@
     font-family: $font-family-primary;
     font-size: 1.4rem;
     font-weight: $font-weight-bold;
+    line-height: 1.6rem;
     border-radius: $border-radius;
     text-transform: uppercase;
+    text-decoration: none;
+
     transition: all $transition-base;
 
     &:not(:last-of-type ) {

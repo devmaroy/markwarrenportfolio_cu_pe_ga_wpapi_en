@@ -1,0 +1,13 @@
+/*------------------------------------*\
+    # Blog - Sidebar
+\*------------------------------------*/
+
+
+.blog-sidebar {
+    grid-column: 1 / -1;
+    margin-top: 6rem;
+
+    @media ( min-width: $breakpoint-medium ) {
+        grid-column: 8 / -1;
+    }
+}

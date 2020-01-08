@@ -12,7 +12,10 @@
     li {
         display: inline-block;
         margin: 0 0 2rem 0;
-        @include dot-pseudo( $color: $primary-light, $margin: 0 1.5rem );
+
+        &:not( :last-child ) {
+            @include dot-pseudo( $color: $primary-light, $margin: 0 1.5rem );
+        }
     }
 
     a {
