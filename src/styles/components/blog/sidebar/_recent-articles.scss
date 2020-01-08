@@ -9,11 +9,9 @@
 
 .blog-sidebar-recent-article {
     display: flex;
-    align-items: flex-start; /* NEW */
-    margin: 3rem 0;
 
-    &:last-child {
-        margin-bottom: 0;
+    &:not( :last-child ) {
+        margin: 0 0 3rem 0;
     }
 }
 

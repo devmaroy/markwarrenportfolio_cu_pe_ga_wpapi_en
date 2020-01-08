@@ -1,0 +1,37 @@
+/*------------------------------------*\
+    # Blog Sidebar - Categories
+\*------------------------------------*/
+
+
+.blog-sidebar-categories {
+    margin-top: 6rem;
+}
+
+.blog-sidebar-categories__list {
+    @include list-unstyled;
+}
+
+.blog-sidebar-categories__item {
+    &:not( :last-child ) {
+        margin: 0 0 1.5rem 0;
+    }
+
+    &::before {
+        content: url( '../images/icons/caret.svg' );
+        margin: 0 1rem 0 0;
+    }
+}
+
+.blog-sidebar-categories__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    color: $off-gray;
+
+    transition: $transition-base;
+
+    &:hover,
+    &:focus {
+        color: $gray;
+    }
+}
