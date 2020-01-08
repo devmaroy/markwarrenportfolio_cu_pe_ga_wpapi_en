@@ -1,0 +1,40 @@
+/*------------------------------------*\
+    # Blog Sidebar - Heading
+\*------------------------------------*/
+
+.blog-sidebar-heading {
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-bold;
+    font-size: 2.2rem;
+    color: $black;
+    margin: 0;
+    padding-bottom: 1.5rem;
+
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 20%;
+        height: .2rem;
+        background: $primary;
+
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        border-radius: $border-radius;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: .2rem;
+        background: $input-border-color;
+        margin-top: 1.5rem;
+
+        position: absolute;
+        bottom: 0;
+        border-radius: $border-radius;
+    }
+}

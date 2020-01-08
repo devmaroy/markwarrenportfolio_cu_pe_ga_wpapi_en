@@ -3,7 +3,7 @@ import searchIcon from '../../../images/icons/search.svg';
 
 const Search = () => {
     return (
-        <div className="search">
+        <div className="blog-sidebar-search">
             <form className="sidebar-form">
                 <div className="sidebar-form__group">
                     <input type="text" className="sidebar-form__control" placeholder="Search ..." />

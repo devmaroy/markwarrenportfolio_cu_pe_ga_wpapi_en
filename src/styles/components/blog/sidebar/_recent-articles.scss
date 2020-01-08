@@ -1,0 +1,80 @@
+/*------------------------------------*\
+    # Blog Sidebar - Recent Articles
+\*------------------------------------*/
+
+
+.blog-sidebar-recent-articles {
+    margin-top: 6rem;
+}
+
+.blog-sidebar-recent-article {
+    display: flex;
+    align-items: flex-start; /* NEW */
+    margin: 3rem 0;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.blog-sidebar-recent-article__header {
+    flex: 1 0 auto;
+    margin-right: 1.5rem;
+}
+
+.blog-sidebar-recent-article__img {
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+    border-radius: $border-radius;
+}
+
+.blog-sidebar-recent-article__link {
+    display: inline-block;
+    text-decoration: none;
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-bold;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    color: $black;
+
+    &:hover,
+    &:focus {
+        color: lighten( $black, 13% );
+    }
+}
+
+.blog-sidebar-recent-article__meta {
+    display: flex;
+    align-items: center;
+    margin: 1.2rem 0 0 0;
+}
+
+.blog-sidebar-recent-article__categories {
+    @include list-unstyled;
+
+    li {
+        line-height: 1.9rem;
+    }
+}
+
+.blog-sidebar-recent-article__category {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    color: $primary;
+
+    @include dot-pseudo( $color: $primary-light, $margin: 0 1.5rem );
+
+    &:hover,
+    &:focus {
+        color: darken( $primary, 13% );
+    }
+}
+
+.blog-sidebar-recent-article__date {
+    font-size: 1.2rem;
+    font-weight: $font-weight-bold;
+    color: $off-gray;   
+}
