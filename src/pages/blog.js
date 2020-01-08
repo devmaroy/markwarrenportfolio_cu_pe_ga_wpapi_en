@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../layout/base/layout';
-import BlogBase from '../components/blog/blogBase.js';
+import BlogBase from '../components/blog/base';
 
 const BlogPage = () => {
     return (

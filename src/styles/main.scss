@@ -39,11 +39,20 @@
 @import './components/newsletter-cta';
 
 
-// Blog 
+// Blog
 @import './components/blog/blog-base';
-@import './components/blog/blog-main';
-@import './components/blog/blog-sidebar';
 @import './components/blog/article-preview';
+
+
+// Blog - Main
+@import './components/blog/main/main';
+
+
+// Blog - Sidebar
+@import './components/blog/sidebar/sidebar';
+@import './components/blog/sidebar/form';
+
+
 
 // Page
 @import './pages/error404';

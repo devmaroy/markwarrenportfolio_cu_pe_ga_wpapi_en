@@ -1,7 +1,7 @@
 import React from 'react';
 import Heading from '../common/heading';
-import BlogMain from './main/blogMain';
-import BlogSidebar from './sidebar/blogSidebar';
+import BlogMain from './main/main';
+import BlogSidebar from './sidebar/sidebar';
 
 
 const BlogBase = () => {
