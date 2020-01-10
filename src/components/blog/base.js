@@ -9,7 +9,7 @@ const BlogBase = () => {
         <div className="blog">
             <div className="container">
                 <div className="blog__inner grid-container">
-                    <Heading main="My Latest Projects" sub="Portfolio" />
+                    <Heading main="All My Articles" sub="Blog" />
                     <BlogMain />
                     <BlogSidebar />
                 </div>

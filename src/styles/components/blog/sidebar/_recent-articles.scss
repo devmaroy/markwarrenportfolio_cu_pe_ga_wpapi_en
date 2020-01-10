@@ -36,6 +36,8 @@
     line-height: 1.9rem;
     color: $black;
 
+    transition: all $transition-base;
+
     &:hover,
     &:focus {
         color: lighten( $black, 13% );
@@ -45,14 +47,30 @@
 .blog-sidebar-recent-article__meta {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     margin: 1.2rem 0 0 0;
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    
+    @media ( min-width: $breakpoint-medium ) and ( max-width: 1100px ) {
+        display: block;
+    }
 }
 
 .blog-sidebar-recent-article__categories {
     @include list-unstyled;
-
+    margin: 0 1.5rem 0 0;
+    
     li {
-        line-height: 1.9rem;
+        @include dot-pseudo( $color: $primary-light, $margin: 0 1.5rem );
+        display: inline-block;
+
+        @media ( min-width: $breakpoint-medium ) {
+            &:last-child::after {
+                content: '';
+                display: none;
+            }
+        }
     }
 }
 
@@ -63,7 +81,7 @@
     text-transform: uppercase;
     color: $primary;
 
-    @include dot-pseudo( $color: $primary-light, $margin: 0 1.5rem );
+    transition: all $transition-base;
 
     &:hover,
     &:focus {

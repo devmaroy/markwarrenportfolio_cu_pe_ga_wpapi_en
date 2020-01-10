@@ -22,6 +22,9 @@ const RecentArticles = () => {
                             <li>
                                 <a href="#" className="blog-sidebar-recent-article__category">Web development</a>
                             </li>
+                            <li>
+                                <a href="#" className="blog-sidebar-recent-article__category">Web development</a>
+                            </li>
                         </ul>
 
                         <time dateTime="" className="blog-sidebar-recent-article__date">3 hours ago</time>
@@ -41,6 +44,9 @@ const RecentArticles = () => {
                         <ul className="blog-sidebar-recent-article__categories">
                             <li>
                                 <a href="#" className="blog-sidebar-recent-article__category">UI Design</a>
+                            </li>
+                            <li>
+                                <a href="#" className="blog-sidebar-recent-article__category">UI</a>
                             </li>
                         </ul>
 
