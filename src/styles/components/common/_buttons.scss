@@ -83,3 +83,13 @@
 .button--noshadow {
     box-shadow: none;
 }
+
+.button--small {
+    font-size: 1.2rem;
+    padding: 1rem;
+
+    @media ( min-width: $breakpoint-medium ) {
+        font-size: 1.4rem;
+        padding: 1rem;
+    }
+}
