@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    # Blog Sidebar - Instagram Feed
+\*------------------------------------*/
+
+
+.blog-sidebar-instagram-feed {
+    margin-top: 6rem;
+}
+
+.blog-sidebar-instagram-feed__list {
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax( 10rem, 1fr ) );
+    grid-gap: 2rem;
+}
+
+.blog-sidebar-instagram-feed__item {
+    position: relative;
+    height: 10rem;
+    overflow: hidden;
+    backface-visibility: hidden;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        .blog-sidebar-instagram-feed__overlay {
+            transform: translateY( 0 );
+        }
+    }
+}
+
+.blog-sidebar-instagram-feed__img {
+    border-radius: $border-radius;  
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-sidebar-instagram-feed__overlay {
+    background: #000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $border-radius;
+    background: transparentize( $primary, .25 );
+    transform: translate3d( 0, 11rem, 0 );
+
+    transition: all 0.25s linear;
+
+    img {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+}
