@@ -8,6 +8,7 @@
     margin-top: 6rem;
 
     @media ( min-width: $breakpoint-medium ) {
-        grid-column: 8 / -1;
+        grid-column: 9 / -1;
+        margin-top: 2rem;
     }
 }
