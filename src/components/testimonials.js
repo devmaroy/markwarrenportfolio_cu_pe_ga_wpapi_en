@@ -1,9 +1,9 @@
 import React from 'react';
 import Heading from './common/heading';
 import starsIcon from '../images/icons/stars.svg';
-import userOne from '../images/users/user-1.jpg';
-import userTwo from '../images/users/user-2.jpg';
-import userThree from '../images/users/user-3.jpg';
+import userOne from '../images/users/user-01.jpg';
+import userTwo from '../images/users/user-02.jpg';
+import userThree from '../images/users/user-03.jpg';
 
 
 const Testimonials = () => {

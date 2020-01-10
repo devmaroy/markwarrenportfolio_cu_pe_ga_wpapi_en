@@ -49,6 +49,7 @@
     height: 30rem;
     cursor: pointer;
     overflow: hidden;
+    backface-visibility: hidden;
 
     grid-column: span 2;
 

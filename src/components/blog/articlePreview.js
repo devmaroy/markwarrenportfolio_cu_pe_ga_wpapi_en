@@ -1,7 +1,7 @@
 import React from 'react';
-import articleOneImg from '../../images/recent-articles/article-1.jpg';
-import articleTwoImg from '../../images/recent-articles/article-2.jpg';
-import articleThreeImg from '../../images/recent-articles/article-3.jpg';
+import articleOneImg from '../../images/articles/article-01.jpg';
+import articleTwoImg from '../../images/articles/article-02.jpg';
+import articleThreeImg from '../../images/articles/article-03.jpg';
 
 const ArticlePreview = () => {
     return (
