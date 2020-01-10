@@ -8,7 +8,7 @@ const Search = () => {
         <div className="blog-sidebar-search">
             <SidebarForm 
                 inputType="email" 
-                placeholder="Email Address"
+                placeholder="Search ..."
             >
                 <img src={ searchIcon } alt="Search icon" />
             </SidebarForm>
