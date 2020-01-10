@@ -11,15 +11,17 @@
     font-family: $font-family-secondary;
     font-weight: $font-weight-bold;
     font-size: 3.4rem;
+    line-height: 4.08rem;
     color: $black;
 
     span {
         display: block;
         font-family: $font-family-primary;        
         font-size: 1.8rem;
+        line-height: 28.8px;
+        margin-bottom: .6rem;
         color: $gray;
     }
-
 
     @media ( min-width: 860px ) {
         font-size: 4.2rem;
