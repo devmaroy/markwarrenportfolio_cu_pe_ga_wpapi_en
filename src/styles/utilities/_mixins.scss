@@ -25,7 +25,7 @@
 @mixin dotted-shapes ( $rotate: 0deg ) {
     &::after,
     &::before {
-        content: url('http://localhost:8000/static/dots-8fc510d4d859cc411040182a948011c1.svg');
+        content: url( '../images/dots.svg');
         position: absolute;
         z-index: -1;
         transform: rotate( $rotate );
