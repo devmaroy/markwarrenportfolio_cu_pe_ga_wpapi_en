@@ -73,11 +73,9 @@
         @include dot-pseudo( $color: $primary-light, $margin: 0 1.5rem );
         display: inline-block;
 
-        @media ( min-width: $breakpoint-medium ) {
-            &:last-child::after {
-                content: '';
-                display: none;
-            }
+        &:last-child::after {
+            content: '';
+            display: none;
         }
     }
 }
