@@ -51,7 +51,7 @@
     overflow: hidden;
     backface-visibility: hidden;
 
-    grid-column: span 2;
+    grid-column: span 4;
 
     &:first-child,
     &:last-child {
@@ -67,6 +67,10 @@
         .portfolio__overlay {
             transform: translateY( 0 );
         }
+    }
+
+    @media ( min-width: $breakpoint-small ) {
+        grid-column: span 2;
     }
 
     @media ( min-width: $breakpoint-medium ) {
