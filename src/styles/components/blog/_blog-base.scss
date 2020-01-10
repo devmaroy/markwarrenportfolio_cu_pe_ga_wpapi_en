@@ -5,4 +5,8 @@
 
 .blog {
     margin-top: 6rem;
+
+    .grid-container {
+        grid-gap: 0 4rem;
+    }
 }
