@@ -6,6 +6,17 @@
     margin: 0 0 8rem 0;
 }
 
+.article-preview__img {
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: all $transition-base;
+
+    &:hover,
+    &:focus {
+        opacity: .8;
+    }
+}
+
 .article-preview__meta {
     margin: 2rem 0 0 0;
     display: flex;

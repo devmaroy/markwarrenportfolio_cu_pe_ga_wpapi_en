@@ -7,7 +7,7 @@ const ArticlePreview = () => {
     return (
         <div className="delete-after article-previews">
             <div className="article-preview">
-                <img src={ articleOneImg } alt="" className="recent-article__img" />
+                <img src={ articleOneImg } alt="" className="article-preview__img" />
 
                 <div className="article-preview__meta">
                     <ul className="article-preview__categories">
@@ -35,7 +35,7 @@ const ArticlePreview = () => {
             </div>
 
             <div className="article-preview">
-                <img src={ articleTwoImg } alt="" className="recent-article__img" />
+                <img src={ articleTwoImg } alt="" className="article-preview__img" />
 
                 <div className="article-preview__meta">
                     <ul className="article-preview__categories">
@@ -63,7 +63,7 @@ const ArticlePreview = () => {
             </div>
 
             <div className="article-preview">
-                <img src={ articleThreeImg } alt="" className="recent-article__img" />
+                <img src={ articleThreeImg } alt="" className="article-preview__img" />
 
                 <div className="article-preview__meta">
                     <ul className="article-preview__categories">

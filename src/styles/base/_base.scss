@@ -88,6 +88,14 @@ button:disabled {
     }
 }
 
+.grid-container--blog {
+    grid-gap: 0 1rem;
+
+    @media ( min-width: $breakpoint-small ) {
+        grid-gap: 0 4rem;
+    }
+}
+
 .divider-space {
     margin-top: 10rem;
 
