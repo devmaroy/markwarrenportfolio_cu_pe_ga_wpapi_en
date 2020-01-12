@@ -23,7 +23,7 @@ class Navigation extends Component {
 
                 <div className={ this.state.showMenu ? 'navigation__inner active' : 'navigation__inner' }>
                     <Menu toggleMenu={ this.toggleMenu } />
-                    <button className="button button--primary header__button">Hire me</button>
+                    <button className="button button--primary">Hire me</button>
                 </div>
             </div>
         );
