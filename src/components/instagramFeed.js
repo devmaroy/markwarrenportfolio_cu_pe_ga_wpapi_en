@@ -14,7 +14,7 @@ const InstagramFeed = () => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         centerMode: true,
         customPaging: function(i) {
@@ -24,6 +24,15 @@ const InstagramFeed = () => {
         },
         responsive: [
             {
+                breakpoint: 1600,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  infinite: true,
+                  dots: true
+                }
+            },
+            {
               breakpoint: 720,
               settings: {
                 slidesToShow: 1,
@@ -31,7 +40,7 @@ const InstagramFeed = () => {
                 infinite: true,
                 dots: true
               }
-            },
+            }
         ],
     };
 
@@ -41,26 +50,25 @@ const InstagramFeed = () => {
                 <Heading main="Follow Me" sub="Instagram" /> 
             </div>
             
-            <div className="container no-divider">
+            <div className="contaidner no-divider sacek">
                 <SlickSlider { ...sliderSettings } >
-                    <div className="instagram-feed__item">
+            
                         <img src={ feedImg1 } alt=""/>
-                    </div>
-                    <div className="instagram-feed__item">
+
+        
                         <img src={ feedImg2 } alt=""/>
-                    </div>
-                    <div className="instagram-feed__item">
+         
                         <img src={ feedImg3 } alt=""/>
-                    </div>
-                    <div className="instagram-feed__item">
+                  
+                   
                         <img src={ feedImg4 } alt=""/>
-                    </div>
-                    <div className="instagram-feed__item">
+                  
+                   
                         <img src={ feedImg5 } alt=""/>
-                    </div>
-                    <div className="instagram-feed__item">
+            
+                   
                         <img src={ feedImg6 } alt=""/>
-                    </div>
+                   
                 </SlickSlider>
             </div>
         </section>
