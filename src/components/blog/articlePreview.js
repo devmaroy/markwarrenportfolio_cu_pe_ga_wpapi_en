@@ -20,7 +20,7 @@ const ArticlePreview = () => {
                 </div>
 
                 <h2 className="article-preview__heading">
-                    <a href="#">Halvah tart halvah gummi bonbon cake fruitcake chocolate</a>
+                    <a href="/post/halvah-tart-halvah-gummi-bonbon-cake-fruitcake-chocolate">Halvah tart halvah gummi bonbon cake fruitcake chocolate</a>
                 </h2>
 
                 <div className="article-preview__content">
@@ -48,7 +48,7 @@ const ArticlePreview = () => {
                 </div>
 
                 <h2 className="article-preview__heading">
-                    <a href="#">Oat beans lemon drops fruitcake topping pie pudding apple</a>
+                    <a href="/post/oat-beans-lemon-drops-fruitcake-topping-pie-pudding-apple">Oat beans lemon drops fruitcake topping pie pudding apple</a>
                 </h2>
 
                 <div className="article-preview__content">
@@ -76,7 +76,7 @@ const ArticlePreview = () => {
                 </div>
 
                 <h2 className="article-preview__heading">
-                    <a href="#">Marshmallow wafer bar chocolate macaroon sesame snaps</a>
+                    <a href="/post/marshmallow-wafer-bar-chocolate-macaroon-sesame-snaps">Marshmallow wafer bar chocolate macaroon sesame snaps</a>
                 </h2>
 
                 <div className="article-preview__content">
