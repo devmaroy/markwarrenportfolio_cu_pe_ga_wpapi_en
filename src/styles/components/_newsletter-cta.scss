@@ -16,7 +16,7 @@
     background: none;
     outline: none;
     border: .1rem solid $white;
-    padding: 1.5rem 2.5rem;
+    padding: 1.2rem;
     width: 100%;
     font-size: 1.2rem; 
     border-radius: $border-radius 0 0 $border-radius;
@@ -24,6 +24,10 @@
     
     &::placeholder {
         color: $white;
+    }
+
+    @media ( min-width: $breakpoint-small ) {
+        padding: 1.5rem 2.5rem;
     }
 }
 
