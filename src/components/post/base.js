@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DiscussionEmbed } from 'disqus-react';
+import SideArticle from '../common/sideArticle';
 import articleFourImg from '../../images/articles/article-04.jpg';
 import articleFiveImg from '../../images/articles/article-05.jpg';
 import articleSixImg from '../../images/articles/article-06.jpg';
@@ -56,10 +57,43 @@ const PostBase = ( { children } ) => {
 
                     <DiscussionEmbed {...disqusConfig} />
 
+                    <h2 className="related-article__heading">Related articles</h2>
 
-                    <h2 className="related-article__title">Related articles</h2>
+                    <SideArticle 
+                        imgSrc={ articleFourImg }
+                        imgAlt="Related article"
+                        title="Sweet jelly beans biscuit croissant lemon drops cotton"
+                        category="Web Development"
+                        date="20 hours ago"
+                    /> 
 
-                    <div className="related-article">
+                    <SideArticle 
+                        imgSrc={ articleFiveImg }
+                        imgAlt="Related article"
+                        title="Macaroon chocolate bar sweet roll lollipop marzipan"
+                        category="Web Development"
+                        date="21 hours ago"
+                    /> 
+
+                    <SideArticle 
+                        imgSrc={ articleSixImg }
+                        imgAlt="Related article"
+                        title="Gummies donut chocolate sesame snaps danish croissant chupa"
+                        category="Web Development"
+                        date="22 hours ago"
+                    />                
+                </div>
+            </div>
+        </div>
+    );
+};
+
+
+export default PostBase;
+
+
+
+/*<div className="related-article">
                         <img src={ articleFourImg } alt="" className="related-article__img" />
 
                         <div className="related-article__meta">
@@ -105,12 +139,4 @@ const PostBase = ( { children } ) => {
                         <div className="related-article__footer">
                             <time dateTime="" className="related-article__date">22 hours ago</time>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-
-export default PostBase;
+                    </div>*/

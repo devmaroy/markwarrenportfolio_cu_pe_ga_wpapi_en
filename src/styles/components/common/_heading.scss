@@ -18,12 +18,13 @@
         display: block;
         font-family: $font-family-primary;        
         font-size: 1.8rem;
-        line-height: 28.8px;
+        line-height: 2.8rem;
         margin-bottom: .6rem;
         color: $gray;
     }
 
-    @media ( min-width: 860px ) {
+    @media ( min-width: $breakpoint-medium ) {
         font-size: 4.2rem;
+        margin: 0 0 6rem 0;
     }
 }

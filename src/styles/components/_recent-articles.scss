@@ -2,13 +2,8 @@
     # Recent Articles
 \*------------------------------------*/
 
-
 .recent-articles {
-    .section-heading {
-        grid-column: 1 / -1;
-    }
-
-    .recent-article {
+    .side-article {
         grid-column: span 12;
 
         &:not( :last-child ) {
@@ -27,58 +22,4 @@
             grid-column: span 4;
         }
     }
-}
-
-.recent-article__img {
-    border-radius: $border-radius;
-    cursor: pointer;
-
-    transition: all $transition-base;
-
-    &:hover,
-    &:focus {
-        opacity: .8;
-    }
-}
-
-.recent-article__meta {
-    margin: 2rem 0 0 0;
-}
-
-.recent-article__category {
-    text-decoration: none;
-    font-size: 1.4rem;
-    font-weight: $font-weight-bold;
-    text-transform: uppercase;
-    color: $primary;
-
-    @include dot-pseudo( $color: $primary-light, $margin: 0 1.5rem );
-
-    &:hover,
-    &:focus {
-        color: darken( $primary, 13% );
-    }
-}
-
-.recent-article__heading {
-    text-decoration: none;
-    margin: 2rem 0;
-    font-family: $font-family-secondary;
-    font-size: 1.8rem;
-    line-height: 2.2rem;
-    font-weight: $font-weight-bold;
-    color: $black;
-
-    transition: $transition-base;
-
-    &:hover,
-    &:focus {
-        color: lighten( $black, 13% );
-    }
-}
-
-.recent-article__date {
-    font-size: 1.4rem;
-    font-weight: $font-weight-bold;
-    color: $off-gray;
 }

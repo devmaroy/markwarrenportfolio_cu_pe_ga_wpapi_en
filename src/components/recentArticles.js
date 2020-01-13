@@ -1,8 +1,10 @@
 import React from 'react';
 import Heading from './common/heading';
+import SideArticle from './common/sideArticle';
 import articleOneImg from '../images/articles/article-01.jpg';
 import articleTwoImg from '../images/articles/article-02.jpg';
 import articleThreeImg from '../images/articles/article-03.jpg';
+
 
 const RecentArticles = () => {
     return (
@@ -11,53 +13,29 @@ const RecentArticles = () => {
                 <div className="recent-articles__inner grid-container">
                     <Heading main="My Recent Articles" sub="Blog" />
                     
-                    <div className="recent-article">
-                        <img src={ articleOneImg } alt="" className="recent-article__img" />
-
-                        <div className="recent-article__meta">
-                            <a href="#" className="recent-article__category">Web Development</a>
-                        </div>
-
-                        <a href="#" className="recent-article__heading">
-                            <h4>Halvah tart halvah gummi bonbon cake fruitcake chocolate</h4>
-                        </a>
-
-                        <div className="recent-article__footer">
-                            <time dateTime="" className="recent-article__date">3 hours ago</time>
-                        </div>
-                    </div>
+                    <SideArticle 
+                        imgSrc={ articleOneImg } 
+                        imgAlt="Project 1"
+                        title="Halvah tart halvah gummi bonbon cake fruitcake chocolate"
+                        category="Web Development"
+                        date="3 hours ago"
+                    />
                     
-                    <div className="recent-article">
-                        <img src={ articleTwoImg } alt="" className="recent-article__img" />
-
-                        <div className="recent-article__meta">
-                            <a href="#" className="recent-article__category">UI Design</a>
-                        </div>
-
-                        <a href="#" className="recent-article__heading">
-                            <h4>Oat beans lemon drops fruitcake topping pie pudding apple</h4>
-                        </a>
-                        
-                        <div className="recent-article__footer">
-                            <time dateTime="" className="recent-article__date">6 hours ago</time>
-                        </div>
-                    </div>
+                    <SideArticle 
+                        imgSrc={ articleTwoImg } 
+                        imgAlt="Project 1"
+                        title="Oat beans lemon drops fruitcake topping pie pudding apple"
+                        category="Web Development"
+                        date="6 hours ago"
+                    />
                     
-                    <div className="recent-article">
-                        <img src={ articleThreeImg } alt="" className="recent-article__img" />
-
-                        <div className="recent-article__meta">
-                            <a href="#" className="recent-article__category">Review</a>
-                        </div>
-
-                        <a href="#" className="recent-article__heading">
-                            <h4>Marshmallow wafer chocolate macaroon sesame snaps bar</h4>
-                        </a>
-                        
-                        <div className="recent-article__footer">
-                            <time dateTime="" className="recent-article__date">20 hours ago</time>
-                        </div>
-                    </div>
+                    <SideArticle 
+                        imgSrc={ articleThreeImg } 
+                        imgAlt="Project 1"
+                        title="Marshmallow wafer chocolate macaroon sesame snaps bar"
+                        category="Web Development"
+                        date="20 hours ago"
+                    />
                 </div>
             </div>
         </section>

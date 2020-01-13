@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    # Side Article
+\*------------------------------------*/
+
+
+.side-article__img {
+    border-radius: $border-radius;
+    cursor: pointer;
+
+    transition: all $transition-base;
+
+    &:hover,
+    &:focus {
+        opacity: .8;
+    }
+}
+
+.side-article__meta {
+    margin: 2rem 0 0 0;
+}
+
+.side-article__category {
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    color: $primary;
+
+    transition: all $transition-base;
+
+    &:hover,
+    &:focus {
+        color: darken( $primary, 13% );
+    }
+}
+
+.side-article__heading {
+    text-decoration: none;
+    margin: 2rem 0;
+    font-family: $font-family-secondary;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    font-weight: $font-weight-bold;
+    color: $black;
+
+    transition: all $transition-base;
+
+    &:hover,
+    &:focus {
+        color: lighten( $black, 13% );
+    }
+}
+
+.side-article__date {
+    font-size: 1.4rem;
+    font-weight: $font-weight-bold;
+    color: $off-gray;
+}
