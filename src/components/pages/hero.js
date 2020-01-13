@@ -1,5 +1,5 @@
 import React from 'react';
-import personalImg from '../images/hero/me-hero.svg';
+import personalImg from '../../images/hero/me-hero.svg';
 
 
 const Hero = () => {

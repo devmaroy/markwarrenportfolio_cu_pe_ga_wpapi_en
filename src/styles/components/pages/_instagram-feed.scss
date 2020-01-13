@@ -3,21 +3,6 @@
 \*------------------------------------*/
 
 .instagram-feed {
-    /*.slick-track {
-        display: flex !important; // Fix for same height - slick slider
-    }
-    
-    .slick-slide {
-        padding: 0 .6rem;
-        height: inherit !important; // Fix for same height - slick slider
-    }
-    
-    .slick-slide > div {
-        height: 100% !important; // Fix for same height - slick slider
-        display: flex !important; // Fix for same height - slick slider
-    }*/
-
-
     .slick-track { 
         display: flex !important; 
     } 
@@ -77,14 +62,5 @@
             color: $primary;
             transition: all $transition-base;
         }
-    }
-}
-
-.instagram-feed__item {
-    display: flex !important; // Fix for same height - slick slider
-
-    img {
-        object-fit: cover;
-        border-radius: .6rem;
     }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import Heading from './common/heading';
-import aboutImg from '../images/about/me-about.jpg';
+import Heading from '../common/heading';
+import aboutImg from '../../images/about/me-about.jpg';
 
 
 const About = () => {

@@ -1,9 +1,9 @@
 import React from 'react';
-import Heading from './common/heading';
-import SideArticle from './common/sideArticle';
-import articleOneImg from '../images/articles/article-01.jpg';
-import articleTwoImg from '../images/articles/article-02.jpg';
-import articleThreeImg from '../images/articles/article-03.jpg';
+import Heading from '../common/heading';
+import SideArticle from '../common/sideArticle';
+import articleOneImg from '../../images/articles/article-01.jpg';
+import articleTwoImg from '../../images/articles/article-02.jpg';
+import articleThreeImg from '../../images/articles/article-03.jpg';
 
 
 const RecentArticles = () => {

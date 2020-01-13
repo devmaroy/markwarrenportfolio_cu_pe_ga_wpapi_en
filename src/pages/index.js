@@ -1,15 +1,15 @@
 import React from 'react';
 import Layout from '../layout/base/layout';
-import Hero from '../components/hero';
-import About from '../components/about';
-import Services from '../components/services';
-import Portfolio from '../components/portfolio';
-import CareerCTA from '../components/careerCTA';
-import Testimonials from '../components/testimonials';
-import Contact from '../components/contact';
-import RecentArticles from '../components/recentArticles';
-import InstagramFeed from '../components/instagramFeed';
-import NewsletterCTA from '../components/NewsletterCTA';
+import Hero from '../components/pages/hero';
+import About from '../components/pages/about';
+import Services from '../components/pages/services';
+import Portfolio from '../components/pages/portfolio';
+import CareerCTA from '../components/pages/careerCTA';
+import Testimonials from '../components/pages/testimonials';
+import Contact from '../components/pages/contact';
+import RecentArticles from '../components/pages/recentArticles';
+import InstagramFeed from '../components/pages/instagramFeed';
+import NewsletterCTA from '../components/pages/newsletterCTA';
 
 const IndexPage = () => {
     return (

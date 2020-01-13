@@ -1,5 +1,5 @@
 import React from 'react';
-import CTA from './common/cta';
+import CTA from '../common/cta';
 
 const CareerCTA = () => {
     return (

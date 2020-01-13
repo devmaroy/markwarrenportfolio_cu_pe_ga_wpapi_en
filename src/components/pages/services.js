@@ -1,8 +1,8 @@
 import React from 'react';
-import Heading from './common/heading';
-import servicesOneImg from '../images/icons/services-01.svg';
-import servicesTwoImg from '../images/icons/services-02.svg';
-import servicesThreeImg from '../images/icons/services-03.svg';
+import Heading from './../common/heading';
+import servicesOneImg from '../../images/icons/services-01.svg';
+import servicesTwoImg from '../../images/icons/services-02.svg';
+import servicesThreeImg from '../../images/icons/services-03.svg';
 
 const Services = () => {
     return (
