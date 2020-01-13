@@ -19,7 +19,7 @@ const Testimonials = () => {
                         </div>
 
                         <div className="card__text">
-                            <p>Bonbon cheesecake powder cakes chocolate pudding chocolate candy canes marzipan gummi bears jelly pie.</p>
+                            <p>Bonbon cheesecake powder cakes chocolate pudding chocolate candy canes marzipan gummi bears jelly.</p>
                         </div>
 
                         <div className="card__footer">
