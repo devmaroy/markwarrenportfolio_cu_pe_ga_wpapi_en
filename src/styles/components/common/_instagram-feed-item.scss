@@ -1,0 +1,47 @@
+/*------------------------------------*\
+    # Instagram Feed Item
+\*------------------------------------*/
+
+.instagram-feed-item {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    cursor: pointer;
+    border-radius: $border-radius;
+
+    &:hover,
+    &:focus {
+        .instagram-feed-item__overlay {
+            transform: translateY( 0 );
+        }
+    }
+}
+
+.instagram-feed-item__img {
+    border-radius: $border-radius;  
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.instagram-feed-item__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $border-radius;
+    background: transparentize( $primary, .25 );
+    transform: translate3d( 0, 100%, 0 );
+
+    transition: all 0.25s linear;
+}
+
+.instagram-feed-item__icon {
+    width: 4rem;
+    height: 4rem;
+}

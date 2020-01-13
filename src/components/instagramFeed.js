@@ -1,6 +1,7 @@
 import React from 'react';
 import SlickSlider from 'react-slick';
 import Heading from './common/heading';
+import InstagramFeedItem from './common/instagramFeedItem';
 import feedImg1 from '../images/instagram/feed-01.jpg';
 import feedImg2 from '../images/instagram/feed-02.jpg';
 import feedImg3 from '../images/instagram/feed-03.jpg';
@@ -52,23 +53,12 @@ const InstagramFeed = () => {
             
             <div className="contaidner no-divider sacek">
                 <SlickSlider { ...sliderSettings } >
-            
-                        <img src={ feedImg1 } alt=""/>
-
-        
-                        <img src={ feedImg2 } alt=""/>
-         
-                        <img src={ feedImg3 } alt=""/>
-                  
-                   
-                        <img src={ feedImg4 } alt=""/>
-                  
-                   
-                        <img src={ feedImg5 } alt=""/>
-            
-                   
-                        <img src={ feedImg6 } alt=""/>
-                   
+                    <InstagramFeedItem imgSrc={ feedImg1 } imgAlt="Instagram feed" />
+                    <InstagramFeedItem imgSrc={ feedImg2 } imgAlt="Instagram feed" />
+                    <InstagramFeedItem imgSrc={ feedImg3 } imgAlt="Instagram feed" />
+                    <InstagramFeedItem imgSrc={ feedImg4 } imgAlt="Instagram feed" />
+                    <InstagramFeedItem imgSrc={ feedImg5 } imgAlt="Instagram feed" />
+                    <InstagramFeedItem imgSrc={ feedImg6 } imgAlt="Instagram feed" />
                 </SlickSlider>
             </div>
         </section>
@@ -77,3 +67,12 @@ const InstagramFeed = () => {
 
 
 export default InstagramFeed;
+
+/*<img src={ feedImg1 } alt=""/>
+                        <img src={ feedImg2 } alt=""/>
+                        <img src={ feedImg3 } alt=""/>
+                        <img src={ feedImg4 } alt=""/>
+                        <img src={ feedImg5 } alt=""/>
+                        <img src={ feedImg6 } alt=""/>*/
+
+
