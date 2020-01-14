@@ -34,13 +34,16 @@
 
 .article__categories {
     @include list-unstyled;
+
+    li {
+        @include dot-pseudo( $color: $primary-light, $margin: 0 1.5rem );
+    }
 }
 
 .article__category {
     text-decoration: none;
     color: $primary;
     font-weight: $font-weight-bold;
-    margin-right: 2rem;
 }
 
 .article__date {

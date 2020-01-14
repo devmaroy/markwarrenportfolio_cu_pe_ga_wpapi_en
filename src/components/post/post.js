@@ -8,7 +8,7 @@ import articleTwoImg from '../../images/articles/article-05.jpg';
 import articleThreeImg from '../../images/articles/article-06.jpg';
 
 
-const Post = ( { title, slug, date, featured_media, categories, tags, content } ) => {
+const Post = ( { title, slug, plainDate, date, featured_media, categories, tags, content } ) => {
     const disqusConfig = {
         shortname: process.env.GATSBY_DISQUS_NAME,
         config: { identifier: slug, title },
@@ -35,7 +35,7 @@ const Post = ( { title, slug, date, featured_media, categories, tags, content } 
                                     }
                                 </ul>
 
-                                <time className="article__date">{ date }</time>
+                                <time dateTime={ plainDate } className="article__date">{ date }</time>
                             </div>
                         </header>
 
@@ -51,7 +51,7 @@ const Post = ( { title, slug, date, featured_media, categories, tags, content } 
                             <ul className="article__tags">
                                 {
                                     tags.map( ( { id, name, slug } ) => (
-                                        <li ley={ id }>
+                                        <li key={ id }>
                                             <Link to={ `/tag/${ slug }` } className="button button--primary button--primary-light button--noshadow button--small article__tag">{ name }</Link>
                                         </li>
                                     ))
