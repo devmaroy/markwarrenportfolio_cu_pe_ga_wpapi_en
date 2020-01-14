@@ -51,7 +51,7 @@ const Post = ( { title, slug, date, featured_media, categories, tags, content } 
                         <footer className="article__footer">
                             <ul className="article__tags">
                                 {
-                                    tags.map( ( { id, name, slug } ) => (
+                                    tags && tags.map( ( { id, name, slug } ) => (
                                         <li key={ id }>
                                             <Link 
                                                 to={ `/tag/${ slug }` } 
