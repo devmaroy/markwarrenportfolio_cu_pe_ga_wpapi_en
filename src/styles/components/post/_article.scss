@@ -1,38 +1,13 @@
 /*------------------------------------*\
-    # Post - Base
+    # Article
 \*------------------------------------*/
 
 
-.post {
-    margin-top: 6rem;
-
-    @media ( min-width: $breakpoint-medium ) {
-        margin-top: 10rem;
-    }
-
-    .side-article {
-        grid-column: span 12;
-
-        &:not( :last-child ) {
-            margin: 0 0 4rem 0;
-
-            @media ( min-width: $breakpoint-medium ) {
-                margin: 0;
-            }
-        }
-
-        @media ( min-width: $breakpoint-small ) {
-            grid-column: span 6;
-        }
-
-        @media ( min-width: $breakpoint-medium ) {
-            grid-column: span 4;
-        }
-    }
+.article__header {
+    grid-column: 1 / -1;
 }
 
-.post__title {
-    grid-column: 1 / -1;
+.article__title {
     text-align: center;
     font-family: $font-family-secondary;
     font-weight: $font-weight-bold;
@@ -44,54 +19,50 @@
         font-size: 4.5rem;
         line-height: 5.4rem;
     }
+
+    a {
+        text-decoration: none;
+        color: $black;
+    }
 }
 
-.post__meta {
-    grid-column: 1 / -1;
-
+.article__meta {
+    margin: 2.5rem 0 0 0;
     display: flex;
     justify-content: center;
-    text-align: center;
-    margin-top: 2.5rem;
 }
 
-.post__categories {
+.article__categories {
     @include list-unstyled;
 }
 
-.post__category {
+.article__category {
     text-decoration: none;
     color: $primary;
     font-weight: $font-weight-bold;
     margin-right: 2rem;
 }
 
-.post__date {
+.article__date {
     color: $gray;
     font-weight: $font-weight-bold;
 }
 
-.post__featured-img {
+.article__featured-img {
     grid-column: 1 / -1;
-
-    margin-top: 6rem;   
-    height: 30rem;
-    width: 100%;
-    object-fit: cover;
-    border-radius: $border-radius;
-
-    @media ( min-width: $breakpoint-medium ) {
-        height: 50rem;
+    margin: 6rem 0 0 0;
+    
+    img {
+        border-radius: $border-radius;
+        width: 100%;
+        height: 460px;
+        object-fit: cover;
     }
 }
 
-.post__content {
-    grid-column: 1 / -1;
-    margin-top: 6rem;
-    
-    @media ( min-width: $breakpoint-medium ) {
-        grid-column: 2 / -2;
-    }
+.article__content {
+    grid-column: 2 / -2;
+    margin: 6rem 0 0 0;
 
     h1, h2, h3, h4, h5, h6 {
         font-family: $font-family-secondary;
@@ -99,7 +70,7 @@
         color: $black;
         margin: 6rem 0 2rem 0;
     }
-    
+
     h1 {
         font-size: 4rem;
         line-height: 4.8rem;
@@ -199,29 +170,6 @@
         }
     }
 
-
-    img {
-       border-radius: $border-radius; 
-    }
-
-    figure {
-        margin: 6rem 0 6rem 0;
-
-        img {
-            width: 100%;
-            height: 38rem;
-            object-fit: cover;
-        }
-
-        figcaption {
-            text-align: center;
-            color: $off-gray;
-            font-weight: $font-weight-bold;
-            font-style: italic;
-            margin: 2rem 0 0 0;
-        }
-    }
-
     blockquote {
         position: relative;     
         margin: 6rem 0 6rem 8rem;
@@ -253,46 +201,34 @@
             margin: 6rem 0 6rem 12rem;
         }
     }
+
+    img {
+        border-radius: $border-radius; 
+     }
+ 
+     figure {
+         margin: 6rem 0 6rem 0;
+ 
+         img {
+            object-fit: cover;
+         }
+ 
+         figcaption {
+             text-align: center;
+             color: $off-gray;
+             font-weight: $font-weight-bold;
+             font-style: italic;
+             margin: 2rem 0 0 0;
+         }
+     }
 }
 
-.float-left {
-    float: left;
-    width: 166px;
-    height: 201px;
-    margin-right: 3rem;
-    object-fit: cover;
-
-    @media ( min-width: $breakpoint-medium ) {
-        width: 314px;
-        height: 380px;
-    }
+.article__footer {
+    grid-column: 2 / -2;
 }
 
-
-
-
-
-
-.post__separator {
-    grid-column: 1 / -1;
-    margin: 6rem 0 4rem 0;
-
-    background-image: linear-gradient(to right, $input-border-color 33%, rgba($input-border-color,0) 0%);
-    background-position: bottom;
-    background-size: 22px 1px;
-    background-repeat: repeat-x;
-    height: 1px;
-
-    @media ( min-width: $breakpoint-medium ) {
-        grid-column: 2 / -2;
-    }
-}
-
-
-.post__tags {
+.article__tags {
     @include list-unstyled;
-
-    grid-column: 1 / -1;
 
     li {
         display: inline-block;
@@ -301,73 +237,42 @@
             margin: 0 1rem 1.5rem 0;
         }
     }
-
-    @media ( min-width: $breakpoint-medium ) {
-        grid-column: 2 / -2;
-    }
 }
 
-.post__share {
-    grid-column: 1 / -1;
+.article__share {
     display: flex;
+    align-items: center;
     margin: 4rem 0;
-
-    @media ( min-width: $breakpoint-medium ) {
-        grid-column: 2 / -2;
-    }
-
-    h4 {
-        font-family: $font-weight-bold;
-        font-size: 1.8rem;
-        line-height: 2.2rem;
-        font-weight: 600;
-        color: $off-gray;
-        margin: 0 2.5rem 0 0;
-    }
-
-    ul {
-        @include list-unstyled;
-
-        li {
-            display: inline-block;
-            &:not( :last-child ) {
-                margin: 0 2rem 0 0;
-            }
-        }
-
-        a {
-            color: $black;
-        }
-    }
 }
 
-#disqus_thread {
-    grid-column: 1 / -1;
-    margin: 10rem 0 20rem 0;
-
-    @media ( min-width: $breakpoint-medium ) {
-        grid-column: 2 / -2;
-    }
-}
-
-
-.article-preview {
-    grid-column: span 4;
-}
-
-.related-article__heading {
-    grid-column: 1 / -1;
-
+.article__share-heading {
     font-family: $font-family-secondary;
-    font-weight: $font-weight-bold;
-    font-size: 2.6rem;
-    line-height: 3.1rem;
-    color: $black;
-    margin: 0 0 4rem 0;
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    color: $off-gray;
+    margin: 0 2.5rem 0 0;
+}
 
-    @media ( min-width: $breakpoint-medium ) {
-        font-size: 3.7rem;
-        line-height: 4.4rem;
-        margin: 0 0 6rem 0;
+.article__share-links {
+    @include list-unstyled;
+
+    li {
+        display: inline-block;
+
+        &:not( :last-child ) {
+            margin: 0 2rem 0 0;
+        }
+    }
+
+    a {
+        color: $black;
+        
+        transition: all $transition-base;
+
+        &:hover,
+        &:focus {
+            color: $primary;
+        }
     }
 }

@@ -14,6 +14,7 @@
 
 // Base
 @import 'normalize'; @include normalize();
+@import './wordpresscorestyles.css';
 @import './base/base';
 
 
@@ -63,7 +64,8 @@
 
 
 // Post
-@import './components/post/base';
+@import './components/post/post';
+@import './components/post/article';
 
 
 // Page

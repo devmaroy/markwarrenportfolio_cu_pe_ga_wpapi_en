@@ -1,0 +1,75 @@
+/*------------------------------------*\
+    # Post
+\*------------------------------------*/
+
+
+.post {
+    margin-top: 6rem;
+
+    @media ( min-width: $breakpoint-medium ) {
+        margin-top: 10rem;
+    }
+}
+
+.post__separator {
+    grid-column: 1 / -1;
+    margin: 6rem 0 4rem 0;
+
+    background-image: linear-gradient(to right, $input-border-color 33%, rgba($input-border-color,0) 0%);
+    background-position: bottom;
+    background-size: 22px 1px;
+    background-repeat: repeat-x;
+    height: 1px;
+
+    @media ( min-width: $breakpoint-medium ) {
+        grid-column: 2 / -2;
+    }
+}
+
+.post__meta {
+    #disqus_thread {
+        grid-column: 1 / -1;
+        margin: 10rem 0 20rem 0;
+
+        @media ( min-width: $breakpoint-medium ) {
+            grid-column: 2 / -2;
+        }
+    }
+
+    .related-article__heading {
+        grid-column: 1 / -1;
+    
+        font-family: $font-family-secondary;
+        font-weight: $font-weight-bold;
+        font-size: 2.6rem;
+        line-height: 3.1rem;
+        color: $black;
+        margin: 0 0 4rem 0;
+    
+        @media ( min-width: $breakpoint-medium ) {
+            font-size: 3.7rem;
+            line-height: 4.4rem;
+            margin: 0 0 6rem 0;
+        }
+    }
+
+    .side-article {
+        grid-column: span 12;
+
+        &:not( :last-child ) {
+            margin: 0 0 4rem 0;
+
+            @media ( min-width: $breakpoint-medium ) {
+                margin: 0;
+            }
+        }
+
+        @media ( min-width: $breakpoint-small ) {
+            grid-column: span 6;
+        }
+
+        @media ( min-width: $breakpoint-medium ) {
+            grid-column: span 4;
+        }
+    }
+}
