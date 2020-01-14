@@ -5,10 +5,13 @@ import Pagination from '../../common/pagination';
 const ArticlesFeed = () => {
     return (
         <div className="articles-feed">
-            <ArticlePreview />
-            <Pagination />
+            hello
         </div>
     );
 };
 
 export default ArticlesFeed;
+
+
+/*<ArticlePreview />
+            <Pagination />*/

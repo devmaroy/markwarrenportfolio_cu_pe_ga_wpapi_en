@@ -1,7 +1,7 @@
 const slash = require( 'slash' );
-//const createPagination = require( './createPagination' );
+const createPagination = require( './createPagination' );
 const postTemplate = require.resolve( '../../src/templates/post.js' );
-//const blogListTemplate = require.resolve( '../../src/templates/blogList.js' );
+const blogListTemplate = require.resolve( '../../src/templates/blogList.js' );
 
 
 module.exports = ( { data, createPage } ) => {
@@ -22,7 +22,7 @@ module.exports = ( { data, createPage } ) => {
         // Create paginated posts for blog list
         const perPage = 9;
 
-        /*createPagination({
+        createPagination({
             perPage,
             numPages: Math.ceil( data.edges.length / perPage ),
             prefix: 'blog',
@@ -30,6 +30,6 @@ module.exports = ( { data, createPage } ) => {
             toContext: { id: node.id },
             createPage,
             component: blogListTemplate,
-        });*/
+        });
     });
 };

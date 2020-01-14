@@ -18,7 +18,7 @@ const PostTemplate = ( { data } ) => {
 export default PostTemplate;
 
 
-// Query
+// Template Query
 
 export const query = graphql`
     query( $id: String! ) {
