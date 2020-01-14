@@ -7,8 +7,7 @@ export const query = graphql`
         title
         slug
         content
-        plainDate: date
-        date( formatString: "MMMM DD, YYYY" ) 
+        date
         featured_media {
             source_url
         }

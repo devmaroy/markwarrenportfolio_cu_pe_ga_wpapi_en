@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { format } from 'timeago.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DiscussionEmbed } from 'disqus-react';
 import SideArticle from '../common/sideArticle';
@@ -8,7 +9,7 @@ import articleTwoImg from '../../images/articles/article-05.jpg';
 import articleThreeImg from '../../images/articles/article-06.jpg';
 
 
-const Post = ( { title, slug, plainDate, date, featured_media, categories, tags, content } ) => {
+const Post = ( { title, slug, date, featured_media, categories, tags, content } ) => {
     const disqusConfig = {
         shortname: process.env.GATSBY_DISQUS_NAME,
         config: { identifier: slug, title },
@@ -35,7 +36,7 @@ const Post = ( { title, slug, plainDate, date, featured_media, categories, tags,
                                     }
                                 </ul>
 
-                                <time dateTime={ plainDate } className="article__date">{ date }</time>
+                                <time dateTime={ date } className="article__date">{ format( date ) }</time>
                             </div>
                         </header>
 

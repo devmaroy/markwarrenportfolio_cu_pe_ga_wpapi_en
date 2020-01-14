@@ -23,6 +23,13 @@
     a {
         text-decoration: none;
         color: $black;
+
+        transition: all $transition-base;
+
+        &:hover,
+        &:focus {
+            color: lighten( $black, 13% );
+        }
     }
 }
 
@@ -44,6 +51,13 @@
     text-decoration: none;
     color: $primary;
     font-weight: $font-weight-bold;
+
+    transition: all $transition-base;
+
+    &:hover,
+    &:focus {
+        color: darken( $primary, 13% );
+    }
 }
 
 .article__date {
