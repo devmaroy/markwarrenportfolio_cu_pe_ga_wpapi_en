@@ -13,9 +13,13 @@ const ArticleFeedItem = ( { featured_media, categories, date, slug, title, excer
 
             <div className="article-feed-item__meta">
                 <ul className="article-feed-item__categories">
-                    <li>
-                        <Link to={ `/category/${ slug }` } className="article-feed-item__category">Web development</Link>
-                    </li>
+                    {
+                        categories.map( ( { id, name, slug } ) => (
+                            <li key={ id }>
+                                <Link to={ `/category/${ slug }` } className="article-feed-item__category">{ name }</Link>
+                            </li>
+                        ))
+                    }
                 </ul>
 
                 <time dateTime={ date } className="article-feed-item__date">{ format( date ) }</time>
