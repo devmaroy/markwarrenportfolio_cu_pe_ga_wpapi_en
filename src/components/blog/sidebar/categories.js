@@ -22,9 +22,6 @@ const Categories = () => {
         <StaticQuery query={ query } render={ ( data ) => {
             const categories = data.allWordpressCategory.edges;
 
-            console.log(categories);
-            
-
             return ( 
                 <div className="blog-sidebar-categories">
                     <SidebarHeading heading="Categories" />
