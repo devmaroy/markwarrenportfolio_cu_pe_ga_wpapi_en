@@ -214,6 +214,21 @@
             }
         }
 
+        cite {
+            font-size: 1.6rem;
+            font-weight: $font-weight-bold;
+            color: $primary-light;
+            
+            &::before {
+                content: '-';
+                margin-right: 1rem;
+            }
+
+            @media ( min-width: $breakpoint-medium ) {
+                font-size: 1.8rem;
+            }
+        }
+
         @media ( min-width: $breakpoint-medium ) {
             margin: 6rem 0 6rem 12rem;
         }
