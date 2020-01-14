@@ -52,7 +52,12 @@ const Post = ( { title, slug, plainDate, date, featured_media, categories, tags,
                                 {
                                     tags.map( ( { id, name, slug } ) => (
                                         <li key={ id }>
-                                            <Link to={ `/tag/${ slug }` } className="button button--primary button--primary-light button--noshadow button--small article__tag">{ name }</Link>
+                                            <Link 
+                                                to={ `/tag/${ slug }` } 
+                                                className="button button--primary button--primary-light button--noshadow button--small article__tag"
+                                            >
+                                                { name }
+                                            </Link>
                                         </li>
                                     ))
                                 }
