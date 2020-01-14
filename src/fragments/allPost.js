@@ -6,8 +6,7 @@ export const query = graphql`
         id
         title
         slug
-        plainDate: date
-        date( formatString: "MMMM DD, YYYY" )
+        date
         excerpt
         categories {
             id

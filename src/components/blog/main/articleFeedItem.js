@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { format } from 'timeago.js';
 
+console.log( format );
 
-const ArticleFeedItem = ( { featured_media, categories, plainDate, date, slug, title, excerpt } ) => {
+const ArticleFeedItem = ( { featured_media, categories, date, slug, title, excerpt } ) => {
     return (
         <div className="article-feed-item">
             <div className="article-feed-item__featured-img">
@@ -16,7 +18,7 @@ const ArticleFeedItem = ( { featured_media, categories, plainDate, date, slug, t
                     </li>
                 </ul>
 
-                <time dateTime={ plainDate } className="article-feed-item__date">{ date }</time>
+                <time dateTime={ date } className="article-feed-item__date">{ format( date ) }</time>
             </div>
 
             <h2 className="article-feed-item__heading">
