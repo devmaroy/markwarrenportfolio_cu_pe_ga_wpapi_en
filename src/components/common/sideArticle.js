@@ -1,14 +1,31 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import { format } from 'timeago.js';
 
 
-const SideArticle = ( { imgSrc, imgAlt, category, title, date } ) => {
+const SideArticle = ( { imgSrc, imgAlt, categories, title, date } ) => {
     return (
         <div className="side-article">
             <img src={ imgSrc } alt={ imgAlt } className="side-article__img" />
 
             <div className="side-article__meta">
-                <a href="#" className="side-article__category">{ category }</a>
+                <ul className="side-article__categories">
+                    {
+                        categories.map(( { id, slug, name } ) => (
+                            <li 
+                                key={ id }
+                            >
+                                <Link 
+                                    to={ `/category/${ slug }` } 
+                                    className="side-article__category"
+                                >
+                                    { name }
+                                </Link>
+                            </li>
+                        ))
+                    }
+                </ul>
             </div>
 
             <a href="#" className="side-article__heading">
@@ -16,7 +33,7 @@ const SideArticle = ( { imgSrc, imgAlt, category, title, date } ) => {
             </a>
 
             <div className="side-article__footer">
-                <time dateTime={ date } className="side-article__date">{ date }</time>
+                <time dateTime={ date } className="side-article__date">{ format( date ) }</time>
             </div>
         </div>
     );

@@ -5,6 +5,9 @@
 
 .side-article__img {
     border-radius: $border-radius;
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
     cursor: pointer;
 
     transition: all $transition-base;
@@ -17,6 +20,10 @@
 
 .side-article__meta {
     margin: 2rem 0 0 0;
+}
+
+.side-article__categories {
+    @include list-unstyled;
 }
 
 .side-article__category {

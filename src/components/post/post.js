@@ -3,13 +3,10 @@ import { Link } from 'gatsby';
 import { format } from 'timeago.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DiscussionEmbed } from 'disqus-react';
-import SideArticle from '../common/sideArticle';
-import articleOneImg from '../../images/articles/article-04.jpg';
-import articleTwoImg from '../../images/articles/article-05.jpg';
-import articleThreeImg from '../../images/articles/article-06.jpg';
+import RelatedArticles from './relatedArticles';
 
 
-const Post = ( { title, slug, date, featured_media, categories, tags, content } ) => {
+const Post = ( { title, slug, date, featured_media, categories, tags, content, acf } ) => {
     const disqusConfig = {
         shortname: process.env.GATSBY_DISQUS_NAME,
         config: { identifier: slug, title },
@@ -95,29 +92,7 @@ const Post = ( { title, slug, date, featured_media, categories, tags, content } 
 
                         <h2 className="related-article__heading">Related articles</h2>
 
-                        <SideArticle 
-                            imgSrc={ articleOneImg }
-                            imgAlt="Related article"
-                            title="Sweet jelly beans biscuit croissant lemon drops cotton"
-                            category="Web Development"
-                            date="20 hours ago"
-                        /> 
-
-                        <SideArticle 
-                            imgSrc={ articleTwoImg }
-                            imgAlt="Related article"
-                            title="Sweet jelly beans biscuit croissant lemon drops cotton"
-                            category="Web Development"
-                            date="20 hours ago"
-                        /> 
-
-                        <SideArticle 
-                            imgSrc={ articleThreeImg }
-                            imgAlt="Related article"
-                            title="Sweet jelly beans biscuit croissant lemon drops cotton"
-                            category="Web Development"
-                            date="20 hours ago"
-                        /> 
+                        <RelatedArticles relatedArticles={ acf.related_articles } />    
                     </div>
                 </div>
             </div>

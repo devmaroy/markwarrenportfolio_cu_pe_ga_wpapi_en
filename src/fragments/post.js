@@ -20,6 +20,9 @@ export const query = graphql`
             id
             name
             slug
+        }
+        acf {
+            related_articles
         }  
     }
 `;
