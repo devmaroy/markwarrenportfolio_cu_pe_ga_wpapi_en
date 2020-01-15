@@ -1,81 +1,85 @@
 import React from 'react';
+import { graphql, StaticQuery, Link } from 'gatsby';
+import { format } from 'timeago.js';
 import SidebarHeading from './sidebarHeading';
-import articleOneImg from '../../../images/articles/article-01.jpg';
-import articleTwoImg from '../../../images/articles/article-02.jpg';
-import articleThreeImg from '../../../images/articles/article-03.jpg';
+
+
+// Query
+const query = graphql`
+    {
+        allWordpressPost( limit: 4 ) {
+            edges {
+                node {
+                    ...AllPostData
+                }
+            }
+        }
+    }
+`;
+
 
 const RecentArticles = () => {
     return (
-        <div className="blog-sidebar-recent-articles">
-            <SidebarHeading heading="Recent articles" />
+        <StaticQuery query={ query } render={ ( data ) => {
+            const posts = data.allWordpressPost.edges;
+            
 
-            <div className="blog-sidebar-recent-article">
-                <div className="blog-sidebar-recent-article__header">
-                    <img src={ articleOneImg  } alt="" className="blog-sidebar-recent-article__img" />
-                </div>
+            return ( 
+                <div className="blog-sidebar-recent-articles">
+                    <SidebarHeading heading="Recent articles" />
 
-                <div className="blog-sidebar-recent-article__content">
-                    <a href="#" className="blog-sidebar-recent-article__link">Halvah tart halvah bonbon cake fruitcake chocolate</a>
+                    {
+                        posts.map( ( { node: post } ) => (
+                            <div key={ post.id } className="blog-sidebar-recent-article">
+                                <div className="blog-sidebar-recent-article__header">
+                                    <img 
+                                        src={ post.featured_media.source_url } 
+                                        alt="Recent article image" 
+                                        className="blog-sidebar-recent-article__img" 
+                                    />
+                                </div>
 
-                    <div className="blog-sidebar-recent-article__meta">
-                        <ul className="blog-sidebar-recent-article__categories">
-                            <li>
-                                <a href="#" className="blog-sidebar-recent-article__category">Web development</a>
-                            </li>
-                            <li>
-                                <a href="#" className="blog-sidebar-recent-article__category">Web development</a>
-                            </li>
-                        </ul>
+                                <div className="blog-sidebar-recent-article__content">
+                                    <Link
+                                        to={ `/post/${ post.slug }` }
+                                        className="blog-sidebar-recent-article__link"
+                                    >
+                                        { post.title }
+                                    </Link>
+                                
 
-                        <time dateTime="" className="blog-sidebar-recent-article__date">3 hours ago</time>
-                    </div>
-                </div>
-            </div>
+                                    <div className="blog-sidebar-recent-article__meta">
+                                        <ul className="blog-sidebar-recent-article__categories">
+                                            {
+                                                post.categories.map( ( { id, slug, name } ) => (
+                                                    <li key={ id }>
+                                                        <Link
+                                                            to={ `/category/${ slug }` }
+                                                            className="blog-sidebar-recent-article__category"
+                                                        >
+                                                            { name }
+                                                        </Link>
+                                                    </li>
+                                                ))
+                                            }
+                                        </ul>
 
-            <div className="blog-sidebar-recent-article">
-                <div className="blog-sidebar-recent-article__header">
-                    <img src={ articleTwoImg  } alt="" className="blog-sidebar-recent-article__img" />
-                </div>
-
-                <div className="blog-sidebar-recent-article__content">
-                    <a href="#" className="blog-sidebar-recent-article__link">Oat beans lemon fruitcake topping pudding apple</a>
-
-                    <div className="blog-sidebar-recent-article__meta">
-                        <ul className="blog-sidebar-recent-article__categories">
-                            <li>
-                                <a href="#" className="blog-sidebar-recent-article__category">UI Design</a>
-                            </li>
-                            <li>
-                                <a href="#" className="blog-sidebar-recent-article__category">UI</a>
-                            </li>
-                        </ul>
-
-                        <time dateTime="" className="blog-sidebar-recent-article__date">6 hours ago</time>
-                    </div>
-                </div>
-            </div>
-
-            <div className="blog-sidebar-recent-article">
-                <div className="blog-sidebar-recent-article__header">
-                    <img src={ articleThreeImg  } alt="" className="blog-sidebar-recent-article__img" />
-                </div>
-
-                <div className="blog-sidebar-recent-article__content">
-                    <a href="#" className="blog-sidebar-recent-article__link">Marshmallow chocolate macaroon sesame snaps</a>
-
-                    <div className="blog-sidebar-recent-article__meta">
-                        <ul className="blog-sidebar-recent-article__categories">
-                            <li>
-                                <a href="#" className="blog-sidebar-recent-article__category">Review</a>
-                            </li>
-                        </ul>
-
-                        <time dateTime="" className="blog-sidebar-recent-article__date">20 hours ago</time>
-                    </div>
-                </div>
-            </div>
-        </div>
+                                        <time 
+                                            dateTime={ post.date } 
+                                            className="blog-sidebar-recent-article__date"
+                                        >
+                                            { format( post.date ) }
+                                        </time>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div> 
+            )
+        } } />
     );
 };
+
 
 export default RecentArticles;
