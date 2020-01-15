@@ -50,6 +50,7 @@
 .article__category {
     text-decoration: none;
     color: $primary;
+    text-transform: uppercase;
     font-weight: $font-weight-bold;
 
     transition: all $transition-base;
