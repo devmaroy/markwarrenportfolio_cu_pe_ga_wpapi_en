@@ -6,7 +6,7 @@ import SidebarHeading from './sidebarHeading';
 // Query
 const query = graphql`
     {
-        allWordpressTag {
+        allWordpressTag( sort: { fields: count, order: DESC } ) {
             edges {
                 node{ 
                     ...TagData

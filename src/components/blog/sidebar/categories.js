@@ -6,7 +6,7 @@ import SidebarHeading from './sidebarHeading';
 // Query
 const query = graphql`
     {
-        allWordpressCategory {
+        allWordpressCategory( sort: { fields: count, order: DESC } ) {
             edges {
                 node{ 
                     ...CategoryData
