@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { format } from 'timeago.js';
 
 
-const SideArticle = ( { imgSrc, imgAlt, categories, title, date } ) => {
+const SideArticle = ( { imgSrc, imgAlt, categories, title, slug, date } ) => { 
     return (
         <div className="side-article">
             <img src={ imgSrc } alt={ imgAlt } className="side-article__img" />
@@ -28,9 +28,9 @@ const SideArticle = ( { imgSrc, imgAlt, categories, title, date } ) => {
                 </ul>
             </div>
 
-            <a href="#" className="side-article__heading">
+            <Link to={ `/post/${ slug }` } className="side-article__heading">
                 <h4>{ title }</h4>
-            </a>
+            </Link>
 
             <div className="side-article__footer">
                 <time dateTime={ date } className="side-article__date">{ format( date ) }</time>
@@ -44,7 +44,12 @@ SideArticle.propTypes = {
     imgSrc: PropTypes.string.isRequired,
     imgAlt: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+    categories: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        slug: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+    })) ,
     date: PropTypes.string.isRequired,
 };
 
