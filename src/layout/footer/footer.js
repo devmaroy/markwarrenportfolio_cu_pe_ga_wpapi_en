@@ -11,7 +11,7 @@ const Footer = () => {
                     <SiteLogo />
                     
                     <div className="footer__copyright">
-                        <p>© 2019 All Rights Reserved.</p>
+                        <p>&copy; { new Date().getFullYear() } All Rights Reserved.</p>
                     </div>
 
                     <div className="footer__social">
