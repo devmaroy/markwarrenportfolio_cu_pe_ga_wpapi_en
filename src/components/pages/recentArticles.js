@@ -32,9 +32,11 @@ const RecentArticles = () => {
                             {
                                 posts.map( ( { node: post } ) => (
                                     <SideArticle 
+                                        key={ post.id }
                                         imgSrc={ post.featured_media.source_url }
                                         imgAlt="Recent article"
                                         title={ post.title }
+                                        slug={ post.slug }
                                         categories={ post.categories }
                                         date={ post.date }
                                     />

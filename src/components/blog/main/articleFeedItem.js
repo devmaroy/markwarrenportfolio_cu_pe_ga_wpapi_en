@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { format } from 'timeago.js';
 
-console.log( format );
 
 const ArticleFeedItem = ( { featured_media, categories, date, slug, title, excerpt } ) => {
     return (
