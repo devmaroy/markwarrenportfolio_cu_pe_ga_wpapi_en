@@ -6,6 +6,7 @@ import { faClock  } from '@fortawesome/free-regular-svg-icons';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../../styles/main.scss';
+import Meta from '../../components/common/meta';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 
@@ -17,6 +18,7 @@ library.add( fab, faAngleDoubleLeft );
 const Layout = ( { children } ) => {
     return (
         <div className="site-content">
+            <Meta />
             <Header />
             <main>
                 { children }
