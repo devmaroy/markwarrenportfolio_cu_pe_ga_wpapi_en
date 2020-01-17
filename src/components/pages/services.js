@@ -6,7 +6,7 @@ import servicesThreeImg from '../../images/icons/services-03.svg';
 
 const Services = () => {
     return (
-        <section className="services divider-space">
+        <section id="services" className="services divider-space">
             <div className="container">
                 <div className="services__inner grid-container">
                     <Heading main="What I Do" sub="Services" />

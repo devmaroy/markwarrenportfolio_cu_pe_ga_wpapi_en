@@ -3,7 +3,7 @@ import contactImg from '../../images/contact/contact.jpg';
 
 const Contact = () => {
     return (
-        <section className="contact divider-space">
+        <section id="contact" className="contact divider-space">
             <div className="container">
                 <div className="contact__inner grid-container">
                     <div className="contact-info">

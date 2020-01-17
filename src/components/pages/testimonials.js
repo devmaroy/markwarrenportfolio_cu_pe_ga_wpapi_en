@@ -8,7 +8,7 @@ import userThree from '../../images/users/user-03.jpg';
 
 const Testimonials = () => {
     return (
-        <section className="testimonials divider-space">
+        <section id="testimonials" className="testimonials divider-space">
             <div className="container">
                 <div className="testimonials__inner grid-container">
                     <Heading main="What My Cliens Say" sub="Testimonials" />
