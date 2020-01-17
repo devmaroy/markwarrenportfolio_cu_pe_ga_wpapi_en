@@ -55,19 +55,6 @@ button:disabled {
     color: red;
     font-style: normal;
 }
-/*
-.shape {
-    &::after {
-        content: '';
-        background: url( '../images/dots.svg') no-repeat;
-        display: block;
-        width: 10rem;
-        height: 6rem;
-        position: absolute;
-        z-index: -99;
-    }
-}
-*/
 
 .container {
     max-width: 1280px;
@@ -98,10 +85,10 @@ button:disabled {
 }
 
 .divider-space {
-    margin-top: 10rem;
+    padding-top: 10rem;
 
     @media ( min-width: $breakpoint-medium ) {
-        margin-top: 20rem;
+        padding-top: 20rem;
     }
 }
 
