@@ -23,7 +23,6 @@ const RecentArticles = () => {
         <StaticQuery query={ query } render={ ( data ) => {
             const posts = data.allWordpressPost.edges;
             
-
             return ( 
                 <div className="blog-sidebar-recent-articles">
                     <SidebarHeading heading="Recent articles" />
