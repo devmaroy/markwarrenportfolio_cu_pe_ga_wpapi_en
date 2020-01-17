@@ -1,16 +1,37 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql, StaticQuery, Link } from 'gatsby';
+
+
+// Query
+
+const query = graphql`
+    {
+        allWordpressWpLogo {
+            edges {
+                node {
+                    url {
+                        source_url
+                    }
+                }
+            }
+        }
+    }
+`;
 
 
 const SiteLogo = () => {
     return (
-        <div className="site-logo">
-            <Link to="/" className="site-logo__link">
-                <h1 className="site-logo__text">WARREN
-                    <span>.</span>
-                </h1>
-            </Link>
-        </div>
+        <StaticQuery query={ query } render={ ( data ) => {
+            const siteLogoUrl = data.allWordpressWpLogo.edges[0].node.url.source_url;
+            
+            return (
+                <div className="site-logo">
+                    <Link to="/" className="site-logo__link">
+                        <img src={ siteLogoUrl } alt=""/>
+                    </Link>
+                </div>
+            )
+        }} />
     );
 };
 
