@@ -27,7 +27,7 @@ const SiteLogo = () => {
             return (
                 <div className="site-logo">
                     <Link to="/" className="site-logo__link">
-                        <img src={ siteLogoUrl } alt="Site logo" />
+                        <img src={ siteLogoUrl } alt="Site logo" className="site-logo__img" />
                     </Link>
                 </div>
             )
