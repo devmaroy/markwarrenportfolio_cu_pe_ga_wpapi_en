@@ -15,8 +15,7 @@ const query = graphql`
             edges {
                 node {
                     items {
-                        title
-                        url
+                        ...MenuItemsData
                     }
                 }
             }
@@ -28,9 +27,7 @@ const query = graphql`
 const Menu = ( { toggleMenu } ) => {
     return (
         <StaticQuery query={ query } render={ ( data ) => {
-            const menuItems = data.allWordpressWpApiMenusMenusItems.edges[0].node.items;
-            console.log(menuItems);
-            
+            const menuItems = data.allWordpressWpApiMenusMenusItems.edges[0].node.items;  
 
             return (
                 <nav className="menu-list-wrapepr">

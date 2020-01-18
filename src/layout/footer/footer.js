@@ -1,6 +1,6 @@
 import React from 'react';
 import SiteLogo from '../header/siteLogo';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SocialLinks from '../../components/common/socialLinks';
 
 
 const Footer = () => {
@@ -15,33 +15,7 @@ const Footer = () => {
                     </div>
 
                     <div className="footer__social">
-                        <ul className="social-list">
-                            <li className="social-list__item">
-                                <a href="#" className="social-list__link">
-                                    <FontAwesomeIcon icon={ [ "fab", 'facebook-f' ] } fixedWidth />
-                                </a>
-                            </li>
-                            <li className="social-list__item">
-                                <a href="#" className="social-list__link">
-                                    <FontAwesomeIcon icon={ [ "fab", 'twitter' ] } fixedWidth />
-                                </a>
-                            </li>
-                            <li className="social-list__item">
-                                <a href="#" className="social-list__link">
-                                    <FontAwesomeIcon icon={ [ "fab", 'instagram' ] } fixedWidth />
-                                </a>
-                            </li>
-                            <li className="social-list__item">
-                                <a href="#" className="social-list__link">
-                                    <FontAwesomeIcon icon={ [ "fab", 'linkedin-in' ] } fixedWidth />
-                                </a>
-                            </li>
-                            <li className="social-list__item">
-                                <a href="#" className="social-list__link">
-                                    <FontAwesomeIcon icon={ [ "fab", 'youtube' ] } fixedWidth />
-                                </a>
-                            </li>
-                        </ul>
+                        <SocialLinks type={ 'normal' } fixedWidth={ true } />
                     </div>
                 </div>
             </div>

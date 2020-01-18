@@ -1,0 +1,28 @@
+/*------------------------------------*\
+    # Social
+\*------------------------------------*/
+
+
+.social-links {
+    @include list-unstyled;
+    margin-left: -.5rem;
+}
+
+.social-links__item {
+    display: inline-block;
+
+    &:not( :last-child ) {
+        margin-right: 1rem;
+    }
+}
+
+.social-links__link {
+    color: $black;
+
+    transition: all $transition-base;
+
+    &:hover,
+    &:focus {
+        color: $primary;
+    }
+}

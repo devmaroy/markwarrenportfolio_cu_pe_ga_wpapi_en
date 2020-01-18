@@ -31,27 +31,3 @@
         margin: 2rem 0 2rem 4rem;
     }
 }
-
-.social-list {
-    @include list-unstyled;
-    margin-left: -.5rem;
-}
-
-.social-list__item {
-    display: inline-block;
-
-    &:not( :last-child ) {
-        margin-right: 1rem;
-    }
-}
-
-.social-list__link {
-    color: $black;
-
-    transition: all $transition-base;
-
-    &:hover,
-    &:focus {
-        color: $primary;
-    }
-}
