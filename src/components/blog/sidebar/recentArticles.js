@@ -7,7 +7,7 @@ import SidebarHeading from './sidebarHeading';
 // Query
 const query = graphql`
     {
-        allWordpressPost( limit: 4 ) {
+        allWordpressPost( sort: { fields: [ date ], order: DESC }, limit: 4 ) {
             edges {
                 node {
                     ...AllPostData
