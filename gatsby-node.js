@@ -1,4 +1,6 @@
 const createPosts = require( './utils/nodes/createPosts' );
+const createCategories = require( './utils/nodes/createCategories' );
+const createTags = require( './utils/nodes/createTags' );
 
 
 exports.createPages = async ( { graphql, actions } ) => {
@@ -29,6 +31,26 @@ exports.createPages = async ( { graphql, actions } ) => {
                     }
                 }
             }
+            allWordpressCategory {
+                edges {
+                    node {
+                        id
+                        name
+                        slug
+                        count
+                    }
+                }
+            }
+            allWordpressTag {
+                edges {
+                    node {
+                        id
+                        name
+                        slug
+                        count
+                    }
+                }
+            }
         }    
     `);
 
@@ -46,6 +68,6 @@ exports.createPages = async ( { graphql, actions } ) => {
     // Pass data into separate helper functions
     //createPages( { data: allWordpressPage, createPage } );
     createPosts( { data: allWordpressPost, createPage } );
-    //createCategories( { data: allWordpressCategory, createPage } );
-    //createTags( { data: allWordpressTag, createPage } );
+    createCategories( { data: allWordpressCategory, createPage } );
+    createTags( { data: allWordpressTag, createPage } );
 }

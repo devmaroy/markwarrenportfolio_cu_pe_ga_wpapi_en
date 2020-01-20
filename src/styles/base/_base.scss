@@ -100,3 +100,18 @@ button:disabled {
 .layout-blog {
     margin-top: 10rem;
 }
+
+
+.taxonomy-heading {
+    margin: 0 0 6rem 0;
+    font-family: $font-family-secondary;
+    font-size: 1.8rem;
+    font-weight: $font-weight-normal;
+    color: $off-gray;
+    text-transform: uppercase;
+
+    strong {
+        font-weight: $font-weight-medium;
+        color: $primary;
+    }
+}
