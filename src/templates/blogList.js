@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import LayoutBlog from '../layout/base/layoutBlog';
-import ArticleFeedItem from '../components/blog/main/articleFeedItem';
+import FeedItem from '../components/common/feedItem';
 import Pagination from '../components/common/pagination';
 
 
@@ -13,7 +13,7 @@ const BlogListTemplate = ( { data, pageContext } ) => {
         <LayoutBlog>
             {
                 posts.map( ( { node: post } ) => (
-                    <ArticleFeedItem key={ post.id } { ...post } />
+                    <FeedItem key={ post.id } { ...post } />
                 ))
             }
 

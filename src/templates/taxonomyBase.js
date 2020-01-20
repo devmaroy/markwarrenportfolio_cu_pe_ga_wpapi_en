@@ -1,6 +1,6 @@
 import React from 'react';
 import LayoutBlog from '../layout/base/layoutBlog';
-import ArticleFeedItem from '../components/blog/main/articleFeedItem';
+import FeedItem from '../components/common/feedItem';
 import Pagination from '../components/common/pagination';
 
 
@@ -17,7 +17,7 @@ const TaxonomyBaseTemplate = ( { info, content, currentPage, numPages } ) => {
 
             {
                 content.map( ( { node: content } ) => (
-                    <ArticleFeedItem key={ content.id } { ...content } />
+                    <FeedItem key={ content.id } { ...content } />
                 ))
             }
 
