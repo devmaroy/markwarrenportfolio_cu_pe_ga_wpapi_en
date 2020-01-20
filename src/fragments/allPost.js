@@ -14,8 +14,5 @@ export const query = graphql`
             name
             slug
         }
-        featured_media {
-            source_url
-        }
     }
 `;

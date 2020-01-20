@@ -2,12 +2,7 @@ import { graphql } from 'gatsby';
 
 
 export const query = graphql`
-    fragment PostData on wordpress__POST {
-        id
-        title
-        slug
-        content
-        date
+    fragment FeaturedImageFluidData on wordpress__POST {
         featured_media {
             localFile {
                 childImageSharp {
@@ -17,18 +12,5 @@ export const query = graphql`
                 }
             }
         }
-        categories {
-            id
-            name
-            slug
-        }
-        tags {
-            id
-            name
-            slug
-        }
-        acf {
-            related_articles
-        }  
     }
 `;

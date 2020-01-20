@@ -10,6 +10,7 @@ const query = graphql`
             edges {
                 node {
                     ...AllPostData
+                    ...FeaturedImageFluidData
                 }
             }
         }
@@ -24,10 +25,11 @@ const RelatedArticles = ( { relatedArticles } ) => {
             
             const filteredPosts = posts.filter(( post ) => relatedArticles.includes( post.node.wordpress_id ) );
                 
+                
             return filteredPosts.map( ( { node: post } ) => (
                 <SideArticle 
                     key={ post.id }
-                    imgSrc={ post.featured_media.source_url }
+                    imgSrc={ post.featured_media.localFile.childImageSharp.fluid }
                     imgAlt="Related article"
                     title={ post.title }
                     slug={ post.slug }

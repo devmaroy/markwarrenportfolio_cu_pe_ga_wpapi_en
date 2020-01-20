@@ -2,13 +2,18 @@ import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { format } from 'timeago.js';
+import Img from 'gatsby-image';
 
 
 const SideArticle = ( { imgSrc, imgAlt, categories, title, slug, date } ) => { 
     return (
         <div className="side-article">
-            <img src={ imgSrc } alt={ imgAlt } className="side-article__img" />
-
+            <Img
+                fluid={ imgSrc }
+                alt={ imgAlt } 
+                className="side-article__img"
+            />
+        
             <div className="side-article__meta">
                 <ul className="side-article__categories">
                     {
@@ -41,7 +46,7 @@ const SideArticle = ( { imgSrc, imgAlt, categories, title, slug, date } ) => {
 
 
 SideArticle.propTypes = {
-    imgSrc: PropTypes.string.isRequired,
+    imgSrc: PropTypes.object.isRequired,
     imgAlt: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,

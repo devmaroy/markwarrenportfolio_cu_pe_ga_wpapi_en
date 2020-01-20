@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { format } from 'timeago.js';
+import Img from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DiscussionEmbed } from 'disqus-react';
 import RelatedArticles from './relatedArticles';
@@ -37,8 +38,12 @@ const Post = ( { title, slug, date, featured_media, categories, tags, content, a
                             </div>
                         </header>
 
-                        <div className="article__featured-img">
-                            <img src={ featured_media.source_url } alt="Featured image" />
+                        <div className="article__featured">
+                            <Img 
+                                fluid={ featured_media.localFile.childImageSharp.fluid } 
+                                alt="Featured image" 
+                                className="article__featured-img"
+                            />
                         </div>
 
                         <div className="article__content" dangerouslySetInnerHTML={ { __html: content } } />

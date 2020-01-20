@@ -11,6 +11,7 @@ const query = graphql`
             edges {
                 node {
                     ...AllPostData
+                    ...FeaturedImageFluidData
                 }
             }
         }
@@ -33,7 +34,7 @@ const RecentArticles = () => {
                                 posts.map( ( { node: post } ) => (
                                     <SideArticle 
                                         key={ post.id }
-                                        imgSrc={ post.featured_media.source_url }
+                                        imgSrc={ post.featured_media.localFile.childImageSharp.fluid }
                                         imgAlt="Recent article"
                                         title={ post.title }
                                         slug={ post.slug }

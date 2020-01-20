@@ -1,13 +1,18 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { format } from 'timeago.js';
+import Img from 'gatsby-image';
 
 
 const FeedItem = ( { featured_media, categories, date, slug, title, excerpt } ) => {
     return (
         <div className="feed-item">
-            <div className="feed-item__featured-img">
-                <img src={ featured_media.source_url } alt="Feed item" />
+            <div className="feed-item__featured">
+                <Img 
+                    fluid={ featured_media.localFile.childImageSharp.fluid } 
+                    alt="Feed item" 
+                    className="feed-item__featured-img"
+                />
             </div>
 
             <div className="feed-item__meta">

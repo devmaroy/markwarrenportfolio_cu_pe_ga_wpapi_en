@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, StaticQuery, Link } from 'gatsby';
 import { format } from 'timeago.js';
 import SidebarHeading from './sidebarHeading';
+import Img from 'gatsby-image';
 
 
 // Query
@@ -11,6 +12,7 @@ const query = graphql`
             edges {
                 node {
                     ...AllPostData
+                    ...FeaturedImageFixed8080Data
                 }
             }
         }
@@ -31,8 +33,8 @@ const RecentArticles = () => {
                         posts.map( ( { node: post } ) => (
                             <div key={ post.id } className="blog-sidebar-recent-article">
                                 <div className="blog-sidebar-recent-article__header">
-                                    <img 
-                                        src={ post.featured_media.source_url } 
+                                    <Img
+                                        fixed={ post.featured_media.localFile.childImageSharp.fixed } 
                                         alt="Recent article image" 
                                         className="blog-sidebar-recent-article__img" 
                                     />
