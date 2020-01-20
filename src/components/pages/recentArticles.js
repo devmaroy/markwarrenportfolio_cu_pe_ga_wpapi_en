@@ -7,7 +7,7 @@ import SideArticle from '../common/sideArticle';
 // Query
 const query = graphql`
     {
-        allWordpressPost( sort: { fields: [ date ], order: DESC }, limit: 4 ) {
+        allWordpressPost( sort: { fields: [ date ], order: DESC }, limit: 3 ) {
             edges {
                 node {
                     ...AllPostData

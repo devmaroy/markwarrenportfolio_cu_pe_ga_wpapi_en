@@ -2,11 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import LayoutBlog from '../layout/base/layoutBlog';
 import ArticleFeedItem from '../components/blog/main/articleFeedItem';
+import Pagination from '../components/common/pagination';
 
 
-const BlogListTemplate = ( { data } ) => {
+const BlogListTemplate = ( { data, pageContext } ) => {
     const posts = data.allWordpressPost.edges;
-    
+    const { currentPage, numPages } = pageContext;
+
     return (
         <LayoutBlog>
             {
@@ -14,6 +16,12 @@ const BlogListTemplate = ( { data } ) => {
                     <ArticleFeedItem key={ post.id } { ...post } />
                 ))
             }
+
+            <Pagination 
+                numberOfPages={ numPages }
+                currentPage={ currentPage }
+                prefix="blog"
+            />
         </LayoutBlog>
     )
 };
