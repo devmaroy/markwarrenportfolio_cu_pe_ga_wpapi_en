@@ -5,7 +5,7 @@
 
 .side-article__img {
     border-radius: $border-radius;
-    height: 25rem;
+    height: 22rem;
     width: 100%;
     object-fit: cover;
     cursor: pointer;
@@ -20,6 +20,7 @@
 
 .side-article__meta {
     margin: 2rem 0 0 0;
+    line-height: 1;
 }
 
 .side-article__categories {
@@ -56,6 +57,10 @@
     &:focus {
         color: lighten( $black, 13% );
     }
+}
+
+.side-article__footer {
+    line-height: 1;
 }
 
 .side-article__date {
