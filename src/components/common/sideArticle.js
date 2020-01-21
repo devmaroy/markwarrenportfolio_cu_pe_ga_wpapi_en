@@ -8,11 +8,13 @@ import Img from 'gatsby-image';
 const SideArticle = ( { imgSrc, imgAlt, categories, title, slug, date } ) => { 
     return (
         <div className="side-article">
-            <Img
-                fluid={ imgSrc }
-                alt={ imgAlt } 
-                className="side-article__img"
-            />
+            <Link to={ `/post/${ slug }` }>
+                <Img
+                    fluid={ imgSrc }
+                    alt={ imgAlt } 
+                    className="side-article__img"
+                />
+            </Link>
         
             <div className="side-article__meta">
                 <ul className="side-article__categories">

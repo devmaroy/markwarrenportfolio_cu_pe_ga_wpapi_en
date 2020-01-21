@@ -33,11 +33,13 @@ const RecentArticles = () => {
                         posts.map( ( { node: post } ) => (
                             <div key={ post.id } className="blog-sidebar-recent-article">
                                 <div className="blog-sidebar-recent-article__header">
-                                    <Img
-                                        fixed={ post.featured_media.localFile.childImageSharp.fixed } 
-                                        alt="Recent article image" 
-                                        className="blog-sidebar-recent-article__img" 
-                                    />
+                                    <Link to={ `/post/${ post.slug }` }>
+                                        <Img
+                                            fixed={ post.featured_media.localFile.childImageSharp.fixed } 
+                                            alt="Recent article image" 
+                                            className="blog-sidebar-recent-article__img" 
+                                        />
+                                    </Link>
                                 </div>
 
                                 <div className="blog-sidebar-recent-article__content">

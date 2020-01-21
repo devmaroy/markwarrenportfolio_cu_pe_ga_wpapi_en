@@ -8,11 +8,13 @@ const FeedItem = ( { featured_media, categories, date, slug, title, excerpt } ) 
     return (
         <div className="feed-item">
             <div className="feed-item__featured">
-                <Img 
-                    fluid={ featured_media.localFile.childImageSharp.fluid } 
-                    alt="Feed item" 
-                    className="feed-item__featured-img"
-                />
+                <Link to={ `/post/${ slug }` }>
+                    <Img 
+                        fluid={ featured_media.localFile.childImageSharp.fluid } 
+                        alt="Feed item" 
+                        className="feed-item__featured-img"
+                    />
+                </Link>
             </div>
 
             <div className="feed-item__meta">
