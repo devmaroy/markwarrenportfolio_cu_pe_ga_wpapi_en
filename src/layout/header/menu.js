@@ -1,6 +1,8 @@
 import React from 'react';
 import { graphql, StaticQuery, Link } from 'gatsby';
+import { Link as ScrollLink } from 'react-scroll';
 import closeIcon from '../../images/icons/close.svg';
+import { Location } from '@reach/router';
 
 
 // Query
@@ -24,7 +26,7 @@ const query = graphql`
 `;
 
 
-const Menu = ( { toggleMenu } ) => {
+const Menu = ( { toggleMenu, location } ) => {
     return (
         <StaticQuery query={ query } render={ ( data ) => {
             const menuItems = data.allWordpressWpApiMenusMenusItems.edges[0].node.items;  
@@ -35,15 +37,48 @@ const Menu = ( { toggleMenu } ) => {
                         <li className="menu-list__item close" onClick={ toggleMenu }>
                             <img src={ closeIcon } alt="Close icon" />
                         </li>
-                    
                         {
-                            menuItems.map( ( { object_id, title, url } ) => (
-                                <li key={ object_id } className="menu-list__item">
-                                    <Link to={ url } className="menu-list__link" activeClassName="active">
-                                        { title }
-                                    </Link>
-                                </li>
-                            ))
+                            menuItems.map( ( { object_id, title, url } ) => {
+                                /*return (
+                                    <li key={ object_id } className="menu-list__item">
+                                        <a
+                                            href={ url }
+                                            className="menu-list__link"
+                                            activeClassName="active"
+                                        >
+                                            { title }
+                                        </a>
+                                    </li>
+                                )*/
+
+                                return (
+                                    <li key={ object_id } className="menu-list__item">
+                                        {
+                                            url.includes( '#' ) && ! location.pathname.includes( 'blog' ) ? (
+                                                <ScrollLink
+                                                    to={ url.substring(1) } 
+                                                    className="menu-list__link"
+                                                    activeClass="active"
+                                                    spy={ true }
+                                                    hashSpy={ true }
+                                                    smooth={ true }
+                                                    duration={ 500 }
+                                                >
+                                                    { title }
+                                                </ScrollLink>
+                                            ) : (
+                                                <Link
+                                                    to={ url }
+                                                    className="menu-list__link"
+                                                    activeClassName="active"
+                                                >
+                                                    { title }
+                                                </Link>
+                                            )   
+                                        }
+                                    </li>                         
+                                )
+                            })
                         }
                     </ul>
                 </nav>
@@ -53,4 +88,8 @@ const Menu = ( { toggleMenu } ) => {
 }
 
 
-export default Menu;
+export default ( props ) => (
+    <Location>
+        { locationProps => <Menu { ...locationProps } { ...props } /> }
+    </Location>
+);
