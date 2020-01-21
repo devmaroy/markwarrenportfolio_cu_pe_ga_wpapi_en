@@ -10,14 +10,17 @@
 .feed-item__featured-img {
     border-radius: $border-radius;
     width: 100%;
-    height: 420px;
     cursor: pointer;
-
+    height: 25rem;
     transition: all $transition-base;
 
     &:hover,
     &:focus {
         opacity: .8;
+    }
+
+    @media ( min-width: $breakpoint-small ) {
+        height: 42rem;
     }
 }
 
@@ -26,6 +29,7 @@
     margin: 2rem 0 0 0;
     display: flex;
     align-items: center;
+    line-height: 1;
 }
 
 .feed-item__categories {
