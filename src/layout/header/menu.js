@@ -39,18 +39,6 @@ const Menu = ( { toggleMenu, location } ) => {
                         </li>
                         {
                             menuItems.map( ( { object_id, title, url } ) => {
-                                /*return (
-                                    <li key={ object_id } className="menu-list__item">
-                                        <a
-                                            href={ url }
-                                            className="menu-list__link"
-                                            activeClassName="active"
-                                        >
-                                            { title }
-                                        </a>
-                                    </li>
-                                )*/
-
                                 return (
                                     <li key={ object_id } className="menu-list__item">
                                         {
@@ -63,6 +51,7 @@ const Menu = ( { toggleMenu, location } ) => {
                                                     hashSpy={ true }
                                                     smooth={ true }
                                                     duration={ 500 }
+                                                    onClick={ toggleMenu }
                                                 >
                                                     { title }
                                                 </ScrollLink>
@@ -71,6 +60,7 @@ const Menu = ( { toggleMenu, location } ) => {
                                                     to={ url }
                                                     className="menu-list__link"
                                                     activeClassName="active"
+                                                    onClick={ toggleMenu }
                                                 >
                                                     { title }
                                                 </Link>

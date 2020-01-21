@@ -6,7 +6,6 @@ import hamburgerMenuIcon from '../../images/icons/hamburger-menu.svg'
 class Navigation extends Component {
     constructor( props ) {
         super( props );
-
         this.state = { showMenu: false };
     }
 
