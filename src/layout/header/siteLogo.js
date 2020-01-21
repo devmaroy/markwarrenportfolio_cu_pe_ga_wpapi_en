@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, StaticQuery, Link } from 'gatsby';
-
+import siteLogo from '../../images/icons/logov3.svg';
 
 // Query
 
@@ -27,7 +27,7 @@ const SiteLogo = () => {
             return (
                 <div className="site-logo">
                     <Link to="/" className="site-logo__link">
-                        <img src={ siteLogoUrl } alt="Site logo" className="site-logo__img" />
+                        <img src={ siteLogo } alt="Site logo" className="site-logo__img" />
                     </Link>
                 </div>
             )

@@ -29,10 +29,11 @@
 .post__meta {
     #disqus_thread {
         grid-column: 1 / -1;
-        margin: 10rem 0 20rem 0;
+        margin: 8rem 0;
 
         @media ( min-width: $breakpoint-medium ) {
             grid-column: 2 / -2;
+            margin: 20rem 0 10rem 0;
         }
     }
 
