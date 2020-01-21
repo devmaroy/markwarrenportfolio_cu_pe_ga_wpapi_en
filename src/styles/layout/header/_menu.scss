@@ -39,6 +39,7 @@
 
 .menu-list__link {
     text-decoration: none;
+    font-size: 1.8rem;
     font-weight: $font-weight-bold;
     color: $gray;
     cursor: pointer;
@@ -49,5 +50,9 @@
     &:focus,
     &.active {
         color: $primary;
+    }
+
+    @media ( min-width: $breakpoint-medium ) {
+        font-size: 1.6rem;
     }
 }
