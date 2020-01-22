@@ -1,13 +1,28 @@
 import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import SlickSlider from 'react-slick';
 import Heading from '../common/heading';
-import InstagramFeedItem from './../common/instagramFeedItem';
-import feedImg1 from '../../images/instagram/feed-01.jpg';
-import feedImg2 from '../../images/instagram/feed-02.jpg';
-import feedImg3 from '../../images/instagram/feed-03.jpg';
-import feedImg4 from '../../images/instagram/feed-04.jpg';
-import feedImg5 from '../../images/instagram/feed-05.jpg';
-import feedImg6 from '../../images/instagram/feed-06.jpg';
+import InstagramFeedItem from '../common/instagramFeedItem';
+
+
+const query = graphql`
+    {
+        allInstaNode {
+            edges {
+                node {
+                    id
+                    localFile {
+                        childImageSharp {
+                            fluid {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
 
 
 const InstagramFeed = () => {
@@ -46,22 +61,32 @@ const InstagramFeed = () => {
     };
 
     return (
-        <section className="instagram-feed divider-space">
-            <div className="container">
-                <Heading main="Follow Me" sub="Instagram" /> 
-            </div>
-            
-            <div className="contaidner no-divider sacek">
-                <SlickSlider { ...sliderSettings } >
-                    <InstagramFeedItem imgSrc={ feedImg1 } imgAlt="Instagram feed" />
-                    <InstagramFeedItem imgSrc={ feedImg2 } imgAlt="Instagram feed" />
-                    <InstagramFeedItem imgSrc={ feedImg3 } imgAlt="Instagram feed" />
-                    <InstagramFeedItem imgSrc={ feedImg4 } imgAlt="Instagram feed" />
-                    <InstagramFeedItem imgSrc={ feedImg5 } imgAlt="Instagram feed" />
-                    <InstagramFeedItem imgSrc={ feedImg6 } imgAlt="Instagram feed" />
-                </SlickSlider>
-            </div>
-        </section>
+        <StaticQuery query={ query } render={ ( data ) => {
+            const instagramFeed = data.allInstaNode.edges;
+
+            return (
+                <section className="instagram-feed divider-space">
+                    <div className="container">
+                        <Heading main="Follow Me" sub="Instagram" /> 
+                    </div>
+                    
+                    <div className="instagram-feed__inner">
+                        <SlickSlider { ...sliderSettings }>
+                            {
+                                instagramFeed.map(( { node: feedItem } ) => (
+                                    <InstagramFeedItem 
+                                        key={ feedItem.id }
+                                        id={ feedItem.id }
+                                        imgSrc={ feedItem.localFile.childImageSharp.fluid } 
+                                        imgAlt="Instagram feed" 
+                                    />
+                                ))
+                            }
+                        </SlickSlider>
+                    </div>
+                </section>
+            )
+        }} /> 
     );
 };
 

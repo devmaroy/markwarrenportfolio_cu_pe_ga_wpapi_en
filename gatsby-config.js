@@ -23,6 +23,12 @@ module.exports = {
 				path: `${__dirname}/src/images`,
 			},
 		},
+		{
+			resolve: `gatsby-source-instagram`,
+			options: {
+				username: process.env.INSTAGRAM_FEED_USERNAME,
+			},
+		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{

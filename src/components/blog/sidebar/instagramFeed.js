@@ -1,103 +1,54 @@
-/*import React from 'react';
-import SidebarHeading from './sidebarHeading';
-import addIcon from '../../../images/icons/add.svg';
-import feedImg1 from '../../../images/instagram/feed-01.jpg';
-import feedImg2 from '../../../images/instagram/feed-02.jpg';
-import feedImg3 from '../../../images/instagram/feed-03.jpg';
-import feedImg4 from '../../../images/instagram/feed-04.jpg';
-import feedImg5 from '../../../images/instagram/feed-05.jpg';
-import feedImg6 from '../../../images/instagram/feed-06.jpg';
-
-
-const InstagramFeed = () => {
-    return (
-        <div className="blog-sidebar-instagram-feed">
-            <SidebarHeading heading="Follow me" />  
-
-            <div className="blog-sidebar-instagram-feed__list">
-                <div className="blog-sidebar-instagram-feed__item">
-                    <img src={ feedImg1 } alt="" className="blog-sidebar-instagram-feed__img" />
-
-                    <div className="blog-sidebar-instagram-feed__overlay">
-                        <img src={ addIcon } className="portfolio__icon" alt="Add icon" />
-                    </div>
-                </div> 
-
-                <div className="blog-sidebar-instagram-feed__item">
-                    <img src={ feedImg2 } alt="" className="blog-sidebar-instagram-feed__img"/>
-
-                    <div className="blog-sidebar-instagram-feed__overlay">
-                        <img src={ addIcon } className="portfolio__icon" alt="Add icon" />
-                    </div>
-                </div> 
-
-                <div className="blog-sidebar-instagram-feed__item">
-                    <img src={ feedImg3 } alt="" className="blog-sidebar-instagram-feed__img"/>
-
-                    <div className="blog-sidebar-instagram-feed__overlay">
-                        <img src={ addIcon } className="portfolio__icon" alt="Add icon" />
-                    </div>
-                </div> 
-
-                <div className="blog-sidebar-instagram-feed__item">
-                    <img src={ feedImg4 } alt="" className="blog-sidebar-instagram-feed__img"/>
-
-                    <div className="blog-sidebar-instagram-feed__overlay">
-                        <img src={ addIcon } className="portfolio__icon" alt="Add icon" />
-                    </div>
-                </div> 
-
-                <div className="blog-sidebar-instagram-feed__item">
-                    <img src={ feedImg5 } alt="" className="blog-sidebar-instagram-feed__img"/>
-
-                    <div className="blog-sidebar-instagram-feed__overlay">
-                        <img src={ addIcon } className="portfolio__icon" alt="Add icon" />
-                    </div>
-                </div>
-
-                <div className="blog-sidebar-instagram-feed__item">
-                    <img src={ feedImg6 } alt="" className="blog-sidebar-instagram-feed__img"/>
-
-                    <div className="blog-sidebar-instagram-feed__overlay">
-                        <img src={ addIcon } className="portfolio__icon" alt="Add icon" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-
-export default InstagramFeed;
-*/
-
-
-
 import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import SidebarHeading from './sidebarHeading';
 import InstagramFeedItem from '../../common/instagramFeedItem';
-import feedImg1 from '../../../images/instagram/feed-01.jpg';
-import feedImg2 from '../../../images/instagram/feed-02.jpg';
-import feedImg3 from '../../../images/instagram/feed-03.jpg';
-import feedImg4 from '../../../images/instagram/feed-04.jpg';
-import feedImg5 from '../../../images/instagram/feed-05.jpg';
-import feedImg6 from '../../../images/instagram/feed-06.jpg';
+
+
+const query = graphql`
+    {
+        allInstaNode {
+            edges {
+                node {
+                    id
+                    localFile {
+                        childImageSharp {
+                            fluid {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
 
 
 const InstagramFeed = () => {
     return (
-        <div className="blog-sidebar-instagram-feed">
-            <SidebarHeading heading="Follow me" />  
+        <StaticQuery query={ query } render={ ( data ) => {
+            const instagramFeed = data.allInstaNode.edges;
 
-            <div className="blog-sidebar-instagram-feed__list">
-                <InstagramFeedItem imgSrc={ feedImg1 } imgAlt="Instagram feed" />
-                <InstagramFeedItem imgSrc={ feedImg2 } imgAlt="Instagram feed" />
-                <InstagramFeedItem imgSrc={ feedImg3 } imgAlt="Instagram feed" />
-                <InstagramFeedItem imgSrc={ feedImg4 } imgAlt="Instagram feed" />
-                <InstagramFeedItem imgSrc={ feedImg5 } imgAlt="Instagram feed" />
-                <InstagramFeedItem imgSrc={ feedImg6 } imgAlt="Instagram feed" />
-            </div>
-        </div>
+            return (
+                <div className="blog-sidebar-instagram-feed">
+                    <SidebarHeading heading="Follow me" />  
+        
+                    <div className="blog-sidebar-instagram-feed__list">
+                        {
+                            instagramFeed.map(( { node: feedItem }) => (
+                                <InstagramFeedItem 
+                                    key={ feedItem.id }
+                                    id={ feedItem.id }
+                                    imgSrc={ feedItem.localFile.childImageSharp.fluid } 
+                                    imgAlt="Instagram feed" 
+                                />
+                            ))
+                        }
+                    </div>
+                </div>
+            )
+        }} />
+
     );
 };
 
