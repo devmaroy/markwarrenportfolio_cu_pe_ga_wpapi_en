@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link as ScrollLink } from 'react-scroll';
 import personalImg from '../../images/hero/me-hero.svg';
+import cv from '../../images/cv.pdf';
 
 
 const Hero = () => {
@@ -17,8 +19,17 @@ const Hero = () => {
                             jelly chupa chups.</p>
                         </div>
 
-                        <button className="button button--primary">Download CV</button>
-                        <button className="button button--outline-primary">See Projects</button>                    
+                        <a href={cv} className="button button--primary">Download CV</a>
+                        <ScrollLink 
+                            to="portfolio"
+                            className="button button--outline-primary"
+                            spy={ true }
+                            hashSpy={ true }
+                            smooth={ true }
+                            duration={ 500 }
+                        >
+                            See Projects
+                        </ScrollLink>                    
                    </div>
 
                    <div className="hero-img">

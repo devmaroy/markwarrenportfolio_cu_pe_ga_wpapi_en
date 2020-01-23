@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link as ScrollLink } from 'react-scroll';
 import SiteLogo from './siteLogo';
 import Navigation from './navigation';
 
@@ -10,7 +11,16 @@ const Header = () => {
                 <div className="header__inner">
                     <SiteLogo />
                     <Navigation />
-                    <button className="button button--primary header__button">Hire me</button>
+                    <ScrollLink 
+                        to="contact" 
+                        className="button button--primary header__button"
+                        spy={ true }
+                        hashSpy={ true }
+                        smooth={ true }
+                        duration={ 500 }
+                    >
+                        Hire me
+                    </ScrollLink>
                 </div>
             </div>
         </header>

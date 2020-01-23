@@ -6,7 +6,7 @@ import InstagramFeedItem from '../../common/instagramFeedItem';
 
 const query = graphql`
     {
-        allInstaNode {
+        allInstaNode( limit: 9 ) {
             edges {
                 node {
                     id

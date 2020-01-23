@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
 import Menu from './menu';
 import hamburgerMenuIcon from '../../images/icons/hamburger-menu.svg'
 
@@ -22,7 +23,16 @@ class Navigation extends Component {
 
                 <div className={ this.state.showMenu ? 'navigation__inner active' : 'navigation__inner' }>
                     <Menu toggleMenu={ this.toggleMenu } />
-                    <button className="button button--primary">Hire me</button>
+                    <ScrollLink 
+                        to="contact" 
+                        className="button button--primary navigation__button"
+                        spy={ true }
+                        hashSpy={ true }
+                        smooth={ true }
+                        duration={ 500 }
+                    >
+                        Hire me
+                    </ScrollLink>
                 </div>
             </div>
         );
