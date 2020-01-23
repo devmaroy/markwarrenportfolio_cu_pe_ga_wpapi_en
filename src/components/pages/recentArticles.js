@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, StaticQuery, Link } from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby';
 import Heading from '../common/heading';
 import SideArticle from '../common/sideArticle';
 
