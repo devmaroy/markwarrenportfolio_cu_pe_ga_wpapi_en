@@ -37,7 +37,12 @@ const FeedItem = ( { featured_media, categories, date, slug, title, excerpt } ) 
 
             <div className="feed-item__content" dangerouslySetInnerHTML={ { __html: excerpt } } />
 
-            <a href="#" className="button button--primary feed-item__read-more">Read more</a>
+            <Link 
+                to={ `/post/${ slug }` }
+                className="button button--primary feed-item__read-more"
+            >
+                Read more
+            </Link>
         </div>
     );
 };
