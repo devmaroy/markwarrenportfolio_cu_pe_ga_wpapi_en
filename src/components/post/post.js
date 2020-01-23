@@ -71,19 +71,19 @@ const Post = ( { title, slug, date, featured_media, categories, tags, content, a
 
                                 <ul className="article__share-links">
                                     <li>
-                                        <a href="#">
+                                        <a href="https://facebook.com/">
                                             <FontAwesomeIcon icon={ [ "fab", 'facebook-f' ] } fixedWidth />
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="#">
+                                        <a href="https://twitter.com/">
                                             <FontAwesomeIcon icon={ [ "fab", 'twitter' ] } fixedWidth />
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="#">
+                                        <a href="https://linkedin.com/">
                                             <FontAwesomeIcon icon={ [ "fab", 'linkedin-in' ] } fixedWidth />
                                         </a>
                                     </li>
