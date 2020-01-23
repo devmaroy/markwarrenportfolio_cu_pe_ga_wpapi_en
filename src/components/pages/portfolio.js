@@ -37,7 +37,7 @@ const Portfolio = () => {
 
                             <div className="portfolio__overlay">
                                 <div className="portfolio__overlay-header">
-                                    <img src={ addIcon } className="portfolio__icon" />
+                                    <img src={ addIcon } className="portfolio__icon" alt="Add icon" />
                                 </div>
 
                                 <div className="portfolio__overlay-content">
@@ -54,7 +54,7 @@ const Portfolio = () => {
 
                             <div className="portfolio__overlay">
                                 <div className="portfolio__overlay-header">
-                                    <img src={ addIcon } className="portfolio__icon" />
+                                    <img src={ addIcon } className="portfolio__icon" alt="Add icon" />
                                 </div>
 
                                 <div className="portfolio__overlay-content">
@@ -71,7 +71,7 @@ const Portfolio = () => {
 
                             <div className="portfolio__overlay">
                                 <div className="portfolio__overlay-header">
-                                    <img src={ addIcon } className="portfolio__icon" />
+                                    <img src={ addIcon } className="portfolio__icon" alt="Add icon" />
                                 </div>
 
                                 <div className="portfolio__overlay-content">
@@ -88,7 +88,7 @@ const Portfolio = () => {
 
                             <div className="portfolio__overlay">
                                 <div className="portfolio__overlay-header">
-                                    <img src={ addIcon } className="portfolio__icon" />
+                                    <img src={ addIcon } className="portfolio__icon" alt="Add icon" />
                                 </div>
 
                                 <div className="portfolio__overlay-content">
@@ -105,7 +105,7 @@ const Portfolio = () => {
 
                             <div className="portfolio__overlay">
                                 <div className="portfolio__overlay-header">
-                                    <img src={ addIcon } className="portfolio__icon" />
+                                    <img src={ addIcon } className="portfolio__icon" alt="Add icon" />
                                 </div>
 
                                 <div className="portfolio__overlay-content">
@@ -122,7 +122,7 @@ const Portfolio = () => {
 
                             <div className="portfolio__overlay">
                                 <div className="portfolio__overlay-header">
-                                    <img src={ addIcon } className="portfolio__icon" />
+                                    <img src={ addIcon } className="portfolio__icon" alt="Add icon" />
                                 </div>
 
                                 <div className="portfolio__overlay-content">
