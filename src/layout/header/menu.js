@@ -34,8 +34,10 @@ const Menu = ( { toggleMenu, location } ) => {
             return (
                 <nav className="menu-list-wrapepr">
                     <ul className="menu-list">
-                        <li className="menu-list__item close" onClick={ toggleMenu }>
-                            <img src={ closeIcon } alt="Close icon" />
+                        <li className="menu-list__item close">
+                            <button onClick={ toggleMenu }>
+                                <img src={ closeIcon } alt="Close icon" />
+                            </button>
                         </li>
                         {
                             menuItems.map( ( { object_id, title, url } ) => {
