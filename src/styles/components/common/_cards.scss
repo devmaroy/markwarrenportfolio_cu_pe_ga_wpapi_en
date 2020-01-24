@@ -41,13 +41,7 @@
 .card--onepage {
     grid-column: span 12;
 
-    &:not( :last-child ) {
-        margin: 0 0 4rem 0;     
-         
-        @media ( min-width: $breakpoint-large ) {
-            margin: 0;
-        }
-    }
+    margin: 0 0 4rem 0;
 
     @media ( min-width: $breakpoint-small ) {
         grid-column: span 6;
@@ -72,18 +66,28 @@
     opacity: .3;
 }
 
+.card__icon {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+}
+
 .card__title {
     font-family: $font-family-secondary;
     font-size: 2.6rem;
     font-weight: $font-weight-bold;
     line-height: 2.9rem;
-    margin-bottom: 0 0 2rem 0;
+    margin: 0;
     color: $black;   
 }
 
 .card__text {
     color: $gray;
     line-height: 2.6rem;
+
+    p {
+        margin: 2rem 0 0 0;
+    }
 }
 
 .card__footer {

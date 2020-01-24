@@ -1,58 +1,63 @@
 import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import Heading from './../common/heading';
-import servicesOneImg from '../../images/icons/services-01.svg';
-import servicesTwoImg from '../../images/icons/services-02.svg';
-import servicesThreeImg from '../../images/icons/services-03.svg';
+
+
+// Query
+
+const query = graphql`
+    {
+        allWordpressWpServices( sort: { fields: [date], order: DESC }) {
+            edges {
+                node {
+                    id
+                    title
+                    content
+                    acf {
+                        service_icon {
+                            source_url
+                        }
+                    }
+                }
+            }
+        }
+    }
+`; 
+
 
 const Services = () => {
     return (
-        <section id="services" className="services divider-space">
-            <div className="container">
-                <div className="services__inner grid-container">
-                    <Heading main="What I Do" sub="Services" />
+        <StaticQuery query={ query } render={ ( data ) => {
+            const services = data.allWordpressWpServices.edges;
 
-                    <div className="card card--onepage">
-                        <div className="card__meta">
-                            <span className="card__number">01</span>
-                            <img className="card__icon" src={ servicesOneImg } alt="Services icon" />
-                        </div>
+            return (
+                <section id="services" className="services divider-space">
+                    <div className="container">
+                        <div className="services__inner grid-container">
+                            <Heading main="What I Do" sub="Services" />
 
-                        <h3 className="card__title">UI/UX Design</h3>
+                            {
+                                services.map(( { node: service }, index ) => (
+                                    <div key={ service.id } className="card card--onepage">
+                                        <div className="card__meta">
+                                            <span className="card__number">{ ( index + 1 ).toString().padStart( 2, "0" ) }</span>
+                                            <img className="card__icon" src={ service.acf.service_icon.source_url } alt="Services icon" />
+                                        </div>
 
-                        <div className="card__text">
-                            <p>Wafer cotton wafer muffin gingerbread rolls. Sweet lemon oat cake candy jelly beans.</p>
-                        </div>
-                    </div>
+                                        <h3 className="card__title" dangerouslySetInnerHTML={ { __html: service.title } } />
 
-                    <div className="card card--onepage">
-                        <div className="card__meta">
-                            <span className="card__number">02</span>
-                            <img className="card__icon" src={ servicesTwoImg } alt="Services icon" />
-                        </div>
-
-                        <h3 className="card__title">Web Design</h3>
-
-                        <div className="card__text">
-                            <p>Pastry fruitcake candy cotton candy pastry soufflé cupcake macaroon sweet roll.</p>
+                                        <div className="card__text" dangerouslySetInnerHTML={ { __html: service.content } } />
+                                    </div> 
+                                ))
+                            }
                         </div>
                     </div>
-
-                    <div className="card card--onepage">
-                        <div className="card__meta">
-                            <span className="card__number">03</span>
-                            <img className="card__icon" src={ servicesThreeImg } alt="Services icon" />
-                        </div>
-
-                        <h3 className="card__title">Web Development</h3>
-
-                        <div className="card__text">
-                            <p>Bear claw marzipan wafer apple pie tootsie roll. Jelly-o chocolate bar cookie cake bonbon.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                </section>
+            )
+        }}
+        />
     );
 };
+
 
 export default Services;
