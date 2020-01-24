@@ -7,19 +7,24 @@
     padding: 4rem;
     background: $white;
     border-radius: $border-radius;
-    box-shadow: 1px 4px 20px 1px transparentize( #A9B1D1, 0.75 );
+    box-shadow: .1rem .4rem 2rem .1rem transparentize( #A9B1D1, 0.75 );
 
     transition: all $transition-base;
 
     &:hover,
     &:focus {
-        transform: scale(1.05);
+        transform: scale( 1.05 );
     }
 }
 
 .card--testimonials {
     .card__meta {
         justify-content: center;
+    }
+
+    .card__icon {
+        width: 6rem;
+        height: 6rem;
     }
 
     .card__text {

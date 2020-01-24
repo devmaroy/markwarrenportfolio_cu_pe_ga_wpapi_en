@@ -7,7 +7,7 @@ import Heading from './../common/heading';
 
 const query = graphql`
     {
-        allWordpressWpServices( sort: { fields: [date], order: DESC }) {
+        allWordpressWpServices( sort: { fields: [ date ], order: DESC } ) {
             edges {
                 node {
                     id

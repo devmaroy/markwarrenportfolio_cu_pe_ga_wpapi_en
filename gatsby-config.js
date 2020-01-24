@@ -112,6 +112,7 @@ module.exports = {
 				"**/posts",
 				"**/pages",
 				"**/services",
+				"**/testimonials",
 				"**/media",
 				"**/tags",
 				"**/taxonomies",
