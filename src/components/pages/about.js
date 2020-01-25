@@ -1,48 +1,84 @@
 import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import Heading from '../common/heading';
-import aboutImg from '../../images/about/me-about.jpg';
+import Img from 'gatsby-image';
+
+
+// Query 
+const query = graphql`
+    {
+        allWordpressWpAbout( sort: { fields: [ date ], order: DESC }) {
+            edges {
+                node {
+                    title
+                    content
+                    featured_media {
+                        localFile {
+                            childImageSharp {
+                                fluid( maxWidth: 1200, quality: 100 ) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                    acf {
+                        about_technologies
+                    }
+                }
+            }
+        }
+    }
+`;
 
 
 const About = () => {
     return (
-        <section id="about" className="about divider-space">
-            <div className="container">
-                <div className="about__inner grid-container">
-                    <Heading main="Just a Little" sub="About" />
+        <StaticQuery query={ query } render={ ( data ) => {
+            const { title, content, acf, featured_media } = data.allWordpressWpAbout.edges[0].node;
+            const technologies = acf.about_technologies.split( ',' );
 
-                    <div className="about-img">
-                        <div className="about-img__inner">
-                            <img src={ aboutImg } alt="Me" />
+            return (
+                <section id="about" className="about divider-space">
+                    <div className="container">
+                        <div className="about__inner grid-container">
+                            <Heading main="Just a Little" sub="About" />
+
+                            <div className="about__featured">
+                                <div className="about__featured-wrap">                                    
+                                    <Img 
+                                        fluid={ featured_media.localFile.childImageSharp.fluid } 
+                                        alt="About image" 
+                                        className="about__featured-img"
+                                    />
+                                </div>
+                            </div>
+
+                     
+                            <div className="about-info">
+                                <h3 className="about-info__heading">{ title }</h3>
+
+                                <div className="about-info__text" dangerouslySetInnerHTML={ { __html: content } } />
+
+                                {
+                                    acf.about_technologies && (
+                                        <div className="about-info__technologies">
+                                            <h4 className="about-info__technologies-heading">Technologies I use</h4>
+                                            <ul className="about-info__technologies-list">
+                                                {
+                                                    technologies.map( ( technology, i ) => (
+                                                        <li key={ i }>{ technology.trim() }</li>
+                                                    ))
+                                                }
+                                            </ul>
+                                        </div>  
+                                    )
+                                }     
+                            </div>
                         </div>
                     </div>
-
-                    <div className="about-info">
-                        <h3 className="about-info__heading">Marshmallow fruitcake muffin candy tarts donut chocolate.</h3>
-
-                        <div className="about-info__text">
-                            <p>Chocolate marshmallow sugar tootsie roll pie pastry cake dessert 
-                            apple pie gummies gingerbread sugar plum. Biscuit powder 
-                            danish chocolate cheesecake jujubes cheesecake chocolate 
-                            brownie.</p>
-
-                            <p>Powder oat cake ice cream soufflé jelly-o macaroon sesame snaps candy biscuit danis. 
-                            Lollipop pudding gingerbread marshmallow marzipan cotton candy sweet roll lollipop. 
-                            Gingerbread bear claw wafer dragée jelly beans macaroon bear.</p>    
-                        </div>
-                    
-                        <div className="about-info__technologies">
-                            <h4 className="about-info__technologies-heading">Technologies I use</h4>
-                            <ul className="about-info__technologies-list">
-                                <li>React</li>
-                                <li>NodeJS</li>
-                                <li>Express</li>
-                                <li>MongoDB</li>
-                            </ul>
-                        </div>       
-                    </div>
-                </div>
-            </div>
-        </section>
+                </section>
+            )
+        }} />
     );
 };
 
