@@ -1,52 +1,113 @@
 import React from 'react';
-import contactImg from '../../images/contact/contact.jpg';
+import { StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+
+// Query
+const query = graphql`
+    {
+        allWordpressWpContact( sort: { fields: [ date ], order: DESC } ) {
+            edges {
+                node {
+                    title
+                    content
+                    featured_media {
+                        localFile {
+                            childImageSharp {
+                                fluid( maxWidth: 1200, quality: 100 ) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                    acf {
+                        form {
+                            first_name
+                            last_name
+                            email_address
+                            subject
+                            message
+                            button
+                            required_fields
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
+
 
 const Contact = () => {
     return (
-        <section id="contact" className="contact divider-space">
-            <div className="container">
-                <div className="contact__inner grid-container">
-                    <div className="contact-info">
-                        <h2 className="contact-info__heading">Sugar pie gingerbread sugar plum biscuit tootsie oat cake.</h2>
+        <StaticQuery query={ query } render={ ( data => {
+            const { title, content, acf, featured_media } = data.allWordpressWpContact.edges[0].node;
+            const form = acf.form;
 
-                        <div className="contact-info__text">
-                            <p>Toffee gummies pie macaroon sweet. Tiramisu carrot  jelly beans 
-                            candy canes. Donut carrot chocolate cheesecake cheesecake ice 
-                            brownie sugar plum donut.</p>
+            return (
+                <section id="contact" className="contact divider-space">
+                    <div className="container">
+                        <div className="contact__inner grid-container">
+                            <div className="contact-info">
+                                <h2 className="contact-info__heading" dangerouslySetInnerHTML={ { __html: title } } />
+        
+                                <div className="contact-info__text" dangerouslySetInnerHTML={ { __html: content } } />
+        
+                                <form className="form">
+                                    {
+                                        Object.keys( form ).map( ( field ) => {
+                                            if ( field !== 'button' && field !== 'required_fields' ) {
+                                                return (
+                                                    <div key={ field } className="form__group">
+                                                        {
+                                                            field === 'message' ? (
+                                                                <textarea 
+                                                                    placeholder={ form.required_fields.includes( field ) 
+                                                                        ? `${ form[ field ] } *` 
+                                                                        : form[ field ]
+                                                                    }
+                                                                    className="form__control"
+                                                                ></textarea> 
+                                                            ) : (
+                                                                <input 
+                                                                    type={ field === 'email_address' ? 'email' : 'text' }
+                                                                    placeholder={ form.required_fields.includes( field ) 
+                                                                        ? `${ form[ field ] } *`
+                                                                        : form[ field ]
+                                                                    }
+                                                                    className="form__control" 
+                                                                />
+                                                            )
+                                                        }
+                                                    </div>
+                                                )
+                                            }
+                                        })
+                                    }
+                                
+                                    <div className="form__meta">
+                                        <button className="button button--primary">
+                                            { form[ 'button' ] }
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+        
+                            <div className="contact__featured">
+                                <div className="contact__featured-wrap">                                    
+                                    <Img 
+                                        fluid={ featured_media.localFile.childImageSharp.fluid } 
+                                        alt="Contact image" 
+                                        className="contact__featured-img"
+                                    />
+                                </div>
+                            </div>
                         </div>
-
-                        <form className="form">
-                            <div className="form__group">
-                                <input type="text" placeholder="First Name *" className="form__control" />
-                            </div>
-                            <div className="form__group">
-                                <input type="text" placeholder="Last Name *" className="form__control" />
-                            </div>
-                            <div className="form__group">
-                                <input type="text" placeholder="Email Address *" className="form__control" />
-                            </div>
-                            <div className="form__group">
-                                <input type="text" placeholder="Subject *" className="form__control" />
-                            </div>
-                            <div className="form__group">
-                                <textarea placeholder="Message *" className="form__control"></textarea>
-                            </div>
-
-                            <div className="form__meta">
-                                <button className="button button--primary">SEND</button>
-                            </div>
-                        </form>
                     </div>
+                </section>
+            )
+        })} />
+    )
+}
 
-                    <div className="contact-img">
-                        <div className="contact-img__inner">
-                            <img src={ contactImg } alt="Me working on macbook" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
 
 export default Contact;

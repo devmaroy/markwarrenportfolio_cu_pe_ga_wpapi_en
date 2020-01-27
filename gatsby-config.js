@@ -114,6 +114,7 @@ module.exports = {
 				"**/about",
 				"**/services",
 				"**/testimonials",
+				"**/contact",
 				"**/media",
 				"**/tags",
 				"**/taxonomies",

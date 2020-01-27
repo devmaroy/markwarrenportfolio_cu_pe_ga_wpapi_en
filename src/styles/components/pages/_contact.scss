@@ -28,22 +28,31 @@
 .contact-info__text {
     margin: 0 0 4rem 0;
     color: $gray;
+    
+    p {
+        line-height: 2.9rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 
-.contact-img {
+.contact__featured {
     grid-column: 1 / -1;
-
-    img {
-        border-radius: $border-radius;
-    }
 
     @media ( min-width: $breakpoint-small ) {
         grid-column: 8 / -1;
     }
 }
 
-.contact-img__inner {
+.contact__featured-img {
+    min-height: 67rem;
+    border-radius: $border-radius;
+} 
+
+.contact__featured-wrap {
     position: relative;
 
     @include dotted-shapes( $rotate: 90deg ) {
