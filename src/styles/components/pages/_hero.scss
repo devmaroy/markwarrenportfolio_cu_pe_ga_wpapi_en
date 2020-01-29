@@ -73,7 +73,13 @@
 }
 
 
-.hero-img {
+.hero__featured {
+    @media ( min-width: $breakpoint-medium ) {
+        grid-column: 7 / -1;
+    }
+}
+
+.hero__featured-img {
     img {
         display: none;
 
@@ -81,13 +87,9 @@
             display: block;
         }
     }
-
-    @media ( min-width: $breakpoint-medium ) {
-        grid-column: 7 / -1;
-    }
 }
 
-.hero-img__inner {
+.hero__featured-wrap {
     @include dotted-shapes {
         &::before {
             top: 0;
