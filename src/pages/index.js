@@ -4,7 +4,7 @@ import Hero from '../components/pages/hero';
 import About from '../components/pages/about';
 import Services from '../components/pages/services';
 import Portfolio from '../components/pages/portfolio';
-import CareerCTA from '../components/pages/careerCTA';
+import AvailableCTA from '../components/pages/availableCTA';
 import Testimonials from '../components/pages/testimonials';
 import Contact from '../components/pages/contact';
 import RecentArticles from '../components/pages/recentArticles';
@@ -18,7 +18,7 @@ const IndexPage = () => {
            <About />
            <Services />
            <Portfolio />
-           <CareerCTA />
+           <AvailableCTA />
            <Testimonials />
            <Contact />
            <RecentArticles />

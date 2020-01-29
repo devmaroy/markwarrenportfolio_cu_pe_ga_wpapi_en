@@ -1,19 +1,48 @@
 import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import CTA from '../common/cta';
+
+
+// Query
+const query = graphql`
+    {
+        allWordpressWpNewsletterCta {
+            edges {
+                node {
+                    title
+                    content
+                    acf {
+                        form {
+                            email_address
+                            button
+                        }
+                    }
+                }
+            }
+        }   
+    }
+`;
+
 
 const NewsletterCTA = () => {
     return (
-        <CTA title="Let’s stay in touch">
-            <p>Tootsie roll sweet apple pie jelly-o donut muffin lemon drops. Brownie gingerbread halvah cupcake jelly beans toffee cotton.</p>
+        <StaticQuery query={ query } render={ ( data ) => {
+            const { title, content: text, acf } = data.allWordpressWpNewsletterCta.edges[0].node;
+            const { email_address, button } = acf.form; 
 
-            <form className="newsletter-form">
-                <div className="newsletter-form__group">
-                    <input type="email" className="newsletter-form__control" placeholder="Email Address" />
-                    <button className="newsletter-form__control newsletter-form__button">Subscribe</button>                        
-                </div>
-            </form>
-        </CTA>
+            return (
+                <CTA title={ title } text={ text }>
+                    <form className="newsletter-form">
+                        <div className="newsletter-form__group">
+                            <input type="email" className="newsletter-form__control" placeholder={ email_address } />
+                            <button className="newsletter-form__control newsletter-form__button">{ button }</button>                        
+                        </div>
+                    </form>
+                </CTA>
+            )
+        }} />
     );
 };
+
 
 export default NewsletterCTA;

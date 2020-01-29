@@ -116,6 +116,8 @@ module.exports = {
 				"**/services",
 				"**/testimonials",
 				"**/contact",
+				"**/available_cta",
+				"**/newsletter_cta",
 				"**/media",
 				"**/tags",
 				"**/taxonomies",

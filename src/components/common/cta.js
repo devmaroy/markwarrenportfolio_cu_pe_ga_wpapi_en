@@ -1,6 +1,7 @@
 import React from 'react';
 
-const CTA = ( { title, children } ) => {
+
+const CTA = ( { title, text, children } ) => {
     return (
         <section className="cta divider-space">
             <div className="container">
@@ -9,6 +10,7 @@ const CTA = ( { title, children } ) => {
                         <h2 className="cta-box__heading">{ title }</h2>
 
                         <div className="cta-box__content">
+                            <div className="cta-box__text" dangerouslySetInnerHTML={ { __html: text } } />
                             { children }
                         </div>
                     </div>
@@ -18,11 +20,5 @@ const CTA = ( { title, children } ) => {
     );
 };
 
+
 export default CTA;
-
-/*                        <div className="cta-box__content">
-                            <p>Lemon drops apple pie marshmallow caramels carrot cake cookie 
-                            cotton candy. Marshmallow sugar plum chocolate.</p>
-                        </div>
-
-                        <button className="button button--secondary">Hire me</button>*/
