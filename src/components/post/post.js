@@ -1,103 +1,28 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { format } from 'timeago.js';
-import Img from 'gatsby-image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DiscussionEmbed } from 'disqus-react';
+import Article from './article';
 import RelatedArticles from './relatedArticles';
 
 
-const Post = ( { title, slug, date, featured_media, categories, tags, content, acf } ) => {
+const Post = ( props ) => {
     const disqusConfig = {
         shortname: process.env.GATSBY_DISQUS_NAME,
-        config: { identifier: slug, title },
+        config: { identifier: props.slug, title: props.title },
     };
+
 
     return (
         <div className="post">
             <div className="container">
                 <div className="post__inner">
-                    <article className="article grid-container">
-                        <header className="article__header">
-                            <h1 className="article__title">
-                                <Link to={ `/post/${ slug }` }>{ title }</Link>
-                            </h1>
-
-                            <div className="article__meta">
-                                <ul className="article__categories">
-                                    {
-                                        categories.map( ( { id, name, slug } ) => (
-                                            <li key={ id }>
-                                                <Link to={ `/category/${ slug }` } className="article__category">{ name }</Link>
-                                            </li>
-                                        ))
-                                    }
-                                </ul>
-
-                                <time dateTime={ date } className="article__date">{ format( date ) }</time>
-                            </div>
-                        </header>
-
-                        <div className="article__featured">
-                            <Img 
-                                fluid={ featured_media.localFile.childImageSharp.fluid } 
-                                alt="Featured image" 
-                                className="article__featured-img"
-                            />
-                        </div>
-
-                        <div className="article__content" dangerouslySetInnerHTML={ { __html: content } } />
-
-                        <div className="post__separator"></div>
-
-                        <footer className="article__footer">
-                            <ul className="article__tags">
-                                {
-                                    tags && tags.map( ( { id, name, slug } ) => (
-                                        <li key={ id }>
-                                            <Link 
-                                                to={ `/tag/${ slug }` } 
-                                                className="button button--primary button--primary-light button--noshadow button--small article__tag"
-                                            >
-                                                { name }
-                                            </Link>
-                                        </li>
-                                    ))
-                                }
-                            </ul>
-
-                            <div className="article__share">
-                                <h4 className="article__share-heading">Share this article</h4>
-
-                                <ul className="article__share-links">
-                                    <li>
-                                        <a href="https://facebook.com/">
-                                            <FontAwesomeIcon icon={ [ "fab", 'facebook-f' ] } fixedWidth />
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="https://twitter.com/">
-                                            <FontAwesomeIcon icon={ [ "fab", 'twitter' ] } fixedWidth />
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="https://linkedin.com/">
-                                            <FontAwesomeIcon icon={ [ "fab", 'linkedin-in' ] } fixedWidth />
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </footer>
-                    </article>
+                    <Article { ...props } />
 
                     <div className="post__meta grid-container">
                         <DiscussionEmbed { ...disqusConfig } />
 
                         <h2 className="related-article__heading">Related articles</h2>
 
-                        <RelatedArticles relatedArticles={ acf.related_articles } />    
+                        <RelatedArticles relatedArticles={ props.acf.related_articles } />    
                     </div>
                 </div>
             </div>
