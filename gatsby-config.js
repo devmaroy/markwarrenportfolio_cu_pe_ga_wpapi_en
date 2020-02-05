@@ -2,6 +2,7 @@ require( "dotenv" ).config({
 	path: '.env'
 });
 
+
 module.exports = {
 	siteMetadata: {
 		title: 'Mark Warren - Portfolio',
@@ -114,6 +115,8 @@ module.exports = {
 				"**/hero",
 				"**/about",
 				"**/services",
+				"**/portfolio",
+				"**/portfolio_tags",
 				"**/testimonials",
 				"**/contact",
 				"**/available_cta",
@@ -137,6 +140,28 @@ module.exports = {
 			  normalizer: function({ entities }) {
 				return entities
 			  },
+			  normalizers: normalizers => [
+				  ...normalizers,
+				  {
+					name: "mapPortfolioTagsToPortfolioCustomPost",
+					normalizer: function( { entities } ) {
+						const portfolioTags = entities.filter( e => e.__type === `wordpress__wp_portfolio_tags` )	
+
+						return entities.map( ( e ) => {
+							if ( e.__type === `wordpress__wp_portfolio` ) {
+								let hasPortfolioTags = e.portfolio_tags && Array.isArray( e.portfolio_tags ) && e.portfolio_tags.length;
+								
+								if ( hasPortfolioTags ) {
+									e.portfolio_tags___NODE = e.portfolio_tags.map( ( c ) => portfolioTags.find( ( ptObj ) => c === ptObj.wordpress_id ).id );
+									delete e.portfolio_tags;
+								}
+							}
+
+							return e;
+						})
+					},
+				  },
+				],
 			},
 		  },
 	],
