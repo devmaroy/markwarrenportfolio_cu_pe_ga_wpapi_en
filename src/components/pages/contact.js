@@ -60,34 +60,33 @@ const Contact = () => {
         
                                 <form className="form">
                                     {
-                                        Object.keys( form ).map( ( field ) => {
-                                            if ( field !== 'button' && field !== 'required_fields' ) {
-                                                return (
-                                                    <div key={ field } className="form__group">
-                                                        {
-                                                            field === 'message' ? (
-                                                                <textarea 
-                                                                    placeholder={ form.required_fields.includes( field ) 
-                                                                        ? `${ form[ field ] } *` 
-                                                                        : form[ field ]
-                                                                    }
-                                                                    className="form__control"
-                                                                ></textarea> 
-                                                            ) : (
-                                                                <input 
-                                                                    type={ field === 'email_address' ? 'email' : 'text' }
-                                                                    placeholder={ form.required_fields.includes( field ) 
-                                                                        ? `${ form[ field ] } *`
-                                                                        : form[ field ]
-                                                                    }
-                                                                    className="form__control" 
-                                                                />
-                                                            )
-                                                        }
-                                                    </div>
-                                                )
-                                            }
-                                        })
+                                        
+                                        Object.keys( form )
+                                            .filter(( field ) => field !== 'button' && field !== 'required_fields' )
+                                            .map(( field ) => (
+                                                <div key={ field } className="form__group">
+                                                    {
+                                                        field === 'message' ? (
+                                                            <textarea 
+                                                                placeholder={ form.required_fields.includes( field ) 
+                                                                    ? `${ form[ field ] } *` 
+                                                                    : form[ field ]
+                                                                }
+                                                                className="form__control"
+                                                            ></textarea> 
+                                                        ) : (
+                                                            <input 
+                                                                type={ field === 'email_address' ? 'email' : 'text' }
+                                                                placeholder={ form.required_fields.includes( field ) 
+                                                                    ? `${ form[ field ] } *`
+                                                                    : form[ field ]
+                                                                }
+                                                                className="form__control" 
+                                                            />
+                                                        )
+                                                    }
+                                                </div>
+                                            ))
                                     }
                                 
                                     <div className="form__meta">
