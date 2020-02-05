@@ -81,10 +81,20 @@ const Hero = () => {
                     <div className="container">
                         <div className="hero__inner grid-container">
                             <div className="hero-info">
-                                    <h1 className="hero-info__title" dangerouslySetInnerHTML={ { __html: main_title } } />
-                                    <h2 className="hero-info__subtitle" dangerouslySetInnerHTML={ { __html: sub_title } } />
+                                    <h1 
+                                        className="hero-info__title" 
+                                        dangerouslySetInnerHTML={ { __html: main_title } } 
+                                    />
+                                    
+                                    <h2 
+                                        className="hero-info__subtitle" 
+                                        dangerouslySetInnerHTML={ { __html: sub_title } } 
+                                    />
             
-                                    <div className="hero-info__text" dangerouslySetInnerHTML={ { __html: content } } />
+                                    <div 
+                                        className="hero-info__text" 
+                                        dangerouslySetInnerHTML={ { __html: content } } 
+                                    />
 
                                     { renderLink( primary_button.url, primary_button.text, `button ${ primaryButtonClass }` ) }
                                     { renderLink( secondary_button.url, secondary_button.text, `button ${ secondaryButtonClass }` ) } 

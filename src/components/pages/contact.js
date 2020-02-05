@@ -48,9 +48,15 @@ const Contact = () => {
                     <div className="container">
                         <div className="contact__inner grid-container">
                             <div className="contact-info">
-                                <h2 className="contact-info__heading" dangerouslySetInnerHTML={ { __html: title } } />
+                                <h2 
+                                    className="contact-info__heading" 
+                                    dangerouslySetInnerHTML={ { __html: title } } 
+                                />
         
-                                <div className="contact-info__text" dangerouslySetInnerHTML={ { __html: content } } />
+                                <div 
+                                    className="contact-info__text" 
+                                    dangerouslySetInnerHTML={ { __html: content } } 
+                                />
         
                                 <form className="form">
                                     {

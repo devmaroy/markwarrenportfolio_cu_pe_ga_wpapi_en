@@ -37,7 +37,7 @@ const Services = () => {
                             <Heading main="What I Do" sub="Services" />
 
                             {
-                                services.map(( { node: service }, index ) => (
+                                services.map( ( { node: service }, index ) => (
                                     <div key={ service.id } className="card card--onepage">
                                         <div className="card__meta">
                                             <span className="card__number">{ ( index + 1 ).toString().padStart( 2, "0" ) }</span>

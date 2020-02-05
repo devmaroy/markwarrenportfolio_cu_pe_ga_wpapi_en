@@ -7,8 +7,11 @@ const CTA = ( { title, text, children } ) => {
             <div className="container">
                 <div className="cta__inner grid-container">
                     <div className="cta-box">
-                        <h2 className="cta-box__heading">{ title }</h2>
-
+                        <h2 
+                            className="cta-box__heading" 
+                            dangerouslySetInnerHTML={ { __html: title } }
+                        />
+                        
                         <div className="cta-box__content">
                             <div className="cta-box__text" dangerouslySetInnerHTML={ { __html: text } } />
                             { children }

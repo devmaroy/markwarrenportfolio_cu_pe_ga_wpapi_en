@@ -29,8 +29,7 @@ const NewsletterCTA = () => {
         <StaticQuery query={ query } render={ ( data ) => {
             const { title, content: text, acf } = data.allWordpressWpNewsletterCta.edges[0].node;
             const { email_address, button } = acf.form; 
-            console.log(data);
-            
+
             return (
                 <CTA title={ title } text={ text }>
                     <form className="newsletter-form">
