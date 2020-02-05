@@ -6,7 +6,7 @@ import CTA from '../common/cta';
 // Query
 const query = graphql`
     {
-        allWordpressWpNewsletterCta {
+        allWordpressWpNewsletterCta( sort: { fields: [ date ], order: DESC }, limit: 1 ) {
             edges {
                 node {
                     title
@@ -29,7 +29,8 @@ const NewsletterCTA = () => {
         <StaticQuery query={ query } render={ ( data ) => {
             const { title, content: text, acf } = data.allWordpressWpNewsletterCta.edges[0].node;
             const { email_address, button } = acf.form; 
-
+            console.log(data);
+            
             return (
                 <CTA title={ title } text={ text }>
                     <form className="newsletter-form">

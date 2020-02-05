@@ -6,7 +6,7 @@ import CTA from '../common/cta';
 // Query
 const query = graphql`
     {
-        allWordpressWpAvailableCta {
+        allWordpressWpAvailableCta( sort: { fields: [ date ], order: DESC }, limit: 1 ) {
             edges {
                 node {
                     title

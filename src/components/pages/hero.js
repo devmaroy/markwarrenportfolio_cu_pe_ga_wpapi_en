@@ -8,7 +8,7 @@ import { isExternalLink } from '../../../utils/helpers/links';
 // Query
 const query = graphql`
     {
-        allWordpressWpHero( sort: { fields: [ date ], order: DESC }) {
+        allWordpressWpHero( sort: { fields: [ date ], order: DESC }, limit: 1 ) {
             edges {
                 node {
                     content

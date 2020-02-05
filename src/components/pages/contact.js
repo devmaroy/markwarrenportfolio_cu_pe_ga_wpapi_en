@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 // Query
 const query = graphql`
     {
-        allWordpressWpContact( sort: { fields: [ date ], order: DESC } ) {
+        allWordpressWpContact( sort: { fields: [ date ], order: DESC }, limit: 1 ) {
             edges {
                 node {
                     title

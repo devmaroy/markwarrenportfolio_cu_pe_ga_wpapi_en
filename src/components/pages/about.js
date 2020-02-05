@@ -7,7 +7,7 @@ import Img from 'gatsby-image';
 // Query 
 const query = graphql`
     {
-        allWordpressWpAbout( sort: { fields: [ date ], order: DESC }) {
+        allWordpressWpAbout( sort: { fields: [ date ], order: DESC }, limit: 1 ) {
             edges {
                 node {
                     title
