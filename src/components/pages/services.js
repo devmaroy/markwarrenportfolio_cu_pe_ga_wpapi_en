@@ -38,7 +38,7 @@ const Services = () => {
                 <section id="services" className="services divider-space">
                     <div className="container">
                         <div className="services__inner grid-container">
-                            
+                            <Heading main="What I Do" sub="Services" />
 
                             {
                                 services.map( ( { node: service }, index ) => (

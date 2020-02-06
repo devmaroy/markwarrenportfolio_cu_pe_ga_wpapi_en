@@ -11,7 +11,7 @@ const query = graphql`
             edges {
                 node {
                     ...AllPostData
-                    ...FeaturedImageFluidData
+                    ...PostFeaturedImageFluidData
                 }
             }
         }

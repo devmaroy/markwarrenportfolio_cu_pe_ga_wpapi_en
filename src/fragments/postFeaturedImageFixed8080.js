@@ -2,12 +2,12 @@ import { graphql } from 'gatsby';
 
 
 export const query = graphql`
-    fragment FeaturedImageFluidData on wordpress__POST {
+    fragment PostFeaturedImageFixed8080Data on wordpress__POST {
         featured_media {
             localFile {
                 childImageSharp {
-                    fluid( maxWidth: 1200, quality: 100 ) {
-                        ...GatsbyImageSharpFluid
+                    fixed( width: 80, height: 80, quality: 100 ) {
+                        ...GatsbyImageSharpFixed
                     }
                 }
             }

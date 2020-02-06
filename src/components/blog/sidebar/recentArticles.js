@@ -12,7 +12,7 @@ const query = graphql`
             edges {
                 node {
                     ...AllPostData
-                    ...FeaturedImageFixed8080Data
+                    ...PostFeaturedImageFixed8080Data
                 }
             }
         }
