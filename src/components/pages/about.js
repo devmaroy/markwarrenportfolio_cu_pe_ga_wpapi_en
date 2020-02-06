@@ -23,6 +23,10 @@ const query = graphql`
                     }
                     acf {
                         about_technologies
+                        section_headings {
+                            main
+                            sub
+                        }
                     }
                 }
             }
@@ -36,12 +40,13 @@ const About = () => {
         <StaticQuery query={ query } render={ ( data ) => {
             const { title, content, acf, featured_media } = data.allWordpressWpAbout.edges[0].node;
             const technologies = acf.about_technologies.split( ',' );
+            const sectionHeadings = acf.section_headings;
 
             return (
                 <section id="about" className="about divider-space">
                     <div className="container">
                         <div className="about__inner grid-container">
-                            <Heading main="Just a Little" sub="About" />
+                            <Heading main={ sectionHeadings.main } sub={ sectionHeadings.sub } />
 
                             <div className="about__featured">
                                 <div className="about__featured-wrap">                                    

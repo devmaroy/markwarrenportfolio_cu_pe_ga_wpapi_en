@@ -17,6 +17,10 @@ const query = graphql`
                         service_icon {
                             source_url
                         }
+                        section_headings {
+                            main
+                            sub
+                        }
                     }
                 }
             }
@@ -29,12 +33,12 @@ const Services = () => {
     return (
         <StaticQuery query={ query } render={ ( data ) => {
             const services = data.allWordpressWpServices.edges;
-
+            
             return (
                 <section id="services" className="services divider-space">
                     <div className="container">
                         <div className="services__inner grid-container">
-                            <Heading main="What I Do" sub="Services" />
+                            
 
                             {
                                 services.map( ( { node: service }, index ) => (

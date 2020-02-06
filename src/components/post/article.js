@@ -10,6 +10,13 @@ const Article = ( { title, slug, content, featured_media, date, categories, tags
     return (
         <article className="article grid-container">
             <header className="article__header">
+                <Link 
+                    to="/blog" 
+                    className="article__back buttdon bdutton--primary"
+                >
+                    <FontAwesomeIcon icon="angle-double-left" fixedWidth /> Go back
+                </Link>
+
                 <h1 className="article__title">
                     <Link to={ `/post/${ slug }` }>{ title }</Link>
                 </h1>

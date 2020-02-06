@@ -27,12 +27,12 @@ const query = graphql`
                         primary_button {
                             text
                             design_style
-                            url
+                            bp_url
                         }
                         secondary_button {
                             text
                             design_style
-                            url
+                            bs_url
                         }
                     }
                 }
@@ -96,8 +96,8 @@ const Hero = () => {
                                         dangerouslySetInnerHTML={ { __html: content } } 
                                     />
 
-                                    { renderLink( primary_button.url, primary_button.text, `button ${ primaryButtonClass }` ) }
-                                    { renderLink( secondary_button.url, secondary_button.text, `button ${ secondaryButtonClass }` ) } 
+                                    { renderLink( primary_button.bp_url, primary_button.text, `button ${ primaryButtonClass }` ) }
+                                    { renderLink( secondary_button.bs_url, secondary_button.text, `button ${ secondaryButtonClass }` ) } 
                             </div>
         
                             <div className="hero__featured">

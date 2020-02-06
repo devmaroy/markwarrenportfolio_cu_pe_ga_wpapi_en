@@ -116,7 +116,7 @@ class Portfolio extends Component {
                 return (
                     <section id="portfolio" className="portfolio divider-space">
                         <div className="container">
-                            <div className="portfolio__inner grid-codntainer">
+                            <div className="portfolio__inner">
                                 <Heading main="My Latest Projects" sub="Portfolio" />
 
                                 <ul className="portfolio__navigation">

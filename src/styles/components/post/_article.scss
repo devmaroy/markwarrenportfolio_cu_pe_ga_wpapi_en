@@ -7,6 +7,30 @@
     grid-column: 1 / -1;
 }
 
+.article__back {
+    display: inline-block;
+    margin-bottom: 6rem;
+    
+    color: $primary-light;
+    text-decoration: none;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    vertical-align: middle;
+
+    transition: all $transition-base;
+
+    &:hover,
+    &:focus {
+        color: $primary;
+    }
+
+    svg {
+        position: relative;
+        top: .7.5px;
+    }
+}
+
 .article__title {
     text-align: center;
     font-family: $font-family-secondary;
