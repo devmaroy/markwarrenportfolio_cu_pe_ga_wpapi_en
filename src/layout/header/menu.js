@@ -1,8 +1,7 @@
 import React from 'react';
-import { graphql, StaticQuery, Link } from 'gatsby';
-import { Link as ScrollLink } from 'react-scroll';
+import { graphql, StaticQuery } from 'gatsby';
 import closeIcon from '../../images/icons/close.svg';
-import { Location } from '@reach/router';
+import DynamicLink from '../../components/common/dynamicLink';
 
 
 // Query
@@ -22,15 +21,23 @@ const query = graphql`
                 }
             }
         }
+        allWordpressSiteMetadata {
+            edges {
+                node {
+                    url
+                }
+            }
+        }
     }
 `;
 
 
-const Menu = ( { toggleMenu, location } ) => {
+const Menu = ( { toggleMenu } ) => {
+
     return (
         <StaticQuery query={ query } render={ ( data ) => {
             const menuItems = data.allWordpressWpApiMenusMenusItems.edges[0].node.items;  
-
+        
             return (
                 <nav className="menu-list-wrapepr">
                     <ul className="menu-list">
@@ -40,34 +47,17 @@ const Menu = ( { toggleMenu, location } ) => {
                             </button>
                         </li>
                         {
-                            menuItems.map( ( { object_id, title, url } ) => {
+                            menuItems.map( ( { object_id, title, url } ) => {    
                                 return (
                                     <li key={ object_id } className="menu-list__item">
-                                        {
-                                            url.includes( '#' ) && ! location.pathname.includes( 'blog' ) ? (
-                                                <ScrollLink
-                                                    to={ url.substring(1) } 
-                                                    className="menu-list__link"
-                                                    activeClass="active"
-                                                    spy={ true }
-                                                    hashSpy={ true }
-                                                    smooth={ true }
-                                                    duration={ 500 }
-                                                    onClick={ toggleMenu }
-                                                >
-                                                    { title }
-                                                </ScrollLink>
-                                            ) : (
-                                                <Link
-                                                    to={ url }
-                                                    className="menu-list__link"
-                                                    activeClassName="active"
-                                                    onClick={ toggleMenu }
-                                                >
-                                                    { title }
-                                                </Link>
-                                            )   
-                                        }
+                                        <DynamicLink 
+                                            url={ url }
+                                            className="menu-list__link"
+                                            onClick={ toggleMenu }
+                                            activeClassName="active"
+                                        >
+                                            { title }
+                                        </DynamicLink>
                                     </li>                         
                                 )
                             })
@@ -80,8 +70,4 @@ const Menu = ( { toggleMenu, location } ) => {
 }
 
 
-export default ( props ) => (
-    <Location>
-        { locationProps => <Menu { ...locationProps } { ...props } /> }
-    </Location>
-);
+export default Menu;
