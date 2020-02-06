@@ -19,10 +19,11 @@ const query = graphql`
 const DynamicLink = ( { url, children, location, className, activeClassName, navigate, ...rest } ) => {
    const renderLink = ( url, wordpressUrl ) => {
 
-        if ( isWordpressExternalLink( url, wordpressUrl ) ) {
+        if ( ( url.includes( '#' ) && location.pathname.includes( 'blog' ) ) || isWordpressExternalLink( url, wordpressUrl ) ) {
+
             return (
                 <a 
-                    href={ url }
+                    href={ url.includes( '#' ) ? `/${ url }` : url }
                     className={ className }
                 >
                     { children }

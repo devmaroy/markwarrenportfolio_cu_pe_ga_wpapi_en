@@ -44,6 +44,7 @@ export const templateQuery = graphql`
             edges {
                 node {
                     ...AllPostData
+                    ...PostFeaturedImageFluidData
                 }
             }
         }
