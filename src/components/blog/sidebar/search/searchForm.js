@@ -45,7 +45,7 @@ class SearchForm extends Component {
                             className="sidebar-form__control"
                         />
 
-                        <button className="sidebar-form__control sidebar-form__button">
+                        <button type="button" className="sidebar-form__control sidebar-form__button">
                             <img src={ searchIcon } alt="Form icon" />
                         </button> 
                     </div>
