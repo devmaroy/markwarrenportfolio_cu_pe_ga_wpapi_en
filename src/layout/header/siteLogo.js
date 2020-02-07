@@ -1,9 +1,8 @@
 import React from 'react';
 import { graphql, StaticQuery, Link } from 'gatsby';
-//import siteLogo from '../../images/icons/logov3.svg';
+
 
 // Query
-
 const query = graphql`
     {
         allWordpressWpLogo {
