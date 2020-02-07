@@ -33,6 +33,22 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{
+			resolve: "@gatsby-contrib/gatsby-plugin-elasticlunr-search",
+			options: {
+				// Fields to index
+				fields: ['title', 'content'],
+				// How to resolve each field`s value for a supported node type
+				resolvers: {
+				  // For any node of type MarkdownRemark, list how to resolve the fields` values
+				  wordpress__POST: {
+					title: node => node.title,
+					categories: node => node.categories,
+					//featuredImage : (node, getNode) => console.log( getNode(node.featured_media___NODE) )
+				  }
+				},
+			  },
+		},
+		{
 			resolve: "gatsby-source-wordpress",
 			options: {
 			  /*

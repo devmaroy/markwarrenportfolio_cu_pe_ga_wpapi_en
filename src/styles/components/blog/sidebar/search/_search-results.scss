@@ -1,0 +1,78 @@
+/*------------------------------------*\
+    # Blog Sidebar - Search Results
+\*------------------------------------*/
+
+
+.search-results {
+    position: relative;
+}
+
+.search-results__inner {
+    background: $white;
+    position: absolute;
+    border-radius: 0 0 $border-radius $border-radius;
+    border-radius: $border-radius;
+  
+    top: 2rem;
+    z-index: 999;
+    box-shadow: 0 0 12px rgba(0,0,0,.1);
+    padding: 3rem;
+}
+
+.search-results__icon {
+    position: absolute;
+    top: -3.5rem;
+    left: 2rem;
+    font-size: 4rem;
+    color: $white;
+  
+    svg {
+        filter: drop-shadow(0 0 12px rgba(0,0,0,.1));
+    }
+}
+
+.search-results__heading {
+    font-size: 1.6rem;
+    font-family: $font-family-secondary;
+    font-weight: bold;
+    color: $black;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: normal;
+
+    span {
+        color: $primary;
+        font-weight: 500;
+    }
+}
+
+.search-results__list {
+    @include list-unstyled;
+}
+
+.search-results__item {
+    padding: 2rem 0;
+
+    &:last-child {
+        padding-bottom: 0;
+    }
+
+    &:not( :last-child ) {
+        border-bottom: .1rem solid lighten( $off-gray, 11% );
+    }
+}
+
+.search-results__link {
+    font-weight: bold;
+    text-decoration: none;
+    color: $gray;
+    font-size: 1.4rem;
+    
+
+    transition: all $transition-base;
+
+    &:hover, 
+    &:focus {
+        color: $primary;
+    }
+}

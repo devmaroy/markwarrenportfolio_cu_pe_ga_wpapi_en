@@ -1,6 +1,6 @@
 import React from 'react';
 import SidebarHeading from './sidebarHeading';
-import SidebarForm from './form';
+//import SidebarForm from './form';
 
 
 const Newsletter = () => {
@@ -8,12 +8,12 @@ const Newsletter = () => {
         <div className="blog-sidebar-tags">
             <SidebarHeading heading="Stay in touch" />  
 
-            <SidebarForm 
+            {/*SidebarForm 
                 inputType="email" 
                 placeholder="Email Address"
             >
                 Subscribe
-            </SidebarForm>
+            </SidebarForm>*/}
         </div>
     );
 };

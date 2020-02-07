@@ -1,5 +1,5 @@
 import React from 'react';
-import Search from '../sidebar/search';
+import Search from '../sidebar/search/search';
 import RecentArticles from '../sidebar/recentArticles';
 import Categories from '../sidebar/categories';
 import Tags from '../sidebar/tags';

@@ -2,7 +2,6 @@
     # Blog Sidebar - Form
 \*------------------------------------*/
 
-
 .sidebar-form__group {
     display: flex;
 }
@@ -17,7 +16,7 @@
     color: $gray;
     border: .1rem solid $primary;
     border-radius: $border-radius 0 0 $border-radius;
-
+    
     &::placeholder {
         color: $off-gray;
     }
