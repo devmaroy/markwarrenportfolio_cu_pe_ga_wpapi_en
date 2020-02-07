@@ -54,21 +54,38 @@
     backface-visibility: hidden;
 
     float: left;
-    width: calc( 25% - 1rem );
-    margin-right: 1rem;
+    
+    width: 100%;
     margin-top: 1rem;
+
+    @media ( min-width: $breakpoint-small ) {
+        width: calc( 50% - 1rem );
+        margin-right: 1rem;
+    }
+
+    @media ( min-width: $breakpoint-large ) {
+        width: calc( 25% - 1rem );
+    }
 
     &:first-child,
     &:last-child {
-      width: calc( 50% - 10px );
-    }
+        @media ( min-width: $breakpoint-small ) {
+            width: calc( 100% - 1rem );
+        }
 
+        @media ( min-width: $breakpoint-large ) {
+            width: calc( 50% - 1rem );
+        }
+    }
+   
     &:hover,
     &:focus {
         .portfolio__overlay {
             transform: translateY( 0 );
         }
     }
+
+    
 }
 
 .portfolio__img {
