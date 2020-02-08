@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql, StaticQuery, Link } from 'gatsby';
 import { Link as ScrollLink } from 'react-scroll';
 import { isWordpressExternalLink, createLocalLink } from '../../../utils/helpers/links';
 import { Location } from '@reach/router';
+
 
 const query = graphql`
     {
@@ -16,8 +18,11 @@ const query = graphql`
     }
 `;
 
+
 const DynamicLink = ( { url, children, location, className, activeClassName, navigate, ...rest } ) => {
-   const renderLink = ( url, wordpressUrl ) => {
+
+    // Helper function for rendering link
+    const renderLink = ( url, wordpressUrl ) => {
 
         if ( ( url.includes( '#' ) && location.pathname.includes( 'blog' ) ) || isWordpressExternalLink( url, wordpressUrl ) ) {
 
@@ -64,8 +69,19 @@ const DynamicLink = ( { url, children, location, className, activeClassName, nav
             return renderLink( url, wordpressUrl );
         }} />
     )
-
 };
+
+
+
+DynamicLink.propTypes = {
+    url: PropTypes.string.isRequired,
+    location: PropTypes.object.isRequired,
+    className: PropTypes.string,
+    activeClassName: PropTypes.string,
+    navigate: PropTypes.func,
+    children: PropTypes.node.isRequired,
+};
+
 
 export default ( props ) => (
     <Location>

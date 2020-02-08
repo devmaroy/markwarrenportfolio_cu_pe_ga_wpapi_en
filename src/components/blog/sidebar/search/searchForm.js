@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Index } from 'elasticlunr';
 import searchIcon from '../../../../images/icons/search.svg';
 
@@ -55,6 +56,17 @@ class SearchForm extends Component {
             </div>
         );
     }
+}
+
+
+SearchForm.propTypes = {
+    placeholder: PropTypes.string,
+    children: PropTypes.func.isRequired,
+};
+
+
+SearchForm.defaultProps = {
+    placeholder: 'Search...'
 }
 
 

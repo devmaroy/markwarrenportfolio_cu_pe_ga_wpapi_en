@@ -8,6 +8,7 @@ const Newsletter = () => {
         <div className="blog-sidebar-tags">
             <SidebarHeading heading="Stay in touch" />  
 
+
             {/*SidebarForm 
                 inputType="email" 
                 placeholder="Email Address"

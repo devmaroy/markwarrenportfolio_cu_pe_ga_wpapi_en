@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql, Link } from 'gatsby';
 import { Link as ScrollLink } from 'react-scroll';
 import Img from 'gatsby-image';
@@ -42,7 +43,7 @@ const query = graphql`
 `;
 
 
-const Hero = () => {
+const Hero = ( { data } ) => {
     const renderLink = ( url, text, className ) => {
         if ( isExternalLink( url ) ) {
             return <a href={ url } className={ className }>{ text }</a>
@@ -68,54 +69,87 @@ const Hero = () => {
         )
     }
 
+    const { content, featured_media, acf } = data.allWordpressWpHero.edges[0].node;
+    const { main_title, sub_title, primary_button, secondary_button } = acf;
+
+    const primaryButtonClass = primary_button.design_style === 'fill' ? 'button--primary' : 'button--outline-primary';
+    const secondaryButtonClass = secondary_button.design_style === 'fill' ? 'button--primary' : 'button--outline-primary';;
+
+
     return (
-        <StaticQuery query={ query } render={ ( data ) => {
-            const { content, featured_media, acf } = data.allWordpressWpHero.edges[0].node;
-            const { main_title, sub_title, primary_button, secondary_button } = acf;
+        <section className="hero divider-space">
+            <div className="container">
+                <div className="hero__inner grid-container">
+                    <div className="hero-info">
+                            <h1 
+                                className="hero-info__title" 
+                                dangerouslySetInnerHTML={ { __html: main_title } } 
+                            />
+                            
+                            <h2 
+                                className="hero-info__subtitle" 
+                                dangerouslySetInnerHTML={ { __html: sub_title } } 
+                            />
+    
+                            <div 
+                                className="hero-info__text" 
+                                dangerouslySetInnerHTML={ { __html: content } } 
+                            />
 
-            const primaryButtonClass = primary_button.design_style === 'fill' ? 'button--primary' : 'button--outline-primary';
-            const secondaryButtonClass = secondary_button.design_style === 'fill' ? 'button--primary' : 'button--outline-primary';;
+                            { renderLink( primary_button.bp_url, primary_button.text, `button ${ primaryButtonClass }` ) }
+                            { renderLink( secondary_button.bs_url, secondary_button.text, `button ${ secondaryButtonClass }` ) } 
+                    </div>
 
-            return (
-                <section className="hero divider-space">
-                    <div className="container">
-                        <div className="hero__inner grid-container">
-                            <div className="hero-info">
-                                    <h1 
-                                        className="hero-info__title" 
-                                        dangerouslySetInnerHTML={ { __html: main_title } } 
-                                    />
-                                    
-                                    <h2 
-                                        className="hero-info__subtitle" 
-                                        dangerouslySetInnerHTML={ { __html: sub_title } } 
-                                    />
-            
-                                    <div 
-                                        className="hero-info__text" 
-                                        dangerouslySetInnerHTML={ { __html: content } } 
-                                    />
-
-                                    { renderLink( primary_button.bp_url, primary_button.text, `button ${ primaryButtonClass }` ) }
-                                    { renderLink( secondary_button.bs_url, secondary_button.text, `button ${ secondaryButtonClass }` ) } 
-                            </div>
-        
-                            <div className="hero__featured">
-                                <div className="hero__featured-wrap">                                   
-                                    <Img 
-                                        fluid={ featured_media.localFile.childImageSharp.fluid } 
-                                        alt="Hero image" 
-                                        className="hero__featured-img"
-                                    />
-                                </div>
-                            </div>
+                    <div className="hero__featured">
+                        <div className="hero__featured-wrap">                                   
+                            <Img 
+                                fluid={ featured_media.localFile.childImageSharp.fluid } 
+                                alt="Hero image" 
+                                className="hero__featured-img"
+                            />
                         </div>
                     </div>
-                </section>
-            )
-        }} />
-    );
+                </div>
+            </div>
+        </section>
+    )
 };
 
 
-export default Hero;
+Hero.propTypes = {
+    data: PropTypes.shape({
+        allWordpressWpHero: PropTypes.shape({
+            edges: PropTypes.arrayOf(PropTypes.shape({
+                node: PropTypes.shape({
+                    content: PropTypes.string.isRequired,
+                    featured_media: PropTypes.shape({
+                        localFile: PropTypes.shape({
+                            childImageSharp: PropTypes.shape({
+                                fluid: PropTypes.object.isRequired
+                            }).isRequired
+                        }).isRequired
+                    }).isRequired,
+                    acf: PropTypes.shape({
+                        main_title: PropTypes.string.isRequired,
+                        sub_title: PropTypes.string.isRequired,
+                        primary_button: PropTypes.shape({
+                            text: PropTypes.string.isRequired,
+                            design_style: PropTypes.string.isRequired,
+                            bp_url: PropTypes.string.isRequired,
+                        }).isRequired,
+                        secondary_button: PropTypes.shape({
+                            text: PropTypes.string.isRequired,
+                            design_style: PropTypes.string.isRequired,
+                            bs_url: PropTypes.string.isRequired,
+                        }).isRequired,
+                    }).isRequired,
+                }).isRequired,
+            })).isRequired,
+        }).isRequired,
+    }).isRequired,
+};
+
+
+export default ( { props } ) => (
+    <StaticQuery query={ query } render={ ( data ) => <Hero data={ data } { ... props } /> } />
+)

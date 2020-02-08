@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { DiscussionEmbed } from 'disqus-react';
 import Article from './article';
 import RelatedArticles from './relatedArticles';
@@ -9,7 +10,7 @@ const Post = ( props ) => {
         shortname: process.env.GATSBY_DISQUS_NAME,
         config: { identifier: props.slug, title: props.title },
     };
-
+ 
 
     return (
         <div className="post">
@@ -28,6 +29,35 @@ const Post = ( props ) => {
             </div>
         </div>
     );
+};
+
+
+Post.propTypes = {
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    featured_media: PropTypes.shape({
+        localFile: PropTypes.shape({
+            childImageSharp: PropTypes.shape({
+                fluid: PropTypes.object.isRequired
+            }).isRequired
+        }).isRequired
+    }).isRequired,
+    categories: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        slug: PropTypes.string.isRequired,
+    })).isRequired,
+    tags: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        slug: PropTypes.string.isRequired,
+    })).isRequired,
+    acf: PropTypes.shape({
+        related_articles: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
+    }).isRequired,
 };
 
 

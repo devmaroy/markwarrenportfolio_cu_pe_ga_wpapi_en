@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import { format } from 'timeago.js';
 import Img from 'gatsby-image';
 
@@ -56,7 +56,7 @@ SideArticle.propTypes = {
         id: PropTypes.string.isRequired,
         slug: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
-    })) ,
+    })),
     date: PropTypes.string.isRequired,
 };
 

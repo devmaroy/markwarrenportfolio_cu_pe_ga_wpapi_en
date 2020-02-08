@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { format } from 'timeago.js';
 import Img from 'gatsby-image';
@@ -45,6 +46,26 @@ const FeedItem = ( { featured_media, categories, date, slug, title, excerpt } ) 
             </Link>
         </div>
     );
+};
+
+
+FeedItem.propTypes = {
+    featured_media: PropTypes.shape({
+        localFile: PropTypes.shape({
+            childImageSharp: PropTypes.shape({
+                fluid: PropTypes.object.isRequired
+            }).isRequired
+        }).isRequired
+    }).isRequired,
+    categories: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        slug: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+    })),
+    date: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    excerpt: PropTypes.string.isRequired,
 };
 
 

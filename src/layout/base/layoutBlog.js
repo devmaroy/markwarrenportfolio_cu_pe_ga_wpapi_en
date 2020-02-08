@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Layout from './layout';
 import BlogSidebar from '../../components/blog/sidebar/sidebar';
 import Heading from '../../components/common/heading';
@@ -24,5 +25,9 @@ const LayoutBlog = ( { children } ) => {
     );
 };
 
+
+LayoutBlog.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
 export default LayoutBlog;

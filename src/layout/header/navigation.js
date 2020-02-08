@@ -23,6 +23,7 @@ class Navigation extends Component {
 
                 <div className={ this.state.showMenu ? 'navigation__inner active' : 'navigation__inner' }>
                     <Menu toggleMenu={ this.toggleMenu } />
+                    
                     <ScrollLink 
                         to="contact" 
                         className="button button--primary navigation__button"

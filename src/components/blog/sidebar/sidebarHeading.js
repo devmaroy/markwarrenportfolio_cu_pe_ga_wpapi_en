@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 const SidebarHeading = ( { heading } ) => {
     return (
@@ -7,5 +9,15 @@ const SidebarHeading = ( { heading } ) => {
         </h2>
     );
 };
+
+
+SidebarHeading.propTypes = {
+    heading: PropTypes.string
+};
+
+SidebarHeading.defaultProps = {
+    heading: 'Sidebar Heading'
+};
+
 
 export default SidebarHeading;

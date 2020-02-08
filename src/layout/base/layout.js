@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faAngleDoubleLeft, faCaretUp } from '@fortawesome/free-solid-svg-icons';
@@ -25,6 +26,11 @@ const Layout = ( { children } ) => {
             <Footer />
         </div>
     );
+};
+
+
+Layout.propTypes = {
+    children: PropTypes.node.isRequired,
 };
 
 

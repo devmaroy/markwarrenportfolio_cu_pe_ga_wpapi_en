@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Heading from '../common/heading';
@@ -104,94 +105,132 @@ class Portfolio extends Component {
     }
 
     render() {
+        const { data } = this.props;
+        const portfolioTags = data.allWordpressWpPortfolioTags.edges;
+        const portfolioItems = data.allWordpressWpPortfolio.edges;
+        const { page, portfolioItemsPerLoad } = this.state;
+
+        const totalPages = Math.ceil( portfolioItems.length / portfolioItemsPerLoad );
+        const paginatedPortfolioItems = portfolioItems.slice( 0, page * portfolioItemsPerLoad );
+        
         return (
-            <StaticQuery query={ query } render={ ( data ) => {
-                const portfolioTags = data.allWordpressWpPortfolioTags.edges;
-                const portfolioItems = data.allWordpressWpPortfolio.edges;
-                const { page, portfolioItemsPerLoad } = this.state;
+            <section id="portfolio" className="portfolio divider-space">
+                <div className="container">
+                    <div className="portfolio__inner">
+                        <Heading main="My Latest Projects" sub="Portfolio" />
 
-                const totalPages = Math.ceil( portfolioItems.length / portfolioItemsPerLoad );
-                const paginatedPortfolioItems = portfolioItems.slice( 0, page * portfolioItemsPerLoad );
+                        <ul className="portfolio__navigation">
+                            {
+                                portfolioTags.map( ( { node: portfolioTag } ) => (
+                                    <li key={ portfolioTag.id }>
+                                        <button 
+                                            className={ this.state.active === portfolioTag.slug ? 'portfolio__navigation-link active' : 'portfolio__navigation-link' } 
+                                            onClick={ () => this.filterItems( portfolioTag.slug ) }
+                                            data-filter={ portfolioTag.slug }
+                                        >
+                                            { portfolioTag.name }
+                                        </button>
+                                    </li>
+                                ))
+                            }
+                        </ul>
 
-                return (
-                    <section id="portfolio" className="portfolio divider-space">
-                        <div className="container">
-                            <div className="portfolio__inner">
-                                <Heading main="My Latest Projects" sub="Portfolio" />
+                        <div className="portfolio__items">
+                            {
+                                paginatedPortfolioItems.map( ( { node: portfolioItem } ) => {                                      
+                                    const className = [ 'portfolio__item', ...portfolioItem.portfolio_tags.map( ( { slug } ) => slug ) ].join(' ');
+            
+                                    return (
+                                        <div key={ portfolioItem.id } { ...{ className } }>
+                                            <a href={ portfolioItem.acf.url }>
+                                                <Img 
+                                                    fluid={ portfolioItem.featured_media.localFile.childImageSharp.fluid } 
+                                                    alt="Portfolio project" 
+                                                    className="portfolio__img"
+                                                />
 
-                                <ul className="portfolio__navigation">
-                                    {
-                                        portfolioTags.map( ( { node: portfolioTag } ) => (
-                                            <li key={ portfolioTag.id }>
-                                                <button 
-                                                    className={ this.state.active === portfolioTag.slug ? 'portfolio__navigation-link active' : 'portfolio__navigation-link' } 
-                                                    onClick={ () => this.filterItems( portfolioTag.slug ) }
-                                                    data-filter={ portfolioTag.slug }
-                                                >
-                                                    { portfolioTag.name }
-                                                </button>
-                                            </li>
-                                        ))
-                                    }
-                                </ul>
-
-                                <div className="portfolio__items">
-                                    {
-                                        paginatedPortfolioItems.map( ( { node: portfolioItem } ) => {                                      
-                                            const className = [ 'portfolio__item', ...portfolioItem.portfolio_tags.map( ( { slug } ) => slug ) ].join(' ');
-                  
-                                            return (
-                                                <div key={ portfolioItem.id } { ...{ className } }>
-                                                    <a href={ portfolioItem.acf.url }>
-                                                        <Img 
-                                                            fluid={ portfolioItem.featured_media.localFile.childImageSharp.fluid } 
-                                                            alt="Portfolio project" 
-                                                            className="portfolio__img"
+                                                <div className="portfolio__overlay">
+                                                    <div className="portfolio__overlay-header">
+                                                        <img src={ addIcon } className="portfolio__icon" alt="Add icon" />
+                                                    </div>
+                    
+                                                    <div className="portfolio__overlay-content">
+                                                        <h3 
+                                                            className="portfolio__heading"
+                                                            dangerouslySetInnerHTML={ { __html: portfolioItem.title } }
                                                         />
-   
-                                                        <div className="portfolio__overlay">
-                                                            <div className="portfolio__overlay-header">
-                                                                <img src={ addIcon } className="portfolio__icon" alt="Add icon" />
-                                                            </div>
-                            
-                                                            <div className="portfolio__overlay-content">
-                                                                <h3 
-                                                                    className="portfolio__heading"
-                                                                    dangerouslySetInnerHTML={ { __html: portfolioItem.title } }
-                                                                />
-                                                                <div 
-                                                                    className="portfolio__text" 
-                                                                    dangerouslySetInnerHTML={ { __html: portfolioItem.content } } 
-                                                                />
-                                                            </div>
-                                                        </div>
-                                                    </a>    
-                                                </div>  
-                                            )
-                                        })
-                                    }                                    
-                                </div>
-
-                                <div className="portfolio__meta">
-                                    {
-                                        ! ( page === totalPages ) && (
-                                            <button 
-                                                className="button button--primary"
-                                                onClick={ this.loadMorePortfolioItems }
-                                            >
-                                                Load more
-                                            </button>
-                                        )   
-                                    }
-                                </div>
-                            </div>
+                                                        <div 
+                                                            className="portfolio__text" 
+                                                            dangerouslySetInnerHTML={ { __html: portfolioItem.content } } 
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </a>    
+                                        </div>  
+                                    )
+                                })
+                            }                                    
                         </div>
-                    </section>
-                )
-            }} />
+
+                        <div className="portfolio__meta">
+                            {
+                                ! ( page === totalPages ) && (
+                                    <button 
+                                        className="button button--primary"
+                                        onClick={ this.loadMorePortfolioItems }
+                                    >
+                                        Load more
+                                    </button>
+                                )   
+                            }
+                        </div>
+                    </div>
+                </div>
+            </section>
         );
     }
 }
 
 
-export default Portfolio;
+Portfolio.propTypes = {
+    data: PropTypes.shape({
+        allWordpressWpPortfolioTags: PropTypes.shape({
+            edges: PropTypes.arrayOf(PropTypes.shape({
+                node: PropTypes.shape({
+                    id: PropTypes.string.isRequired,
+                    name: PropTypes.string.isRequired,
+                    slug: PropTypes.string.isRequired,
+                }).isRequired,
+            })).isRequired,
+        }).isRequired,
+        allWordpressWpPortfolio: PropTypes.shape({
+            edges: PropTypes.arrayOf(PropTypes.shape({
+                node: PropTypes.shape({
+                    id: PropTypes.string.isRequired,
+                    title: PropTypes.string.isRequired,
+                    content: PropTypes.string.isRequired,
+                    portfolio_tags: PropTypes.arrayOf(PropTypes.shape({
+                        id: PropTypes.string.isRequired,
+                        name: PropTypes.string.isRequired,
+                        slug: PropTypes.string.isRequired,
+                    })).isRequired,
+                    featured_media: PropTypes.shape({
+                        localFile: PropTypes.shape({
+                            childImageSharp: PropTypes.shape({
+                                fluid: PropTypes.object.isRequired
+                            }).isRequired
+                        }).isRequired
+                    }).isRequired,
+                    acf: PropTypes.shape({
+                        url: PropTypes.string.isRequired
+                    }).isRequired,
+                }).isRequired,
+            })).isRequired,
+        }).isRequired,
+    }).isRequired,
+};
+
+
+export default ( props ) => (
+    <StaticQuery query={ query } render={ ( data ) => <Portfolio data={ data } { ...props } /> } />
+)

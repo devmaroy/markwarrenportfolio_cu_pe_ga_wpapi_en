@@ -9,7 +9,7 @@ const InstagramFeedItem = ( { id, imgSrc, imgAlt } ) => {
         <div className="instagram-feed-item">
             <a href={ `https://instagram.com/p/${ id }` } target="_blank" rel="noopener noreferrer">
                 <Img fluid={ imgSrc } alt={ imgAlt } className="instagram-feed-item__img" />
-
+                
                 <div className="instagram-feed-item__overlay">
                     <img src={ addIcon } className="instagram-feed-item__icon" alt="Add icon" />
                 </div>

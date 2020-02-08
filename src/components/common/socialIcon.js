@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -31,6 +32,18 @@ const SocialIcon = ( { icon, type, fixedWidth } ) => {
     }
 
     return renderIcon( type );
+};
+
+
+SocialIcon.propTypes = {
+    icon: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    fixedWidth: PropTypes.bool,
+};
+
+
+SocialIcon.defaultProps = {
+    fixedWidth: false
 };
 
 

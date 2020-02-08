@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 const CTA = ( { title, text, children } ) => {
@@ -21,6 +22,13 @@ const CTA = ( { title, text, children } ) => {
             </div>
         </section>
     );
+};
+
+
+CTA.propTypes = {
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    children: PropTypes.element,
 };
 
 

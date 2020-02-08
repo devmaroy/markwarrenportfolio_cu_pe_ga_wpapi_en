@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -31,6 +32,12 @@ const SearchResults = ( { query, results } ) => {
             </div>
         </div>
     )
+};
+
+
+SearchResults.propTypes = {
+    query: PropTypes.string.isRequired,
+    results: PropTypes.array.isRequired,
 };
 
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql, StaticQuery, Link } from 'gatsby';
 
 
@@ -16,21 +17,32 @@ const query = graphql`
 `;
 
 
-const SiteLogo = () => {
+const SiteLogo = ( { data } ) => {
+    const siteLogoUrl = data.allWordpressWpLogo.edges[0].node.url;
+    
     return (
-        <StaticQuery query={ query } render={ ( data ) => {
-            const siteLogoUrl = data.allWordpressWpLogo.edges[0].node.url;
-
-            return (
-                <div className="site-logo">
-                    <Link to="/" className="site-logo__link">
-                        <img src={ siteLogoUrl } alt="Site logo" className="site-logo__img" />
-                    </Link>
-                </div>
-            )
-        }} />
-    );
+        <div className="site-logo">
+            <Link to="/" className="site-logo__link">
+                <img src={ siteLogoUrl } alt="Site logo" className="site-logo__img" />
+            </Link>
+        </div>
+    )
 };
 
 
-export default SiteLogo;
+SiteLogo.propTypes = {
+    data: PropTypes.shape({
+        allWordpressWpLogo: PropTypes.shape({
+            edges: PropTypes.arrayOf(PropTypes.shape({
+                node: PropTypes.shape({
+                    url: PropTypes.string.isRequired,
+                }).isRequired,
+            })).isRequired,
+        }).isRequired,
+    }).isRequired,
+};
+
+
+export default ( props ) => (
+    <StaticQuery query={ query } render={ ( data ) => <SiteLogo data={ data } { ...props } /> } />
+)

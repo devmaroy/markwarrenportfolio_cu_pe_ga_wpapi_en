@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql, StaticQuery, Link } from 'gatsby';
 import SidebarHeading from './sidebarHeading';
 
@@ -21,7 +22,7 @@ const Categories = () => {
     return (
         <StaticQuery query={ query } render={ ( data ) => {
             const categories = data.allWordpressCategory.edges;
-
+            
             return ( 
                 <div className="blog-sidebar-categories">
                     <SidebarHeading heading="Categories" />
@@ -46,4 +47,23 @@ const Categories = () => {
     );
 };
 
-export default Categories;
+
+Categories.propTypes = {
+    data: PropTypes.shape({
+        allWordpressCategory: PropTypes.shape({
+            edges: PropTypes.arrayOf(PropTypes.shape({
+                node: PropTypes.shape({
+                    id: PropTypes.string.isRequired,
+                    name: PropTypes.string.isRequired,
+                    slug: PropTypes.string.isRequired,
+                    count: PropTypes.number.isRequired,
+                }).isRequired,
+            })).isRequired,
+        }).isRequired,
+    }).isRequired,
+};
+
+
+export default ( props ) => (
+    <StaticQuery query={ query } render={ ( data ) => <Categories data={ data } { ...props } /> } />
+)

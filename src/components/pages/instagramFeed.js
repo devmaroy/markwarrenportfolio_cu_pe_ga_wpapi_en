@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import SlickSlider from 'react-slick';
 import Heading from '../common/heading';
@@ -25,7 +26,7 @@ const query = graphql`
 `;
 
 
-const InstagramFeed = () => {
+const InstagramFeed = ( { data } ) => {
     const sliderSettings = {
         dots: true,
         infinite: true,
@@ -60,35 +61,51 @@ const InstagramFeed = () => {
         ],
     };
 
+    const instagramFeed = data.allInstaNode.edges;
+
     return (
-        <StaticQuery query={ query } render={ ( data ) => {
-            const instagramFeed = data.allInstaNode.edges;
+        <section className="instagram-feed divider-space">
+            <div className="container">
+                <Heading main="Follow Me" sub="Instagram" /> 
+            </div>
+            
+            <div className="instagram-feed__inner">
+                <SlickSlider { ...sliderSettings }>
+                    {
+                        instagramFeed.map(( { node: feedItem } ) => (
+                            <InstagramFeedItem 
+                                key={ feedItem.id }
+                                id={ feedItem.id }
+                                imgSrc={ feedItem.localFile.childImageSharp.fluid } 
+                                imgAlt="Instagram feed" 
+                            />
+                        ))
+                    }
+                </SlickSlider>
+            </div>
+        </section>
+    )
+}
 
-            return (
-                <section className="instagram-feed divider-space">
-                    <div className="container">
-                        <Heading main="Follow Me" sub="Instagram" /> 
-                    </div>
-                    
-                    <div className="instagram-feed__inner">
-                        <SlickSlider { ...sliderSettings }>
-                            {
-                                instagramFeed.map(( { node: feedItem } ) => (
-                                    <InstagramFeedItem 
-                                        key={ feedItem.id }
-                                        id={ feedItem.id }
-                                        imgSrc={ feedItem.localFile.childImageSharp.fluid } 
-                                        imgAlt="Instagram feed" 
-                                    />
-                                ))
-                            }
-                        </SlickSlider>
-                    </div>
-                </section>
-            )
-        }} /> 
-    );
+
+export default ( props ) => (
+    <StaticQuery query={ query } render={ ( data ) => <InstagramFeed data={ data } { ...props } /> } />
+)
+
+
+InstagramFeed.propTypes = {
+    data: PropTypes.shape({
+        allInstaNode: PropTypes.shape({
+            edges: PropTypes.arrayOf(PropTypes.shape({
+                node: PropTypes.shape({
+                    id: PropTypes.string.isRequired,
+                    localFile: PropTypes.shape({
+                        childImageSharp: PropTypes.shape({
+                            fluid: PropTypes.object.isRequired
+                        }).isRequired
+                    }).isRequired,
+                }).isRequired,
+            })).isRequired,
+        }).isRequired,
+    }).isRequired,
 };
-
-
-export default InstagramFeed;

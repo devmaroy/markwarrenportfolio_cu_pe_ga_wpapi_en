@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import SidebarHeading from './sidebarHeading';
 import InstagramFeedItem from '../../common/instagramFeedItem';
@@ -24,33 +25,48 @@ const query = graphql`
 `;
 
 
-const InstagramFeed = () => {
+const InstagramFeed = ( { data } ) => {
+    const instagramFeed = data.allInstaNode.edges;
+
     return (
-        <StaticQuery query={ query } render={ ( data ) => {
-            const instagramFeed = data.allInstaNode.edges;
+        <div className="blog-sidebar-instagram-feed">
+            <SidebarHeading heading="Follow me" />  
 
-            return (
-                <div className="blog-sidebar-instagram-feed">
-                    <SidebarHeading heading="Follow me" />  
-        
-                    <div className="blog-sidebar-instagram-feed__list">
-                        {
-                            instagramFeed.map(( { node: feedItem }) => (
-                                <InstagramFeedItem 
-                                    key={ feedItem.id }
-                                    id={ feedItem.id }
-                                    imgSrc={ feedItem.localFile.childImageSharp.fluid } 
-                                    imgAlt="Instagram feed" 
-                                />
-                            ))
-                        }
-                    </div>
-                </div>
-            )
-        }} />
-
-    );
+            <div className="blog-sidebar-instagram-feed__list">
+                {
+                    instagramFeed.map(( { node: feedItem }) => (
+                        <InstagramFeedItem 
+                            key={ feedItem.id }
+                            id={ feedItem.id }
+                            imgSrc={ feedItem.localFile.childImageSharp.fluid } 
+                            imgAlt="Instagram feed" 
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    )
 };
 
 
-export default InstagramFeed;
+InstagramFeed.propTypes = {
+    data: PropTypes.shape({
+        allInstaNode: PropTypes.shape({
+            edges: PropTypes.arrayOf(PropTypes.shape({
+                node: PropTypes.shape({
+                    id: PropTypes.string.isRequired,
+                    localFile: PropTypes.shape({
+                        childImageSharp: PropTypes.shape({
+                            fluid: PropTypes.object.isRequired
+                        }).isRequired
+                    }).isRequired,
+                }).isRequired,
+            })).isRequired,
+        }).isRequired,
+    }).isRequired,
+};
+
+
+export default ( props ) => (
+    <StaticQuery query={ query } render={ ( data ) => <InstagramFeed data={ data } { ...props } /> }  />
+)
