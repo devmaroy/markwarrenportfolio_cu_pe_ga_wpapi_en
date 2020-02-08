@@ -1,0 +1,26 @@
+/*------------------------------------*\
+    # Share Links
+\*------------------------------------*/
+
+.share-links {
+    @include list-unstyled;
+
+    li {
+        display: inline-block;
+
+        &:not( :last-child ) {
+            margin: 0 2rem 0 0;
+        }
+    }
+
+    a {
+        color: $black;
+        
+        transition: all $transition-base;
+
+        &:hover,
+        &:focus {
+            color: $primary;
+        }
+    }
+}

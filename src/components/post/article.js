@@ -3,10 +3,11 @@ import { Link } from 'gatsby';
 import { format } from 'timeago.js';
 import Img from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ShareLinks from '../common/shareLinks';
 
 
 const Article = ( { title, slug, content, featured_media, date, categories, tags } ) => {
- 
+
     return (
         <article className="article grid-container">
             <header className="article__header">
@@ -67,7 +68,19 @@ const Article = ( { title, slug, content, featured_media, date, categories, tags
                 <div className="article__share">
                     <h4 className="article__share-heading">Share this article</h4>
 
-                    <ul className="article__share-links">
+                    <ShareLinks url={ `https://mariohernandez.io/post/${ slug }` } />
+                </div>
+            </footer>
+        </article>
+    );
+};
+
+
+export default Article;
+
+
+
+/*<ul className="article__share-links">
                         <li>
                             <a href="https://facebook.com/">
                                 <FontAwesomeIcon icon={ [ "fab", 'facebook-f' ] } fixedWidth />
@@ -85,12 +98,4 @@ const Article = ( { title, slug, content, featured_media, date, categories, tags
                                 <FontAwesomeIcon icon={ [ "fab", 'linkedin-in' ] } fixedWidth />
                             </a>
                         </li>
-                    </ul>
-                </div>
-            </footer>
-        </article>
-    );
-};
-
-
-export default Article;
+                    </ul>*/
