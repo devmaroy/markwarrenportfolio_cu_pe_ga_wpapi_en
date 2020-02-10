@@ -1,4 +1,16 @@
 import React from 'react';
+
+const instagramFeed = () => {
+    return (
+        <div>
+            offline
+        </div>
+    );
+};
+
+export default instagramFeed;
+
+/*import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import SlickSlider from 'react-slick';
@@ -108,4 +120,4 @@ InstagramFeed.propTypes = {
             })).isRequired,
         }).isRequired,
     }).isRequired,
-};
+};*/
