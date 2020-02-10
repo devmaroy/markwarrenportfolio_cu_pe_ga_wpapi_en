@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { singlePostPropTypes } from '../../propTypesValues';
 import { Link } from 'gatsby';
 import { format } from 'timeago.js';
 import Img from 'gatsby-image';
@@ -7,7 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ShareLinks from '../common/shareLinks';
 
 
-const Article = ( { title, slug, content, featured_media, date, categories, tags } ) => {
+const Article = ( { id, title, slug, content, featured_media, date, categories, tags } ) => {
+
     return (
         <article className="article grid-container">
             <header className="article__header">
@@ -77,27 +78,7 @@ const Article = ( { title, slug, content, featured_media, date, categories, tags
 
 
 Article.propTypes = {
-    title: PropTypes.string.isRequired,
-    slug: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-    featured_media: PropTypes.shape({
-        localFile: PropTypes.shape({
-            childImageSharp: PropTypes.shape({
-                fluid: PropTypes.object.isRequired
-            }).isRequired
-        }).isRequired
-    }).isRequired,
-    date: PropTypes.string.isRequired,
-    categories: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        slug: PropTypes.string.isRequired,
-    })).isRequired,
-    tags: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        slug: PropTypes.string.isRequired,
-    })).isRequired,
+    ...singlePostPropTypes
 };
 
 

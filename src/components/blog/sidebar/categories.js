@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { taxonomyPropTypes } from '../../../propTypesValues';
 import { graphql, StaticQuery, Link } from 'gatsby';
 import SidebarHeading from './sidebarHeading';
 
@@ -53,9 +54,7 @@ Categories.propTypes = {
         allWordpressCategory: PropTypes.shape({
             edges: PropTypes.arrayOf(PropTypes.shape({
                 node: PropTypes.shape({
-                    id: PropTypes.string.isRequired,
-                    name: PropTypes.string.isRequired,
-                    slug: PropTypes.string.isRequired,
+                    ...taxonomyPropTypes,
                     count: PropTypes.number.isRequired,
                 }).isRequired,
             })).isRequired,

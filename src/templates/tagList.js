@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { templatePostPropTypes, templatePaginationPropTypes, taxonomyPropTypes } from '../propTypesValues';
 import { graphql } from 'gatsby';
 import TaxonomyBaseTemplate from './taxonomyBase';
 
@@ -25,40 +26,17 @@ const TagListTemplate = ( { data, pageContext } ) => {
 
 TagListTemplate.propTypes = {
     pageContext: PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        limit: PropTypes.number.isRequired,
-        skip: PropTypes.number.isRequired,
-        currentPage: PropTypes.number.isRequired,
-        numPages: PropTypes.number.isRequired,
+        ...templatePaginationPropTypes,
     }).isRequired,
     data: PropTypes.shape({
         tag: PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
-            slug: PropTypes.string.isRequired,                    
+            ...taxonomyPropTypes,
             count: PropTypes.number.isRequired,
         }).isRequired,
         posts: PropTypes.shape({
             edges: PropTypes.arrayOf( PropTypes.shape({
                 node: PropTypes.shape({
-                    wordpress_id: PropTypes.number.isRequired,
-                    id: PropTypes.string.isRequired,
-                    title: PropTypes.string.isRequired,                    
-                    slug: PropTypes.string.isRequired,                    
-                    date: PropTypes.string.isRequired,                    
-                    excerpt: PropTypes.string.isRequired,   
-                    categories: PropTypes.arrayOf(PropTypes.shape({
-                        id: PropTypes.string.isRequired,
-                        name: PropTypes.string.isRequired,
-                        slug: PropTypes.string.isRequired,
-                    })).isRequired, 
-                    featured_media: PropTypes.shape({
-                        localFile: PropTypes.shape({
-                            childImageSharp: PropTypes.shape({
-                                fluid: PropTypes.object.isRequired
-                            }).isRequired
-                        }).isRequired
-                    }).isRequired                
+                    ...templatePostPropTypes,             
                 }).isRequired
             }).isRequired )
         }).isRequired 

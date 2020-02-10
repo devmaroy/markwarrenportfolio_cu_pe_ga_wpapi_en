@@ -1,5 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
+import { taxonomyPropTypes, featuredMediaFluidPropTypes } from '../../propTypesValues';
 import { graphql, StaticQuery } from 'gatsby';
 import Heading from '../common/heading';
 import SideArticle from '../common/sideArticle';
@@ -61,17 +62,9 @@ RecentArticles.propTypes = {
                     date: PropTypes.string.isRequired,
                     excerpt: PropTypes.string.isRequired,
                     categories: PropTypes.arrayOf(PropTypes.shape({
-                        id: PropTypes.string.isRequired,
-                        name: PropTypes.string.isRequired,
-                        slug: PropTypes.string.isRequired,
+                        ...taxonomyPropTypes,
                     })).isRequired,
-                    featured_media: PropTypes.shape({
-                        localFile: PropTypes.shape({
-                            childImageSharp: PropTypes.shape({
-                                fluid: PropTypes.object.isRequired
-                            }).isRequired
-                        }).isRequired
-                    }).isRequired,
+                    ...featuredMediaFluidPropTypes,
                 }).isRequired,
             })).isRequired,
         }).isRequired,

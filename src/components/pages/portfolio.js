@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { taxonomyPropTypes, featuredMediaFluidPropTypes } from '../../propTypesValues';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Heading from '../common/heading';
@@ -197,9 +198,7 @@ Portfolio.propTypes = {
         allWordpressWpPortfolioTags: PropTypes.shape({
             edges: PropTypes.arrayOf(PropTypes.shape({
                 node: PropTypes.shape({
-                    id: PropTypes.string.isRequired,
-                    name: PropTypes.string.isRequired,
-                    slug: PropTypes.string.isRequired,
+                    ...taxonomyPropTypes,
                 }).isRequired,
             })).isRequired,
         }).isRequired,
@@ -210,17 +209,9 @@ Portfolio.propTypes = {
                     title: PropTypes.string.isRequired,
                     content: PropTypes.string.isRequired,
                     portfolio_tags: PropTypes.arrayOf(PropTypes.shape({
-                        id: PropTypes.string.isRequired,
-                        name: PropTypes.string.isRequired,
-                        slug: PropTypes.string.isRequired,
+                        ...taxonomyPropTypes,
                     })).isRequired,
-                    featured_media: PropTypes.shape({
-                        localFile: PropTypes.shape({
-                            childImageSharp: PropTypes.shape({
-                                fluid: PropTypes.object.isRequired
-                            }).isRequired
-                        }).isRequired
-                    }).isRequired,
+                    ...featuredMediaFluidPropTypes,
                     acf: PropTypes.shape({
                         url: PropTypes.string.isRequired
                     }).isRequired,

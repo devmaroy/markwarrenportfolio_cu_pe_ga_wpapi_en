@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { featuredMediaFluidPropTypes } from '../../propTypesValues';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -120,13 +121,7 @@ Contact.propTypes = {
                 node: PropTypes.shape({
                     title: PropTypes.string.isRequired,
                     content: PropTypes.string.isRequired,
-                    featured_media: PropTypes.shape({
-                        localFile: PropTypes.shape({
-                            childImageSharp: PropTypes.shape({
-                                fluid: PropTypes.object.isRequired
-                            }).isRequired
-                        }).isRequired
-                    }).isRequired,
+                    ...featuredMediaFluidPropTypes,
                     acf: PropTypes.shape({
                         form: PropTypes.shape({
                             first_name: PropTypes.string.isRequired,

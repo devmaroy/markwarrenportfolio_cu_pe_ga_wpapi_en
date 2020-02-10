@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { previewPostPropTypes } from '../../propTypesValues';
 import { graphql, StaticQuery } from 'gatsby';
 import SideArticle from '../common/sideArticle';
 
@@ -42,24 +43,7 @@ RelatedArticles.propTypes = {
         allWordpressPost: PropTypes.shape({
             edges: PropTypes.arrayOf(PropTypes.shape({
                 node: PropTypes.shape({
-                    wordpress_id: PropTypes.number.isRequired,
-                    id: PropTypes.string.isRequired,
-                    title: PropTypes.string.isRequired,
-                    slug: PropTypes.string.isRequired,
-                    date: PropTypes.string.isRequired,
-                    excerpt: PropTypes.string.isRequired,
-                    categories: PropTypes.arrayOf(PropTypes.shape({
-                        id: PropTypes.string.isRequired,
-                        name: PropTypes.string.isRequired,
-                        slug: PropTypes.string.isRequired,
-                    })).isRequired,
-                    featured_media: PropTypes.shape({
-                        localFile: PropTypes.shape({
-                            childImageSharp: PropTypes.shape({
-                                fluid: PropTypes.object.isRequired
-                            }).isRequired
-                        }).isRequired
-                    }).isRequired,
+                    ...previewPostPropTypes
                 }).isRequired,
             })).isRequired,
         }).isRequired,

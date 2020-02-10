@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { sidebarPreviewPostPropTypes } from '../../../propTypesValues';
 import { graphql, StaticQuery, Link } from 'gatsby';
 import { format } from 'timeago.js';
 import SidebarHeading from './sidebarHeading';
@@ -87,24 +88,7 @@ RecentArticles.propTypes = {
         allWordpressPost: PropTypes.shape({
             edges: PropTypes.arrayOf(PropTypes.shape({
                 node: PropTypes.shape({
-                    wordpress_id: PropTypes.number.isRequired,
-                    id: PropTypes.string.isRequired,
-                    title: PropTypes.string.isRequired,
-                    slug: PropTypes.string.isRequired,
-                    date: PropTypes.string.isRequired,
-                    excerpt: PropTypes.string.isRequired,
-                    categories: PropTypes.arrayOf(PropTypes.shape({
-                        id: PropTypes.string.isRequired,
-                        name: PropTypes.string.isRequired,
-                        slug: PropTypes.string.isRequired,
-                    })).isRequired,
-                    featured_media: PropTypes.shape({
-                        localFile: PropTypes.shape({
-                            childImageSharp: PropTypes.shape({
-                                fixed: PropTypes.object.isRequired
-                            }).isRequired
-                        }).isRequired
-                    }).isRequired,
+                    ...sidebarPreviewPostPropTypes
                 }).isRequired,
             })).isRequired,
         }).isRequired,

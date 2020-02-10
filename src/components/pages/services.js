@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Heading from './../common/heading';
 
@@ -17,10 +18,6 @@ const query = graphql`
                         service_icon {
                             source_url
                         }
-                        section_headings {
-                            main
-                            sub
-                        }
                     }
                 }
             }
@@ -31,7 +28,7 @@ const query = graphql`
 
 const Services = ( { data } ) => {
     const services = data.allWordpressWpServices.edges;
-
+    
     return (
         <section id="services" className="services divider-space">
             <div className="container">
@@ -57,6 +54,26 @@ const Services = ( { data } ) => {
         </section>  
     )
 }
+
+
+Services.propTypes = {
+    data: PropTypes.shape({
+        allWordpressWpServices: PropTypes.shape({
+            edges: PropTypes.arrayOf(PropTypes.shape({
+                node: PropTypes.shape({
+                    id: PropTypes.string.isRequired,
+                    title: PropTypes.string.isRequired,
+                    content: PropTypes.string.isRequired,
+                    acf: PropTypes.shape({
+                        service_icon: PropTypes.shape({
+                            source_url: PropTypes.string.isRequired,
+                        }).isRequired,
+                    }).isRequired,
+                }).isRequired,
+            })).isRequired,
+        }).isRequired,
+    }).isRequired,
+};
 
 
 export default ( props ) => (

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { menuPropTypes } from '../../propTypesValues';
 import { graphql, StaticQuery } from 'gatsby';
 import SocialIcon from './SocialIcon';
 
@@ -46,17 +47,7 @@ const SocialLinks = ( { data, type, fixedWidth } ) => {
 
 SocialLinks.propTypes = {
     data: PropTypes.shape({
-        allWordpressWpApiMenusMenusItems: PropTypes.shape({
-            edges: PropTypes.arrayOf(PropTypes.shape({
-                node: PropTypes.shape({
-                    items: PropTypes.arrayOf(PropTypes.shape({
-                        object_id: PropTypes.number.isRequired,
-                        title: PropTypes.string.isRequired,
-                        url: PropTypes.string.isRequired,
-                    })).isRequired,
-                }).isRequired,
-            })).isRequired,
-        }).isRequired,
+        ...menuPropTypes,
     }).isRequired,
     type: PropTypes.string,
     fixedWidth: PropTypes.bool,

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { taxonomyPropTypes } from '../../propTypesValues';
 import { Link } from 'gatsby';
 import { format } from 'timeago.js';
 import Img from 'gatsby-image';
@@ -53,9 +54,7 @@ SideArticle.propTypes = {
     title: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
     categories: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        slug: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
+        ...taxonomyPropTypes
     })),
     date: PropTypes.string.isRequired,
 };

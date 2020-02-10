@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { taxonomyPropTypes, featuredMediaFluidPropTypes } from '../propTypesValues';
 import { graphql } from 'gatsby';
 import Layout from '../layout/base/layout';
 import Post from '../components/post/Post';
@@ -25,22 +26,12 @@ PostTemplate.propTypes = {
             date: PropTypes.string.isRequired,
             content: PropTypes.string.isRequired,
             categories: PropTypes.arrayOf(PropTypes.shape({
-                id: PropTypes.string.isRequired,
-                name: PropTypes.string.isRequired,
-                slug: PropTypes.string.isRequired,
+                ...taxonomyPropTypes,
             })).isRequired,
             tags: PropTypes.arrayOf(PropTypes.shape({
-                id: PropTypes.string.isRequired,
-                name: PropTypes.string.isRequired,
-                slug: PropTypes.string.isRequired,
+                ...taxonomyPropTypes,
             })).isRequired,
-            featured_media: PropTypes.shape({
-                localFile: PropTypes.shape({
-                    childImageSharp: PropTypes.shape({
-                        fluid: PropTypes.object.isRequired
-                    }).isRequired
-                }).isRequired
-            }).isRequired,
+            ...featuredMediaFluidPropTypes,
             acf: PropTypes.shape({
                 related_articles: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired
             }).isRequired,

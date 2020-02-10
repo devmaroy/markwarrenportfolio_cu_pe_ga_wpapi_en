@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { menuPropTypes } from '../../propTypesValues';
 import { graphql, StaticQuery } from 'gatsby';
 import closeIcon from '../../images/icons/close.svg';
 import DynamicLink from '../../components/common/dynamicLink';
@@ -60,17 +61,7 @@ const Menu = ( { data, toggleMenu } ) => {
 
 Menu.propTypes = {
     data: PropTypes.shape({
-        allWordpressWpApiMenusMenusItems: PropTypes.shape({
-            edges: PropTypes.arrayOf(PropTypes.shape({
-                node: PropTypes.shape({
-                    items: PropTypes.arrayOf(PropTypes.shape({
-                        object_id: PropTypes.number.isRequired,
-                        title: PropTypes.string.isRequired,
-                        url: PropTypes.string.isRequired,
-                    })).isRequired,
-                }).isRequired,
-            })).isRequired,
-        }).isRequired,
+        ...menuPropTypes,
     }).isRequired,
 };
 

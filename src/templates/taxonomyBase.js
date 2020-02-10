@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import LayoutBlog from '../layout/base/layoutBlog';
 import FeedItem from '../components/common/feedItem';
 import Pagination from '../components/common/pagination';
+import { taxonomyPropTypes, featuredMediaFluidPropTypes } from '../propTypesValues';
 
 
 const TaxonomyBaseTemplate = ( { info, content, currentPage, numPages } ) => {
@@ -48,17 +49,9 @@ TaxonomyBaseTemplate.propTypes = {
             date: PropTypes.string.isRequired,                    
             excerpt: PropTypes.string.isRequired,   
             categories: PropTypes.arrayOf(PropTypes.shape({
-                id: PropTypes.string.isRequired,
-                name: PropTypes.string.isRequired,
-                slug: PropTypes.string.isRequired,
+                ...taxonomyPropTypes,
             })).isRequired, 
-            featured_media: PropTypes.shape({
-                localFile: PropTypes.shape({
-                    childImageSharp: PropTypes.shape({
-                        fluid: PropTypes.object.isRequired
-                    }).isRequired
-                }).isRequired
-            }).isRequired   
+            ...featuredMediaFluidPropTypes,
         }).isRequired
     }).isRequired ).isRequired,
     currentPage: PropTypes.number.isRequired,  

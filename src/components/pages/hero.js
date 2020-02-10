@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { featuredMediaFluidPropTypes } from '../../propTypesValues';
 import { StaticQuery, graphql, Link } from 'gatsby';
 import { Link as ScrollLink } from 'react-scroll';
 import Img from 'gatsby-image';
@@ -122,13 +123,7 @@ Hero.propTypes = {
             edges: PropTypes.arrayOf(PropTypes.shape({
                 node: PropTypes.shape({
                     content: PropTypes.string.isRequired,
-                    featured_media: PropTypes.shape({
-                        localFile: PropTypes.shape({
-                            childImageSharp: PropTypes.shape({
-                                fluid: PropTypes.object.isRequired
-                            }).isRequired
-                        }).isRequired
-                    }).isRequired,
+                    ...featuredMediaFluidPropTypes,
                     acf: PropTypes.shape({
                         main_title: PropTypes.string.isRequired,
                         sub_title: PropTypes.string.isRequired,
