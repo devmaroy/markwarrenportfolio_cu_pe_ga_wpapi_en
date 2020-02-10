@@ -42,7 +42,8 @@ module.exports = {
 				  // For any node of type MarkdownRemark, list how to resolve the fields` values
 				  wordpress__POST: {
 					title: node => node.title,
-					categories: node => node.categories,
+					slug: node => node.slug,
+					categories: ( node, getNode ) => node.categories___NODE.map( ( categoryNode ) => getNode( categoryNode ) ),
 					//featuredImage : (node, getNode) => console.log( getNode(node.featured_media___NODE) )
 				  }
 				},

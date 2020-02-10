@@ -8,15 +8,15 @@
     list-style: none;
 }
 
-@mixin dot-pseudo ( $color, $margin ) {
+@mixin dot-pseudo ( $color, $margin, $width: .6rem, $height: .6rem ) {
     &::after {
         content: '';
         position: relative;
         bottom: 1px;
         display: inline-block;
         margin: $margin;
-        width: .6rem;
-        height: .6rem;
+        width: $width;
+        height: $height;
         background: $color;
         border-radius: 50%;
     }

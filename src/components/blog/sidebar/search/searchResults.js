@@ -22,9 +22,29 @@ const SearchResults = ( { query, results } ) => {
                 <ul className="search-results__list">
 
                     {
-                        results.map( ( { id, title } ) => (
+                        results.map( ( { id, slug, title, categories } ) => (
                             <li key={ id } className="search-results__item">
-                                <Link to={ `/post/${ title }` } className="search-results__link">{ title }</Link>
+                                <Link
+                                    to={ `/post/${ slug }` }
+                                    className="search-results__link"
+                                >
+                                    { title }
+                                </Link>
+                            
+                                <ul className="search-results__categories">
+                                    {
+                                        categories.map( ( { id, name, slug } ) => (
+                                            <li key={ id } className="search-results__categories-item">
+                                                <Link
+                                                    to={ `/category/${ slug }` }
+                                                    className="search-results__link search-results__link--secondary search-results__categories-link"
+                                                >
+                                                    { name }
+                                                </Link>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
                             </li>
                         ))
                     }

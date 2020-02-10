@@ -52,6 +52,9 @@
 
 .search-results__item {
     padding: 2rem 0;
+    font-size: 1.4rem;
+    color: $black;
+    font-weight: bold;
 
     &:last-child {
         padding-bottom: 0;
@@ -66,13 +69,37 @@
     font-weight: bold;
     text-decoration: none;
     color: $gray;
-    font-size: 1.4rem;
-    
 
     transition: all $transition-base;
+
+
 
     &:hover, 
     &:focus {
         color: $primary;
     }
+}
+
+.search-results__link--secondary {
+    color: $primary-light;
+}
+
+.search-results__categories {
+    @include list-unstyled;
+}
+
+.search-results__categories-item {
+    display: inline-block;
+
+    @include dot-pseudo( $color: $primary-light, $margin: 0 1rem );
+
+    &:last-child::after {
+        content: '';
+        display: none;
+    }
+}
+
+.search-results__categories-link {
+    text-transform: uppercase;
+    font-size: 1rem;
 }
