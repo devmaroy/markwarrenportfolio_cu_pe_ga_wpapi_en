@@ -44,7 +44,7 @@ For any questions feel free to contact me at marek@matejovic.cz
 
 1. **Clone from Github**
     ```
-    git clone git@github.com:mmatejovic/simpletfitnessblog.git
+    git clone git@github.com:mmatejovic/markwarrenportfolio.git
     ```
 2. **Install dependencies**
    ```
