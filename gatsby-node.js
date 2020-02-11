@@ -4,22 +4,12 @@ const createTags = require( './utils/nodes/createTags' );
 
 
 exports.createPages = async ( { graphql, actions } ) => {
-    const { createPage, createRedirect } = actions;
-    //createRedirect( { fromPath: '/', toPath: '/blog', redirectInBrowser: true, isPermanent: true } );
+    const { createPage } = actions;
+
 
     // Create graphql query
     const result = await graphql(`
         {
-            allWordpressPage {
-                edges {
-                    node {
-                        id
-                        path
-                        slug
-                        status
-                    }
-                }
-            }
             allWordpressPost {
                 edges {
                     node {
@@ -62,11 +52,10 @@ exports.createPages = async ( { graphql, actions } ) => {
 
 
     // Access query results via object destructuring
-    const { allWordpressPage, allWordpressPost, allWordpressCategory, allWordpressTag } = result.data;
+    const { allWordpressPost, allWordpressCategory, allWordpressTag } = result.data;
 
 
     // Pass data into separate helper functions
-    //createPages( { data: allWordpressPage, createPage } );
     createPosts( { data: allWordpressPost, createPage } );
     createCategories( { data: allWordpressCategory, createPage } );
     createTags( { data: allWordpressTag, createPage } );
