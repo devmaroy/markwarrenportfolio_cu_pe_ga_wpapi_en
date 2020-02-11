@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Heading from '../common/heading';
 import addIcon from '../../images/icons/add.svg';
-//import Isotope from 'isotope-layout';
+import Isotope from 'isotope-layout';
 
 
 // Query
@@ -63,6 +63,7 @@ class Portfolio extends Component {
 
     componentDidMount() {
         try {
+            // The elements are in the DOM, initialize a shuffle instance.
             const Isotope = require( 'isotope-layout' );
 
             this.iso = new Isotope( '.portfolio__items', {
@@ -76,22 +77,10 @@ class Portfolio extends Component {
         } catch ( e ) {
             console.log( e );
         }
-
-        /*if ( typeof window !== 'undefined' ) {
-            // The elements are in the DOM, initialize a shuffle instance.
-            this.iso = new Isotope( '.portfolio__items', {
-                // options
-                itemSelector: '.portfolio__item',
-                masonry: {
-                    columnWidth: 1,
-                    gutter: 1
-                }
-            });
-        }*/
     }
 
     componentDidUpdate( prevProps, prevState ) {
-        /*if ( typeof window !== 'undefined' && ( prevState.page !== this.state.page ) ) {
+        if ( prevState.page !== this.state.page ) {
             // This means that we want to load more portfolio items
             // And because isotope now doesn't know about new items we need to reinitialize again
             this.iso.destroy();
@@ -104,19 +93,16 @@ class Portfolio extends Component {
                     gutter: 1
                 }
             });
-        }*/
+        }
     }
 
     componentWillUnmount() {
-        /*if ( typeof window !== 'undefined' ) {
-            // Remove isotope
-            this.iso.destroy();
-            this.iso = null;
-        }*/
+        // Remove isotope
+        this.iso.destroy();
+        this.iso = null;
     }
 
     filterItems = ( filterValue ) => {
-        console.log( this.iso )
         this.iso.arrange( { filter: `.${ filterValue }` } );
         this.setState( () => ( { active: filterValue } ) );
     }
