@@ -63,7 +63,7 @@ class Portfolio extends Component {
 
     componentDidMount() {
         try {
-            require( 'isotope-layout' );
+            const Isotope = require( 'isotope-layout' );
 
             this.iso = new Isotope( '.portfolio__items', {
                 // options
