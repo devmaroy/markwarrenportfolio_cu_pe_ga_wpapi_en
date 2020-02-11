@@ -14,7 +14,9 @@ const query = graphql`
                     id
                     content
                     acf {
-                        testimonial_icon
+                        testimonial_icon {
+                            source_url
+                        }
                         testimonial_name
                         testimonial_image {
                             source_url
