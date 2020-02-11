@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { menuPropTypes } from '../../propTypesValues';
 import { graphql, StaticQuery } from 'gatsby';
-import SocialIcon from './SocialIcon';
+import SocialIcon from './socialIcon';
 
 
 // Query

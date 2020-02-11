@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { taxonomyPropTypes, featuredMediaFluidPropTypes } from '../propTypesValues';
 import { graphql } from 'gatsby';
 import Layout from '../layout/base/layout';
-import Post from '../components/post/Post';
+import Post from '../components/post/post';
 
 
 const PostTemplate = ( { data } ) => {
