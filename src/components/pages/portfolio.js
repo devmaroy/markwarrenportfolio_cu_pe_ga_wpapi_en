@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Heading from '../common/heading';
 import addIcon from '../../images/icons/add.svg';
-import Isotope from 'isotope-layout';
+//import Isotope from 'isotope-layout';
 
 
 // Query
