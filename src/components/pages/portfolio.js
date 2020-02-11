@@ -63,9 +63,9 @@ class Portfolio extends Component {
     componentDidMount() {
         try {
             // The elements are in the DOM, initialize a shuffle instance.
-            const Isotope = require( 'isotope-layout' );
+            this.isotope = require( 'isotope-layout' );
 
-            this.iso = new Isotope( '.portfolio__items', {
+            this.iso = new this.isotope( '.portfolio__items', {
                 // options
                 itemSelector: '.portfolio__item',
                 masonry: {
@@ -84,7 +84,9 @@ class Portfolio extends Component {
             // And because isotope now doesn't know about new items we need to reinitialize again
             this.iso.destroy();
 
-            this.iso = new Isotope( '.portfolio__items', {
+            this.isotope = require( 'isotope-layout' );
+
+            this.iso = new this.isotope( '.portfolio__items', {
                 // options
                 itemSelector: '.portfolio__item',
                 masonry: {
