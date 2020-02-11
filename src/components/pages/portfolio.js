@@ -62,7 +62,7 @@ class Portfolio extends Component {
     }
 
     componentDidMount() {
-        if ( typeof window !== 'undefined' ) {
+        /*if ( typeof window !== 'undefined' ) {
             // The elements are in the DOM, initialize a shuffle instance.
             this.iso = new Isotope( '.portfolio__items', {
                 // options
@@ -72,7 +72,7 @@ class Portfolio extends Component {
                     gutter: 1
                 }
             });
-        }
+        }*/
     }
 
     componentDidUpdate( prevProps, prevState ) {
