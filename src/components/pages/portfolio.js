@@ -62,6 +62,12 @@ class Portfolio extends Component {
     }
 
     componentDidMount() {
+        try {
+            require( 'isotope-layout' );
+        } catch ( e ) {
+            console.log( e );
+        }
+
         /*if ( typeof window !== 'undefined' ) {
             // The elements are in the DOM, initialize a shuffle instance.
             this.iso = new Isotope( '.portfolio__items', {
