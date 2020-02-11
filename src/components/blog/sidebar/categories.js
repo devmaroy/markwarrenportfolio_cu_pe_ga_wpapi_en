@@ -19,34 +19,30 @@ const query = graphql`
 `;
 
 
-const Categories = () => {
-    return (
-        <StaticQuery query={ query } render={ ( data ) => {
-            const categories = data.allWordpressCategory.edges;
-            
-            return ( 
-                <div className="blog-sidebar-categories">
-                    <SidebarHeading heading="Categories" />
+const Categories = ( { data } ) => {
+    const categories = data.allWordpressCategory.edges;
 
-                    <ul className="blog-sidebar-categories__list">
-                        {
-                            categories.map( ( { node: category } ) => (
-                                <li key={ category.id } className="blog-sidebar-categories__item">
-                                    <Link 
-                                        to={ `/category/${ category.slug }` } 
-                                        className="blog-sidebar-categories__link"
-                                    >
-                                        { `${ category.name }(${ category.count })`  }
-                                    </Link>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </div> 
-            )
-        } } />
-    );
-};
+    return ( 
+        <div className="blog-sidebar-categories">
+            <SidebarHeading heading="Categories" />
+
+            <ul className="blog-sidebar-categories__list">
+                {
+                    categories.map( ( { node: category } ) => (
+                        <li key={ category.id } className="blog-sidebar-categories__item">
+                            <Link 
+                                to={ `/category/${ category.slug }` } 
+                                className="blog-sidebar-categories__link"
+                            >
+                                { `${ category.name }(${ category.count })`  }
+                            </Link>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div> 
+    )
+}
 
 
 Categories.propTypes = {
