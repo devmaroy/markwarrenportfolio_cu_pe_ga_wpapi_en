@@ -62,15 +62,17 @@ class Portfolio extends Component {
     }
 
     componentDidMount() {
-        // The elements are in the DOM, initialize a shuffle instance.
-        this.iso = new Isotope( '.portfolio__items', {
-            // options
-            itemSelector: '.portfolio__item',
-            masonry: {
-                columnWidth: 1,
-                gutter: 1
-            }
-        });
+        if ( typeof window !== 'undefined' ) {
+            // The elements are in the DOM, initialize a shuffle instance.
+            this.iso = new Isotope( '.portfolio__items', {
+                // options
+                itemSelector: '.portfolio__item',
+                masonry: {
+                    columnWidth: 1,
+                    gutter: 1
+                }
+            });
+        }
     }
 
     componentDidUpdate( prevProps, prevState ) {
@@ -91,9 +93,11 @@ class Portfolio extends Component {
     }
 
     componentWillUnmount() {
-        // Remove isotope
-        this.iso.destroy();
-        this.iso = null;
+        if ( typeof window !== 'undefined' ) {
+            // Remove isotope
+            this.iso.destroy();
+            this.iso = null;
+        }
     }
 
     filterItems = ( filterValue ) => {
