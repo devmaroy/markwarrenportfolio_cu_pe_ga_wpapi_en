@@ -141,11 +141,9 @@ module.exports = {
 				"**/media",
 				"**/tags",
 				"**/taxonomies",
-				"**/users",
 				"**/menus",
 				"**/logo",
 				"**/favicon",
-				"**/acf-options-general",
 			  ],
 			  // Blacklisted routes using glob patterns
 			  excludedRoutes: [],
