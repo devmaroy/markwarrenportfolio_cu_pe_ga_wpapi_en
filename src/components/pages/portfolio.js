@@ -56,7 +56,7 @@ class Portfolio extends Component {
         this.state = {
             active: 'all',
             page: 1,
-            portfolioItemsPerLoad: 6,
+            portfolioItemsPerLoad: 2,
         }
     }
 
