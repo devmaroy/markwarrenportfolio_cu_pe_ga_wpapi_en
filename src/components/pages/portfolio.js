@@ -116,6 +116,7 @@ class Portfolio extends Component {
     }
 
     filterItems = ( filterValue ) => {
+        console.log( this.iso )
         this.iso.arrange( { filter: `.${ filterValue }` } );
         this.setState( () => ( { active: filterValue } ) );
     }
