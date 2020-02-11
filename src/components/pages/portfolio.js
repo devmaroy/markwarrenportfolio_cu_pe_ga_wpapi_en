@@ -1,4 +1,4 @@
-/*import React, { Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { taxonomyPropTypes, featuredMediaFluidPropTypes } from '../../propTypesValues';
 import { StaticQuery, graphql } from 'gatsby';
@@ -76,7 +76,7 @@ class Portfolio extends Component {
     }
 
     componentDidUpdate( prevProps, prevState ) {
-        if ( typeof window !== 'undefined' && ( prevState.page !== this.state.page ) ) {
+        /*if ( typeof window !== 'undefined' && ( prevState.page !== this.state.page ) ) {
             // This means that we want to load more portfolio items
             // And because isotope now doesn't know about new items we need to reinitialize again
             this.iso.destroy();
@@ -89,20 +89,20 @@ class Portfolio extends Component {
                     gutter: 1
                 }
             });
-        }
+        }*/
     }
 
     componentWillUnmount() {
-        if ( typeof window !== 'undefined' ) {
+        /*if ( typeof window !== 'undefined' ) {
             // Remove isotope
             this.iso.destroy();
             this.iso = null;
-        }
+        }*/
     }
 
     filterItems = ( filterValue ) => {
-        this.iso.arrange( { filter: `.${ filterValue }` } );
-        this.setState( () => ( { active: filterValue } ) );
+        /*this.iso.arrange( { filter: `.${ filterValue }` } );
+        this.setState( () => ( { active: filterValue } ) );*/
     }
 
     loadMorePortfolioItems = () => {
@@ -228,16 +228,4 @@ Portfolio.propTypes = {
 
 export default ( props ) => (
     <StaticQuery query={ query } render={ ( data ) => <Portfolio data={ data } { ...props } /> } />
-)*/
-
-import React from 'react';
-
-const portfolio = () => {
-    return (
-        <div>
-            nall is here
-        </div>
-    );
-};
-
-export default portfolio;
+)
