@@ -30,6 +30,12 @@ module.exports = {
 				username: process.env.INSTAGRAM_FEED_USERNAME,
 			},
 		},
+		{
+			resolve: 'gatsby-plugin-mailchimp',
+			options: {
+				endpoint: 'https://marekmatejovic.us4.list-manage.com/subscribe/post?u=43bdd10cab7d62decc8d9a67d&amp;id=70acdfb909',
+			},
+		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{

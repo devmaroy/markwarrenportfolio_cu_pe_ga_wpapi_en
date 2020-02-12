@@ -1,0 +1,91 @@
+/*------------------------------------*\
+    # Action Form
+\*------------------------------------*/
+
+
+.action-form__group {
+    display: flex;
+
+    .action-form__control {
+        appearance: none;
+        background: none;
+        outline: none;
+        width: 100%;
+        padding: 1.5rem;
+        font-size: 1.4rem;
+        color: $gray;
+        border: .1rem solid $primary;
+        border-radius: $border-radius 0 0 $border-radius;
+    
+        transition: all $transition-base;
+        
+        &::placeholder {
+            color: $off-gray;
+        }
+    
+        &.disabled {
+            border-color: $off-gray;
+        }
+    }
+    
+    .action-form__button {
+        width: auto;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        font-weight: $font-weight-bold;
+        background: $primary;
+        color: $white;
+        border-radius: 0 $border-radius $border-radius 0;
+        border-left: none;
+        
+    
+        &:hover,
+        &:focus {
+            background: darken( $primary, 10% );
+        }
+    
+        &.disabled,
+        &:disabled {
+            background: $off-gray;
+            border-color: $off-gray;
+        }
+    }
+}
+
+.action-form--secondary {
+    max-width: 340px;
+    margin: 0 auto;
+
+    .action-form__control {
+        border-color: $white;
+        padding: 1.2rem;
+        font-size: 1.2rem; 
+        color: $white;
+            
+        &::placeholder {
+            color: $white;
+        }
+        
+        @media ( min-width: $breakpoint-small ) {
+            padding: 1.5rem 2.5rem; 
+        }
+    }
+
+    .action-form__button {
+        background: $white;
+        color: $primary;
+        
+        &:hover,
+        &:focus {
+            background: none;
+            color: $white;
+        }
+
+        &.disabled,
+        &:disabled {
+            background: transparentize( $white, .2 );
+            color: $primary;
+            border-color: $off-gray;
+        }
+    }
+}

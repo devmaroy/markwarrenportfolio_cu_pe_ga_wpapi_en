@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import CTA from '../common/cta';
+import Newsletter from '../common/newsletter';
 
 
 // Query
@@ -31,12 +32,7 @@ const NewsletterCTA = ( { data } ) => {
 
     return (
         <CTA title={ title } text={ text }>
-            <form className="newsletter-form">
-                <div className="newsletter-form__group">
-                    <input type="email" className="newsletter-form__control" placeholder={ email_address } />
-                    <button className="newsletter-form__control newsletter-form__button">{ button }</button>                        
-                </div>
-            </form>
+            <Newsletter variant="secondary" placeholder={ email_address } buttonText={ button } />
         </CTA>
     )
 }

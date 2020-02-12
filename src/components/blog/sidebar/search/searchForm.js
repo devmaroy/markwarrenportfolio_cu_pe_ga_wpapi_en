@@ -36,24 +36,25 @@ class SearchForm extends Component {
         const resData = { query, results };
 
         return (
-            <div className="search-form">
-                <form className="sidebar-form">
-                    <div className="sidebar-form__group">
+            <React.Fragment>
+                <form className="search-form">
+                    <div className="search-form__group">
                         <input 
                             type="text"
                             placeholder={ placeholder }
+                            value={ query }
                             onChange={ this.handleSearch }
-                            className="sidebar-form__control"
+                            className="search-form__control"
                         />
 
-                        <button type="button" className="sidebar-form__control sidebar-form__button">
+                        <button type="button" className="search-form__control search-form__button">
                             <img src={ searchIcon } alt="Form icon" />
                         </button> 
                     </div>
                 </form>
 
                 { children( resData ) }
-            </div>
+            </React.Fragment>
         );
     }
 }

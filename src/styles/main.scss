@@ -32,6 +32,7 @@
 @import './components/common/social';
 @import './components/common/share-links';
 @import './components/common/feed-item';
+@import './components/common/action-form';
 
 
 // Pages
@@ -43,7 +44,6 @@
 @import './components/pages/contact';
 @import './components/pages/recent-articles';
 @import './components/pages/instagram-feed';
-@import './components/pages/newsletter-cta';
 
 
 // Blog
@@ -57,11 +57,11 @@
 // Blog - Sidebar
 @import './components/blog/sidebar/sidebar';
 @import './components/blog/sidebar/heading';
-@import './components/blog/sidebar/form';
 @import './components/blog/sidebar/recent-articles';
 @import './components/blog/sidebar/categories';
 @import './components/blog/sidebar/tags';
 @import './components/blog/sidebar/instagram-feed';
+@import './components/blog/sidebar/search/search-form';
 @import './components/blog/sidebar/search/search-results';
 
 

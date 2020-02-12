@@ -5,7 +5,6 @@ import SearchForm from './searchForm';
 import SearchResults from './searchResults';
 
 
-
 // Search Query 
 const searchQuery = graphql`
     query SearchIndexQuery {

@@ -1,23 +1,17 @@
 import React from 'react';
 import SidebarHeading from './sidebarHeading';
-//import SidebarForm from './form';
+import Newsletter from '../../common/newsletter';
 
 
-const Newsletter = () => {
+const NewsletterSidebar = () => {
     return (
-        <div className="blog-sidebar-tags">
-            <SidebarHeading heading="Stay in touch" />  
+        <div className="blog-sidebar-newsletter">
+            <SidebarHeading heading="Stay in touch" /> 
 
-
-            {/*SidebarForm 
-                inputType="email" 
-                placeholder="Email Address"
-            >
-                Subscribe
-            </SidebarForm>*/}
+            <Newsletter />
         </div>
     );
 };
 
 
-export default Newsletter;
+export default NewsletterSidebar;
