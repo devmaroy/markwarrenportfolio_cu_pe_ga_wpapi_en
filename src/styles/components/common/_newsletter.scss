@@ -1,0 +1,64 @@
+/*------------------------------------*\
+    # Newsletter
+\*------------------------------------*/
+
+
+.newsletter {
+    .newsletter-success__heading {
+        font-family: $font-family-secondary;
+        color: $primary;
+        margin: 0;
+    }
+    
+    .newsletter-success__text {
+        color: $gray;
+    
+        p {
+            margin: 1rem 0;
+        }
+    }
+    
+    .newsletter-error__text {
+        margin: 2rem 0;
+        color: $gray;
+    
+        a {
+            color: $primary;
+            text-decoration: none;
+            transition: all $transition-base;
+       
+            &:hover,
+            &:focus {
+                color: darken( $primary, 15% );
+            }
+        }
+    }
+}
+
+.newsletter--secondary {
+    .newsletter-success__heading {
+        color: $white;
+    }
+    
+    .newsletter-success__text {
+        color: $white;
+        opacity: .9;
+    }
+    
+    .newsletter-error__text {
+        color: $white;
+        text-align: center;
+        opacity: .9;
+    
+        a {
+            color: $white;
+            font-weight: $font-weight-bold;
+
+            &:hover,
+            &:focus {
+                color: darken( $white, 15% );
+            }
+        }
+    }
+}
+

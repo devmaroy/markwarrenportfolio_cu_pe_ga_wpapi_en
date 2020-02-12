@@ -30,6 +30,7 @@
 @import './components/common/side-article';
 @import './components/common/instagram-feed-item';
 @import './components/common/social';
+@import './components/common/newsletter';
 @import './components/common/share-links';
 @import './components/common/feed-item';
 @import './components/common/action-form';
@@ -57,13 +58,13 @@
 // Blog - Sidebar
 @import './components/blog/sidebar/sidebar';
 @import './components/blog/sidebar/heading';
+@import './components/blog/sidebar/search/search-form';
+@import './components/blog/sidebar/search/search-results';
 @import './components/blog/sidebar/recent-articles';
 @import './components/blog/sidebar/categories';
 @import './components/blog/sidebar/tags';
+@import './components/blog/sidebar/newsletter';
 @import './components/blog/sidebar/instagram-feed';
-@import './components/blog/sidebar/search/search-form';
-@import './components/blog/sidebar/search/search-results';
-
 
 
 // Post

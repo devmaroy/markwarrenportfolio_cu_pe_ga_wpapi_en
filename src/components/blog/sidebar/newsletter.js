@@ -8,7 +8,7 @@ const NewsletterSidebar = () => {
         <div className="blog-sidebar-newsletter">
             <SidebarHeading heading="Stay in touch" /> 
 
-            <Newsletter />
+            <Newsletter variant="primary" placeholder="Email Address" buttonText="Subscribe" />
         </div>
     );
 };

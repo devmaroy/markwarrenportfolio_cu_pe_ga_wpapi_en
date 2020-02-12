@@ -24,7 +24,7 @@ class Newsletter extends Component {
         const { variant, placeholder, buttonText } = this.props;
  
         return (
-            <div className="newsletter">
+            <div className={ `newsletter newsletter--${ variant }` }>
                 {
                     subscribe.result === 'success' ? (
                         <div className="newsletter-success">
@@ -57,6 +57,12 @@ class Newsletter extends Component {
     }
 }
 
+
+Newsletter.defaultProps = {
+    variant: 'primary',
+    placeholder: 'Email Address',
+    buttonText: 'Subscribe',
+}
 
 Newsletter.propTypes = {
     variant: PropTypes.string,
