@@ -59,7 +59,7 @@ class Portfolio extends Component {
             portfolioItemsPerLoad: 2,
         }
     }
-
+    
     componentDidMount() {
         try {
             // The elements are in the DOM, initialize a shuffle instance.
@@ -84,7 +84,7 @@ class Portfolio extends Component {
             // And because isotope now doesn't know about new items we need to reinitialize again
             this.iso.destroy();
 
-            this.isotope = require( 'isotope-layout' );
+            //this.isotope = require( 'isotope-layout' );
 
             this.iso = new this.isotope( '.portfolio__items', {
                 // options
@@ -102,6 +102,10 @@ class Portfolio extends Component {
         this.iso.destroy();
         this.iso = null;
     }
+
+    /*initIsotope = () => {
+        tr
+    }*/
 
     filterItems = ( filterValue ) => {
         this.iso.arrange( { filter: `.${ filterValue }` } );
