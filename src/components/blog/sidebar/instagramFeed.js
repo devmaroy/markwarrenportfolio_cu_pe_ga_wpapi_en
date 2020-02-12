@@ -1,16 +1,4 @@
 import React from 'react';
-
-const instagramFeed = () => {
-    return (
-        <div>
-            offline
-        </div>
-    );
-};
-
-export default instagramFeed;
-
-/*import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import SidebarHeading from './sidebarHeading';
@@ -81,4 +69,4 @@ InstagramFeed.propTypes = {
 
 export default ( props ) => (
     <StaticQuery query={ query } render={ ( data ) => <InstagramFeed data={ data } { ...props } /> }  />
-)*/
+)
