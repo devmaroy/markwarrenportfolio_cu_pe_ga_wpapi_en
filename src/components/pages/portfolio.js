@@ -64,15 +64,7 @@ class Portfolio extends Component {
         try {
             // The elements are in the DOM, initialize a shuffle instance.
             this.isotope = require( 'isotope-layout' );
-
-            this.iso = new this.isotope( '.portfolio__items', {
-                // options
-                itemSelector: '.portfolio__item',
-                masonry: {
-                    columnWidth: 1,
-                    gutter: 1
-                }
-            });
+            this.initIsotope();
         } catch ( e ) {
             console.log( e );
         }
@@ -83,17 +75,7 @@ class Portfolio extends Component {
             // This means that we want to load more portfolio items
             // And because isotope now doesn't know about new items we need to reinitialize again
             this.iso.destroy();
-
-            //this.isotope = require( 'isotope-layout' );
-
-            this.iso = new this.isotope( '.portfolio__items', {
-                // options
-                itemSelector: '.portfolio__item',
-                masonry: {
-                    columnWidth: 1,
-                    gutter: 1
-                }
-            });
+            this.initIsotope();
         }
     }
 
@@ -103,9 +85,16 @@ class Portfolio extends Component {
         this.iso = null;
     }
 
-    /*initIsotope = () => {
-        tr
-    }*/
+    initIsotope = () => {
+        this.iso = new this.isotope( '.portfolio__items', {
+            // options
+            itemSelector: '.portfolio__item',
+            masonry: {
+                columnWidth: 1,
+                gutter: 1
+            }
+        });
+    }
 
     filterItems = ( filterValue ) => {
         this.iso.arrange( { filter: `.${ filterValue }` } );
