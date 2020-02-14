@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { isValidEmail } from '../../../utils/helpers/validation';
 
 
 class NewsletterForm extends Component {
@@ -18,12 +19,8 @@ class NewsletterForm extends Component {
         this.props.onSubmit( this.state.email );
     }
 
-    isValidEmail = () => {
-        return ( /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/ ).test( this.state.email );
-    }
-
     canBeSubmitted = () => {
-        return this.state.email.length > 0 && this.isValidEmail();
+        return this.state.email.length > 0 && isValidEmail();
     }
 
     render() {

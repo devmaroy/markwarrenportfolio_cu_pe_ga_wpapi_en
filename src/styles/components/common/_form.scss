@@ -3,7 +3,9 @@
 \*------------------------------------*/
 
 .form__group {
+    position: relative;
     margin: 0 0 2rem 0;
+    line-height: 0;
 }
 
 .form__control {
@@ -17,6 +19,8 @@
     width: 100%;
     color: $black;
 
+    transition: all $transition-base;
+
     @at-root textarea#{&} {
         height: 18rem;
         resize: vertical;
@@ -26,9 +30,12 @@
         color: $gray;
     }
 
-    &:hover,
-    &:focus {
-        border-color: lighten( $primary, 30% );
+    &.error {
+        border-color: $error;
+    }
+
+    &.success {
+        border-color: $success;
     }
 
     @media ( min-width: $breakpoint-medium ) {
@@ -43,4 +50,35 @@
     @media ( min-width: $breakpoint-medium ) {
         margin: 4rem 0 0 0;
     }
+}
+
+.form__response {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 100%;
+    border-radius: 0 .3rem .3rem 0;
+
+    svg {
+        color: $white;
+    }
+}
+
+.form__response--error {
+    background: $error;
+}
+
+.form__response--success {
+    background: $success;
+}
+
+.form__error-message {
+    margin: -1.5rem 0 1.5rem 0;
+    color: $error;
 }

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ContactForm from './contactForm';
 import { featuredMediaFluidPropTypes } from '../../propTypesValues';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -40,78 +41,45 @@ const query = graphql`
 `;
 
 
-const Contact = ( { data } ) => {
-    const { title, content, acf, featured_media } = data.allWordpressWpContact.edges[0].node;
-    const form = acf.form;
+class Contact extends Component {
+    render() {
+        const { data } = this.props;
+        const { title, content, acf, featured_media } = data.allWordpressWpContact.edges[0].node;
+        const form = acf.form;
 
-    return (
-        <section id="contact" className="contact divider-space">
-            <div className="container">
-                <div className="contact__inner grid-container">
-                    <div className="contact-info">
-                        <h2 
-                            className="contact-info__heading" 
-                            dangerouslySetInnerHTML={ { __html: title } } 
-                        />
-
-                        <div 
-                            className="contact-info__text" 
-                            dangerouslySetInnerHTML={ { __html: content } } 
-                        />
-
-                        <form className="form">
-                            {
-                                
-                                Object.keys( form )
-                                    .filter(( field ) => field !== 'button' && field !== 'required_fields' )
-                                    .map(( field ) => (
-                                        <div key={ field } className="form__group">
-                                            {
-                                                field === 'message' ? (
-                                                    <textarea 
-                                                        placeholder={ form.required_fields.includes( field ) 
-                                                            ? `${ form[ field ] } *` 
-                                                            : form[ field ]
-                                                        }
-                                                        className="form__control"
-                                                    ></textarea> 
-                                                ) : (
-                                                    <input 
-                                                        type={ field === 'email_address' ? 'email' : 'text' }
-                                                        placeholder={ form.required_fields.includes( field ) 
-                                                            ? `${ form[ field ] } *`
-                                                            : form[ field ]
-                                                        }
-                                                        className="form__control" 
-                                                    />
-                                                )
-                                            }
-                                        </div>
-                                    ))
-                            }
-                        
-                            <div className="form__meta">
-                                <button className="button button--primary">
-                                    { form[ 'button' ] }
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div className="contact__featured">
-                        <div className="contact__featured-wrap">                                    
-                            <Img 
-                                fluid={ featured_media.localFile.childImageSharp.fluid } 
-                                alt="Contact image" 
-                                className="contact__featured-img"
+        return (
+            <section id="contact" className="contact divider-space">
+                <div className="container">
+                    <div className="contact__inner grid-container">
+                        <div className="contact-info">
+                            <h2 
+                                className="contact-info__heading" 
+                                dangerouslySetInnerHTML={ { __html: title } } 
                             />
+    
+                            <div 
+                                className="contact-info__text" 
+                                dangerouslySetInnerHTML={ { __html: content } } 
+                            />
+    
+                            <ContactForm { ...form } />
+                        </div>
+    
+                        <div className="contact__featured">
+                            <div className="contact__featured-wrap">                                    
+                                <Img 
+                                    fluid={ featured_media.localFile.childImageSharp.fluid } 
+                                    alt="Contact image" 
+                                    className="contact__featured-img"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    )
-};
+            </section>
+        )
+    }
+}
 
 
 Contact.propTypes = {
@@ -139,6 +107,6 @@ Contact.propTypes = {
 };
 
 
-export default ( props ) => (
-    <StaticQuery query={ query } render={ ( data ) => <Contact data={ data } { ... props } /> } />
-)
+export default ( props ) => {
+    return <StaticQuery query={ query } render={ ( data ) => <Contact data={ data } { ...props } /> }  />
+}
