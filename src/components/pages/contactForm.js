@@ -129,18 +129,20 @@ class ContactForm extends Component {
             // Form is valid
             
             // Send to netlify
+            this.setState(() => ( { loading: true } ) ); 
+
             fetch( '/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: encode( { 'form-name': 'mwcontact', ...this.state.fields } )
             }).then( ( res ) => {
                 if ( res.ok ) {
-                    this.setState( () => ( { success: true } ) )
+                    this.setState(() => ( { success: true, loading: false } ) )
                 } else {
-                    console.log('faila')
+                    this.setState(() => ( { error: true, loading: false } ) )
                 }
-            }).catch((e) => {
-                console.log( e, '  fail' );
+            }).catch( ( e ) => {
+                this.setState(() => ( { error: true, loading: false } ) )
             });
 /*
             fetch("/", {
@@ -159,8 +161,16 @@ class ContactForm extends Component {
         const formFields = this.props;
         const { fieldsErrors, loading, error, success } = this.state;
 
+        if ( loading ) {
+            return 'loading....'
+        }
+
         if ( success ) {
-            return 'HAHAHHAHAHAH'
+            return 'Thank you for contacting me!'
+        }
+
+        if ( error ) {
+            return 'Your information was not sent. Please try again later.';
         }
 
         return (
