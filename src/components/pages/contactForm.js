@@ -175,7 +175,7 @@ class ContactForm extends Component {
 
         return (
             <React.Fragment>
-                <form method="post" name="mwcontact" data-netlify="true" netlify-honeypot="bot" onSubmit={ this.handleSubmit } className="form">
+                <form autocomplete="off" method="post" name="mwcontact" data-netlify="true" netlify-honeypot="bot" onSubmit={ this.handleSubmit } className="form">
                     {
                         // Quick note for someone in the future:
                         // I know.. nested ternary operators are... awful, but for this case still good.
