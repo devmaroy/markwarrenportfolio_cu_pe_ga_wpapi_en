@@ -127,14 +127,17 @@ class ContactForm extends Component {
             
             // Send to netlify
             const data = {
-                first_name: 'Aloisik'
+                first_name: 'Aloisik29'
             }
 
+            console.log( 'data', data);
+            console.log( 'state fields', this.state.fields);
+            
 
             fetch( '/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: encode( { 'form-name': 'mwcontact', ...this.state.fields } )
+                body: encode( { 'form-name': 'mwcontact', ...data } )
             }).then( ( res ) => {
                 if ( res.ok ) {
                     console.log('vse je ok');
