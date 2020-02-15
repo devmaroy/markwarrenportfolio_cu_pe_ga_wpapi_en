@@ -8,10 +8,16 @@ export const encode = ( data ) => {
 
 // Submit Form
 export const submitForm = ( name, data ) => {
+    console.log(data);
+    
+    const fields = {
+        first_name: 'John Casey'
+    }
+
     const options = {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode( { 'form-name': name, ...data } )
+        body: encode( { 'form-name': name, ...fields } )
     }
 
     return fetch( '/', options )
