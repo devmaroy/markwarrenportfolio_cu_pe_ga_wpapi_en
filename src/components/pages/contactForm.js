@@ -131,8 +131,8 @@ class ContactForm extends Component {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: encode( { 'form-name': 'contact', ...data } )
-            }).then(() => {
-                console.log('aha');
+            }).then((res) => {
+                console.log(res);
             }).catch((e) => {
                 console.log( e, '  fail' );
             });
@@ -159,7 +159,7 @@ class ContactForm extends Component {
 
         return (
             <React.Fragment>
-                <form method="post" name="contact" action="/thanks" data-netlify="true" netlify-honeypot="bot" onSubmit={ this.handleSubmit } className="form">
+                <form method="post" name="mark-warren-contact-form" data-netlify="true" netlify-honeypot="bot" onSubmit={ this.handleSubmit } className="form">
                     {
                         // Quick note for someone in the future:
                         // I know.. nested ternary operators are... awful, but for this case still good.
