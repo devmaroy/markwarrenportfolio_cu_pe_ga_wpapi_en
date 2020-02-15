@@ -127,7 +127,11 @@ class ContactForm extends Component {
             
             // Send to netlify
             const data = {
-                first_name: 'Aloisik29'
+                first_name: this.state.fields['first_name'],
+                last_name: this.state.fields['last_name'],
+                email_address: this.state.fields['email_address'],
+                subject: this.state.fields['subject'],
+                message: this.state.fields['message'],
             }
 
             console.log( 'data', data);
