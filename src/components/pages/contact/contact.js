@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ContactForm from './contactForm';
-import { featuredMediaFluidPropTypes } from '../../propTypesValues';
+import { featuredMediaFluidPropTypes } from '../../../propTypesValues';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 

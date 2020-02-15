@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { isEmpty, isValidEmail } from '../../../utils/helpers/validation'
-import Loading from '../common/loading';
+import { isEmpty, isValidEmail } from '../../../../utils/helpers/validation'
+import { submitForm } from '../../../../utils/helpers/form'
+import ContactFormResponse from './contactFormResponse';
+import Loading from '../../common/loading';
 
-
-const encode = (data) => {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-  }
 
 class ContactForm extends Component {
     constructor( props ) {
@@ -124,69 +120,54 @@ class ContactForm extends Component {
         return valid;
     }
 
-    handleSubmit = ( e ) => {
+    handleSubmit = async ( e ) => {
         e.preventDefault();
         
-
         if ( this.validateForm( this.state ) ) {
             // Form is valid
             
-            // Send to netlify
+            // Set loading
             this.setState(() => ( { loading: true } ) ); 
-
-            fetch( '/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: encode( { 'form-name': 'mwcontact', ...this.state.fields } )
-            }).then( ( res ) => {
-                if ( res.ok ) {
-                    this.setState(() => ( { success: true, loading: false } ) )
-                } else {
-                    this.setState(() => ( { error: true, loading: false } ) )
-                }
-            }).catch( ( e ) => {
+            
+            // Send to netlify 
+            try {
+                await submitForm( 'mwcontact', this.state.fields );
+                this.setState(() => ( { success: true, loading: false } ) )
+            } catch ( e ) {
                 this.setState(() => ( { error: true, loading: false } ) )
-            });
-/*
-            fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: encode({ "form-name": "contact", ...this.state })
-              })
-                .then(() => alert("Success!"))
-                .catch(error => alert(error));
-        
-              e.preventDefault();*/
+            }
         }
     }
 
     render() {
         const formFields = this.props;
         const { fieldsErrors, loading, error, success } = this.state;
-
+        
         if ( loading ) {
-            return <Loading />
+            return <Loading />;
         }
 
         if ( success ) {
             return (
-                <div className="form__submitted form__submitted--success">
-                    <h4 className="form__submitted-heading">Thank you for contacting us. 😄</h4>
-                    <div className="form__submitted-text">
-                        <p>You are very important to us, all information received will always remain confidential. We will contact you as soon as we review your message.</p>
-                    </div>
-                </div>
+                <ContactFormResponse
+                    heading="Thank you for contacting me."
+                    type="success"
+                    emoji="😄"
+                >
+                    <p>You are very important to me, all information received will always remain confidential. I will contact you as soon as I review your message.</p>
+                </ContactFormResponse>
             )
         }
 
         if ( error ) {
             return (
-                <div className="form__submitted form__submitted--error">
-                    <h4 className="form__submitted-heading">Sorry, there was a problem. 😔</h4>
-                    <div className="form__submitted-text">
-                        <p>Something went wrong. Unfortunately your information was not sent. Please try again later. If problem occurs again, try to contact me via social media (page bottom right corner). Thank you.</p>
-                    </div>
-                </div>
+                <ContactFormResponse
+                    heading="Sorry, there was a problem."
+                    type="error"
+                    emoji="😔"
+                >
+                    <p>Something went wrong. Unfortunately your information was not sent. Please try again later. If problem occurs again, try to contact me via social media (page bottom right corner). Thank you.</p>
+                </ContactFormResponse>
             )
         }
 
@@ -244,7 +225,7 @@ class ContactForm extends Component {
                                         }
 
                                         <div className="form__hidden">
-                                            <label>Don't fill this out, human</label>
+                                            <label htmlFor="bot">Don't fill this out, human</label>
                                             <input name="bot" />
                                         </div>
                                     </div>

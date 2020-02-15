@@ -6,7 +6,7 @@ import Services from '../components/pages/services';
 import Portfolio from '../components/pages/portfolio';
 import AvailableCTA from '../components/pages/availableCTA';
 import Testimonials from '../components/pages/testimonials';
-import Contact from '../components/pages/contact';
+import Contact from '../components/pages/contact/contact';
 import RecentArticles from '../components/pages/recentArticles';
 import InstagramFeed from '../components/pages/instagramFeed';
 import NewsletterCTA from '../components/pages/newsletterCTA';
