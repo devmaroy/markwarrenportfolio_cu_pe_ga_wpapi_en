@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { isEmpty, isValidEmail } from '../../../utils/helpers/validation'
+import Loading from '../common/loading';
+
+
 const encode = (data) => {
     return Object.keys(data)
         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -28,8 +31,8 @@ class ContactForm extends Component {
                 message: '',
             },
             loading: false,
-            error: false,
             success: false,
+            error: false,
         }
     }
 
@@ -162,20 +165,34 @@ class ContactForm extends Component {
         const { fieldsErrors, loading, error, success } = this.state;
 
         if ( loading ) {
-            return 'loading....'
+            return <Loading />
         }
 
         if ( success ) {
-            return 'Thank you for contacting me!'
+            return (
+                <div className="form__submitted form__submitted--success">
+                    <h4 className="form__submitted-heading">Thank you for contacting us. 😄</h4>
+                    <div className="form__submitted-text">
+                        <p>You are very important to us, all information received will always remain confidential. We will contact you as soon as we review your message.</p>
+                    </div>
+                </div>
+            )
         }
 
         if ( error ) {
-            return 'Your information was not sent. Please try again later.';
+            return (
+                <div className="form__submitted form__submitted--error">
+                    <h4 className="form__submitted-heading">Sorry, there was a problem. 😔</h4>
+                    <div className="form__submitted-text">
+                        <p>Something went wrong. Unfortunately your information was not sent. Please try again later. If problem occurs again, try to contact me via social media (page bottom right corner). Thank you.</p>
+                    </div>
+                </div>
+            )
         }
 
         return (
             <React.Fragment>
-                <form autocomplete="off" method="post" name="mwcontact" data-netlify="true" netlify-honeypot="bot" onSubmit={ this.handleSubmit } className="form">
+                <form autoComplete="off" method="post" name="mwcontact" data-netlify="true" netlify-honeypot="bot" onSubmit={ this.handleSubmit } className="form">
                     {
                         // Quick note for someone in the future:
                         // I know.. nested ternary operators are... awful, but for this case still good.

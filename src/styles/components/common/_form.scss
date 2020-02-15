@@ -83,6 +83,39 @@
     color: $error;
 }
 
+.form__submitted {
+    margin: 8rem 0 0 0;
+}
+
+.form__submitted-heading {
+    font-size: 3rem;
+    font-weight: $font-weight-bold;
+    font-family: $font-family-secondary;
+    margin: 0;
+    color: $error;
+}
+
+.form__submitted-text {
+    color: $gray;
+
+    p {
+        margin: 1rem 0;
+        line-height: 1.8;
+    }
+}
+
+.form__submitted--success {
+    .form__submitted-heading {
+        color: $success;
+    }
+}
+
+.form__submitted--error {
+    .form__submitted-heading {
+        color: $error;
+    }
+}
+
 .form__hidden {
     display: none;
 }

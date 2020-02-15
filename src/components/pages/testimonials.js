@@ -14,9 +14,7 @@ const query = graphql`
                     id
                     content
                     acf {
-                        testimonial_icon {
-                            source_url
-                        }
+                        testimonial_icon
                         testimonial_name
                         testimonial_image {
                             source_url
@@ -47,7 +45,7 @@ const Testimonials = ( { data } ) => {
                                     <div className="card__meta">
                                         <img 
                                             className="card__icon" 
-                                            src={ testimonial.acf.testimonial_icon.source_url } 
+                                            src={ testimonial.acf.testimonial_icon } 
                                             alt="Services icon" 
                                         />    
                                     </div>
