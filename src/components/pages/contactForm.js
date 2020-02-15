@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { isEmpty, isValidEmail } from '../../../utils/helpers/validation'
-
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
 
 class ContactForm extends Component {
     constructor( props ) {
@@ -22,9 +26,6 @@ class ContactForm extends Component {
                 message: '',
             },
         }
-    }
-    componentDidMount() {
-        console.log( this.props )
     }
 
     handleChange = ( e ) => {
@@ -121,6 +122,30 @@ class ContactForm extends Component {
             // Form is valid
             
             // Send to netlify
+            const data = {
+                first_name: this.state.first_name
+            }
+
+
+            fetch( '/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: encode( { 'form-name': 'contact', ...data } )
+            }).then(() => {
+                console.log('aha');
+            }).catch((e) => {
+                console.log( e, '  fail' );
+            });
+/*
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({ "form-name": "contact", ...this.state })
+              })
+                .then(() => alert("Success!"))
+                .catch(error => alert(error));
+        
+              e.preventDefault();*/
         }
     }
 
@@ -134,7 +159,7 @@ class ContactForm extends Component {
 
         return (
             <React.Fragment>
-                <form onSubmit={ this.handleSubmit } className="form">
+                <form method="post" name="contact" action="/thanks" data-netlify="true" netlify-honeypot="bot" onSubmit={ this.handleSubmit } className="form">
                     {
                         // Quick note for someone in the future:
                         // I know.. nested ternary operators are... awful, but for this case still good.
@@ -176,7 +201,7 @@ class ContactForm extends Component {
                                             fieldsErrors[field] ? (
                                                 <span className="form__response form__response--error">
                                                     <FontAwesomeIcon icon={ [ "far", 'times-circle' ] } fixedWidth />
-                                                </span>
+                                                </span>                                        
                                             ) : 
                                                 ! isEmpty( this.state[field] ) && (
                                                     <span className="form__response form__response--success">
@@ -184,6 +209,11 @@ class ContactForm extends Component {
                                                     </span>
                                                 )
                                         }
+
+                                        <div className="form__hidden">
+                                            <label>Don't fill this out, human</label>
+                                            <input name="bot" />
+                                        </div>
                                     </div>
 
                                     {
