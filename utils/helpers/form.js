@@ -11,7 +11,8 @@ export const submitForm = ( name, data ) => {
     console.log(data);
     
     const fields = {
-        first_name: 'John Casey'
+        first_name: data.first_name,
+        last_name: data.last_name,
     }
 
     const options = {
