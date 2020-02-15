@@ -134,7 +134,7 @@ class ContactForm extends Component {
             fetch( '/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: encode( { 'form-name': 'contact', ...data } )
+                body: encode( { 'form-name': 'mark-warren-contact-form', ...data } )
             }).then( ( res ) => {
                 if ( res.ok ) {
                     console.log('vse je ok');
