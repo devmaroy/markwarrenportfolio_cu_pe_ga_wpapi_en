@@ -27,6 +27,9 @@ class ContactForm extends Component {
                 subject: '',
                 message: '',
             },
+            loading: false,
+            error: false,
+            success: false,
         }
     }
 
@@ -126,25 +129,13 @@ class ContactForm extends Component {
             // Form is valid
             
             // Send to netlify
-            const data = {
-                first_name: this.state.fields['first_name'],
-                last_name: this.state.fields['last_name'],
-                email_address: this.state.fields['email_address'],
-                subject: this.state.fields['subject'],
-                message: this.state.fields['message'],
-            }
-
-            console.log( 'data', data);
-            console.log( 'state fields', this.state.fields);
-            
-
             fetch( '/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: encode( { 'form-name': 'mwcontact', ...this.state.fields } )
             }).then( ( res ) => {
                 if ( res.ok ) {
-                    console.log('vse je ok');
+                    this.setState( () => ( { success: true } ) )
                 } else {
                     console.log('faila')
                 }
@@ -166,7 +157,11 @@ class ContactForm extends Component {
 
     render() {
         const formFields = this.props;
-        const { fieldsErrors } = this.state;
+        const { fieldsErrors, loading, error, success } = this.state;
+
+        if ( success ) {
+            return 'HAHAHHAHAHAH'
+        }
 
         return (
             <React.Fragment>
