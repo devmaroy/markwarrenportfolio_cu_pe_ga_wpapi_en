@@ -13,11 +13,13 @@ class ContactForm extends Component {
         super( props );
 
         this.state = {
-            first_name: '',
-            last_name: '',
-            email_address: '',
-            subject: '',
-            message: '',
+            fields: {
+                first_name: '',
+                last_name: '',
+                email_address: '',
+                subject: '',
+                message: '',
+            },
             fieldsErrors: {
                 first_name: '',
                 last_name: '',
@@ -31,12 +33,14 @@ class ContactForm extends Component {
     handleChange = ( e ) => {
         const name = e.target.name;
         const value = e.target.value;
-
         const fieldsErrors = this.validateField( name, value );
-        
-        this.setState(() => ({
-            [name]: value,
-            fieldsErrors
+
+        this.setState( ( { fields } ) => ({
+            fieldsErrors,
+            fields: {
+                ...fields,
+                [name]: value
+            }
         }));
     }
 
@@ -97,7 +101,7 @@ class ContactForm extends Component {
         return errors;
     }
 
-    validateForm = ( { fieldsErrors, ...rest } ) => {
+    validateForm = ( { fieldsErrors, fields } ) => {
         let valid = true;
 
         // Check if we have errors in state
@@ -105,8 +109,8 @@ class ContactForm extends Component {
 
         // Check if form was submitted empty
         let errors;
-        Object.keys( rest ).map(( fieldKey ) => {
-            errors = this.validateField( fieldKey, rest[fieldKey] );
+        Object.keys( fields ).map(( fieldKey ) => {
+            errors = this.validateField( fieldKey, fields[fieldKey] );
             return errors[ fieldKey ].length > 0 && ( valid = false );
         });
         this.setState(() => ({ errors: fieldsErrors }))
@@ -116,7 +120,7 @@ class ContactForm extends Component {
 
     handleSubmit = ( e ) => {
         e.preventDefault();
-
+        
 
         if ( this.validateForm( this.state ) ) {
             // Form is valid
@@ -131,8 +135,12 @@ class ContactForm extends Component {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: encode( { 'form-name': 'contact', ...data } )
-            }).then((res) => {
-                console.log(res);
+            }).then( ( res ) => {
+                if ( res.ok ) {
+                    console.log('vse je ok');
+                } else {
+                    console.log('faila')
+                }
             }).catch((e) => {
                 console.log( e, '  fail' );
             });
@@ -147,10 +155,6 @@ class ContactForm extends Component {
         
               e.preventDefault();*/
         }
-    }
-
-    notEmpty = ( field ) => {  
-        return this.state[field];
     }
 
     render() {
@@ -180,7 +184,7 @@ class ContactForm extends Component {
                                                     name={ field }
                                                     value={ this.state[ field ] }
                                                     onChange={ this.handleChange }
-                                                    className={ fieldsErrors[ field ] ? 'form__control error' : ( ! isEmpty( this.state[field] ) ? 'form__control success' : 'form__control' ) }>
+                                                    className={ fieldsErrors[ field ] ? 'form__control error' : ( ! isEmpty( this.state.fields[field] ) ? 'form__control success' : 'form__control' ) }>
                                                 </textarea> 
                                             ) : (
                                                 <input 
@@ -192,7 +196,7 @@ class ContactForm extends Component {
                                                     name={ field }
                                                     value={ this.state[ field ] }
                                                     onChange={ this.handleChange }
-                                                    className={ fieldsErrors[ field ] ? 'form__control error' : ( ! isEmpty( this.state[field] ) ? 'form__control success' : 'form__control' ) }
+                                                    className={ fieldsErrors[ field ] ? 'form__control error' : ( ! isEmpty( this.state.fields[field] ) ? 'form__control success' : 'form__control' ) }
                                                 />
                                             )
                                         }
@@ -203,7 +207,7 @@ class ContactForm extends Component {
                                                     <FontAwesomeIcon icon={ [ "far", 'times-circle' ] } fixedWidth />
                                                 </span>                                        
                                             ) : 
-                                                ! isEmpty( this.state[field] ) && (
+                                                ! isEmpty( this.state.fields[field] ) && (
                                                     <span className="form__response form__response--success">
                                                         <FontAwesomeIcon icon={ [ "far", 'check-circle' ] } fixedWidth />
                                                     </span>
