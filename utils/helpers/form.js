@@ -18,7 +18,7 @@ export const submitForm = ( name, data ) => {
     const options = {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode( { 'form-name': name, ...fields } )
+        body: encode( { 'form-name': name, ...data } )
     }
 
     return fetch( '/', options )
