@@ -5,15 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ShareLinks = ( { location, url } ) => {
     const { origin } = location;
-    console.log(origin);
-
-    console.log(location);
-    const path = globalHistory.location.pathname
-    console.log(path);
-    console.log(ServerLocation);
+ 
+    const openPopup = ( url, title, w, h ) => {
+        var left = (window.screen.width/2)-(w/2);
+        var top = (window.screen.height/2)-(h/2);
+        return window.open(url, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes, width='+w+', height='+h+', top='+top+', left='+left);
+    }
     
     
-
     return typeof window !== 'undefined' && (
         <ul className="share-links">
             <li className="share-links__item">
@@ -22,6 +21,7 @@ const ShareLinks = ( { location, url } ) => {
                     className="share-links__link"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={ () => openPopup( `https://www.facebook.com/sharer/sharer.php?u=${ origin }${ url }`, '', 500, 500 ) }
                 >
                     <FontAwesomeIcon icon={ [ "fab", 'facebook-f' ] } fixedWidth />
                 </a>
@@ -32,6 +32,7 @@ const ShareLinks = ( { location, url } ) => {
                     className="share-links__link"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={ () => openPopup( `https://twitter.com/intent/tweet/?url=${ origin }${ url }`, '', 500, 500 ) }
                 >
                     <FontAwesomeIcon icon={ [ "fab", 'twitter' ] } fixedWidth />
                     
