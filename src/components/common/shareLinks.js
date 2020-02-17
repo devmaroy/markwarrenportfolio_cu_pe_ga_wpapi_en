@@ -6,19 +6,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const ShareLinks = ( { location, url } ) => {
     const { origin } = location;
     console.log(origin);
+    const testos = origin;
     
 
     return (
         <ul className="share-links">
             <li className="share-links__item">
                 <a 
-                    href={ origin }
+                    href={ testos }
                     className="share-links__link"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     <FontAwesomeIcon icon={ [ "fab", 'facebook-f' ] } fixedWidth />
-                    { origin }
+                    { testos }
                 </a>
             </li>
             <li className="share-links__item">
