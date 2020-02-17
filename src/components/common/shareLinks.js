@@ -18,6 +18,7 @@ const ShareLinks = ( { location, url } ) => {
                     rel="noopener noreferrer"
                 >
                     <FontAwesomeIcon icon={ [ "fab", 'facebook-f' ] } fixedWidth />
+                    { origin }
                 </a>
             </li>
             <li className="share-links__item">
