@@ -1,14 +1,20 @@
 import React from 'react';
-import { Location } from '@reach/router';
+import { Location , globalHistory, ServerLocation} from '@reach/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const ShareLinks = ( { location, url } ) => {
     const { origin } = location;
     console.log(origin);
+
+    console.log(location);
+    const path = globalHistory.location.pathname
+    console.log(path);
+    console.log(ServerLocation);
+    
     
 
-    return (
+    return typeof window !== 'undefined' && (
         <ul className="share-links">
             <li className="share-links__item">
                 <a 
