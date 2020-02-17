@@ -48,6 +48,8 @@ const Article = ( { id, title, slug, content, featured_media, date, categories, 
 
             <div className="article__content" dangerouslySetInnerHTML={ { __html: content } } />
 
+            { console.log( content )}
+
             <div className="post__separator"></div>
 
             <footer className="article__footer">
@@ -83,25 +85,3 @@ Article.propTypes = {
 
 
 export default Article;
-
-
-
-/*<ul className="article__share-links">
-                        <li>
-                            <a href="https://facebook.com/">
-                                <FontAwesomeIcon icon={ [ "fab", 'facebook-f' ] } fixedWidth />
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://twitter.com/">
-                                <FontAwesomeIcon icon={ [ "fab", 'twitter' ] } fixedWidth />
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://linkedin.com/">
-                                <FontAwesomeIcon icon={ [ "fab", 'linkedin-in' ] } fixedWidth />
-                            </a>
-                        </li>
-                    </ul>*/
