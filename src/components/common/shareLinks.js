@@ -13,7 +13,7 @@ const ShareLinks = ( { location, url } ) => {
         <ul className="share-links">
             <li className="share-links__item">
                 <a 
-                    href={ testos }
+                    href="https://testots.com/"
                     className="share-links__link"
                     target="_blank"
                     rel="noopener noreferrer"
