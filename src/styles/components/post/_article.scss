@@ -273,17 +273,20 @@
     }
  
     figure {
-        margin: 6rem 0 6rem 0;
+        //margin: 6rem 0 6rem 0;
  
         img {
             object-fit: cover;
         }
  
         figcaption {
-            text-align: center;
-            color: $off-gray;
-            font-weight: $font-weight-bold;
-            font-style: italic;
+            p {
+                text-align: center;
+                color: $off-gray;
+                font-weight: $font-weight-bold;
+                font-style: italic;
+            }
+           
             //margin: 2rem 0 0 0;
         }
     }
