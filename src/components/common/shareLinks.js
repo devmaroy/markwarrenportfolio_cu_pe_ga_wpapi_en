@@ -12,7 +12,7 @@ const ShareLinks = ( { location, url } ) => {
         <ul className="share-links">
             <li className="share-links__item">
                 <a 
-                    href={ `https://www.facebook.com/sharer/sharer.php?u=${ origin }${ url }` }
+                    href={ origin }
                     className="share-links__link"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -23,7 +23,7 @@ const ShareLinks = ( { location, url } ) => {
             </li>
             <li className="share-links__item">
                 <a 
-                    href={ `https://twitter.com/intent/tweet/?url=${ origin }${ url }` }
+                    href={ origin }
                     className="share-links__link"
                     target="_blank"
                     rel="noopener noreferrer"
