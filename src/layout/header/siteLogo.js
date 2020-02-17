@@ -9,7 +9,9 @@ const query = graphql`
         allWordpressWpLogo {
             edges {
                 node {
-                    url
+                    url {
+                        source_url
+                    }
                 }
             }
         }
@@ -18,7 +20,7 @@ const query = graphql`
 
 
 const SiteLogo = ( { data } ) => {
-    const siteLogoUrl = data.allWordpressWpLogo.edges[0].node.url;
+    const siteLogoUrl = data.allWordpressWpLogo.edges[0].node.url.source_url;
     
     return (
         <div className="site-logo">
