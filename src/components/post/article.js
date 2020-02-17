@@ -69,7 +69,7 @@ const Article = ( { id, title, slug, content, featured_media, date, categories, 
                 <div className="article__share">
                     <h4 className="article__share-heading">Share this article</h4>
 
-                    <ShareLinks url={ `https://mariohernandez.io/post/${ slug }` } />
+                    <ShareLinks url={ `/post/${ slug }` } />
                 </div>
             </footer>
         </article>
