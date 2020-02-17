@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const ShareLinks = ( { location, url } ) => {
+    const { origin } = location;
+    
     return (
         <ul className="share-links">
             <li className="share-links__item">
