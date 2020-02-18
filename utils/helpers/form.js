@@ -8,13 +8,6 @@ export const encode = ( data ) => {
 
 // Submit Form
 export const submitForm = ( name, data ) => {
-    console.log(data);
-    
-    const fields = {
-        first_name: data.first_name,
-        last_name: data.last_name,
-    }
-
     const options = {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

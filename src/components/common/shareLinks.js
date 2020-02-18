@@ -1,5 +1,5 @@
 import React from 'react';
-import { Location , globalHistory, ServerLocation} from '@reach/router';
+import { Location } from '@reach/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 

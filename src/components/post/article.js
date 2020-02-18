@@ -48,8 +48,6 @@ const Article = ( { id, title, slug, content, featured_media, date, categories, 
 
             <div className="article__content" dangerouslySetInnerHTML={ { __html: content } } />
 
-            { console.log( content )}
-
             <div className="post__separator"></div>
 
             <footer className="article__footer">

@@ -274,7 +274,12 @@
  
     figure {
         //margin: 6rem 0 6rem 0;
- 
+        p {
+            text-align: center;
+            color: $off-gray;
+            font-weight: $font-weight-bold;
+            font-style: italic;
+        }
         img {
             object-fit: cover;
         }
