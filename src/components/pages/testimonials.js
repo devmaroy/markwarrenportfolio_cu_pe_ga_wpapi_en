@@ -41,9 +41,9 @@ const Testimonials = ( { data } ) => {
                     <Heading main="What My Cliens Say" sub="Testimonials" />
 
                     {
-                        testimonials.map( ( { node: testimonial } ) => {
+                        testimonials.map( ( { node: testimonial }, index ) => {
                             return (
-                                <div key={ testimonial.id } className="card card--testimonials card--onepage">
+                                <div key={ testimonial.id } className="card card--testimonials card--onepage" data-aos='zoom-in-right' data-aos-delay={ 100 * index }>
                                     <div className="card__meta">
                                         <img 
                                             className="card__icon" 

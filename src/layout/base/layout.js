@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -13,8 +15,11 @@ import Header from '../header/header';
 import Footer from '../footer/footer';
 
 
-// Create font awesome icon library
+// Create Font Awesome Icon Library
 library.add( fab, faAngleDoubleLeft, faCaretUp, faCheckCircle, faTimesCircle );
+
+// Initialize AOS Library
+AOS.init( { duration: 2000 } );
 
 
 const Layout = ( { children } ) => {

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const CTA = ( { title, text, children } ) => {
     return (
-        <section className="cta divider-space">
+        <section className="cta divider-space" data-aos='slide-right'>
             <div className="container">
                 <div className="cta__inner grid-container">
                     <div className="cta-box">

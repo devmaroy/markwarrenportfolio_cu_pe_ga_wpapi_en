@@ -51,7 +51,7 @@ class Contact extends Component {
             <section id="contact" className="contact divider-space">
                 <div className="container">
                     <div className="contact__inner grid-container">
-                        <div className="contact-info">
+                        <div className="contact-info" data-aos='slide-right'>
                             <h2 
                                 className="contact-info__heading" 
                                 dangerouslySetInnerHTML={ { __html: title } } 
@@ -65,7 +65,7 @@ class Contact extends Component {
                             <ContactForm { ...form } />
                         </div>
     
-                        <div className="contact__featured">
+                        <div className="contact__featured" data-aos='slide-left'>
                             <div className="contact__featured-wrap">                                    
                                 <Img 
                                     fluid={ featured_media.localFile.childImageSharp.fluid } 

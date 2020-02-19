@@ -6,7 +6,7 @@ import Navigation from './navigation';
 
 const Header = () => {
     return (
-        <header className="header">
+        <header className="header" data-aos='fade'>
             <div className="container">
                 <div className="header__inner">
                     <SiteLogo />

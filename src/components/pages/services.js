@@ -28,7 +28,7 @@ const query = graphql`
 
 const Services = ( { data } ) => {
     const services = data.allWordpressWpServices.edges;
-    
+ 
     return (
         <section id="services" className="services divider-space">
             <div className="container">
@@ -37,7 +37,7 @@ const Services = ( { data } ) => {
 
                     {
                         services.map( ( { node: service }, index ) => (
-                            <div key={ service.id } className="card card--onepage">
+                            <div key={ service.id } className="card card--onepage" data-aos='zoom-in-right' data-aos-delay={ 100 * index }>
                                 <div className="card__meta">
                                     <span className="card__number">{ ( index + 1 ).toString().padStart( 2, "0" ) }</span>
                                     <img className="card__icon" src={ service.acf.service_icon.source_url } alt="Services icon" />

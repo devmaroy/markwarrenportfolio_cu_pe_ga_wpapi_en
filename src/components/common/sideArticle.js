@@ -6,9 +6,9 @@ import { format } from 'timeago.js';
 import Img from 'gatsby-image';
 
 
-const SideArticle = ( { imgSrc, imgAlt, categories, title, slug, date } ) => { 
+const SideArticle = ( { imgSrc, imgAlt, categories, title, slug, date, ...rest } ) => { 
     return (
-        <div className="side-article">
+        <div className="side-article" { ...rest }>
             <Link to={ `/post/${ slug }` }>
                 <Img
                     fluid={ imgSrc }

@@ -43,7 +43,7 @@ const About = ( { data } ) => {
                 <div className="about__inner grid-container">
                     <Heading main="Just a Little" sub="About" />
 
-                    <div className="about__featured">
+                    <div className="about__featured" data-aos='slide-right'>
                         <div className="about__featured-wrap">                                    
                             <Img 
                                 fluid={ featured_media.localFile.childImageSharp.fluid } 
@@ -54,7 +54,7 @@ const About = ( { data } ) => {
                     </div>
 
                 
-                    <div className="about-info">
+                    <div className="about-info" data-aos='slide-left'>
                         <h3 className="about-info__heading">{ title }</h3>
 
                         <div className="about-info__text" dangerouslySetInnerHTML={ { __html: content } } />

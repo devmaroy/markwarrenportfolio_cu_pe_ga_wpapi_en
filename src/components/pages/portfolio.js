@@ -138,11 +138,11 @@ class Portfolio extends Component {
 
                         <div className="portfolio__items">
                             {
-                                paginatedPortfolioItems.map( ( { node: portfolioItem } ) => {                                      
+                                paginatedPortfolioItems.map( ( { node: portfolioItem }, index ) => {                                      
                                     const className = [ 'portfolio__item', ...portfolioItem.portfolio_tags.map( ( { slug } ) => slug ) ].join(' ');
-            
+                 
                                     return (
-                                        <div key={ portfolioItem.id } { ...{ className } }>
+                                        <div key={ portfolioItem.id } { ...{ className } } data-aos='zoom-in-left' data-aos-delay={ 100 * index }>
                                             <a href={ portfolioItem.acf.url }>
                                                 <Img 
                                                     fluid={ portfolioItem.featured_media.localFile.childImageSharp.fluid } 

@@ -47,7 +47,7 @@ const query = graphql`
 const Hero = ( { data } ) => {
     const renderLink = ( url, text, className ) => {
         if ( isExternalLink( url ) ) {
-            return <a href={ url } className={ className }>{ text }</a>
+            return <a href={ url } className={ className } data-aos='slide-up'>{ text }</a>
         }  
 
         if ( url.includes( '#' ) ) {   
@@ -59,6 +59,7 @@ const Hero = ( { data } ) => {
                     smooth={ true }
                     duration={ 500 }
                     className={ className }
+                    data-aos='slide-up'
                 >
                     { text }
                 </ScrollLink>
@@ -85,23 +86,26 @@ const Hero = ( { data } ) => {
                             <h1 
                                 className="hero-info__title" 
                                 dangerouslySetInnerHTML={ { __html: main_title } } 
+                                data-aos='fade-down'
                             />
                             
                             <h2 
                                 className="hero-info__subtitle" 
                                 dangerouslySetInnerHTML={ { __html: sub_title } } 
+                                data-aos='fade-down'
                             />
     
                             <div 
                                 className="hero-info__text" 
                                 dangerouslySetInnerHTML={ { __html: content } } 
+                                data-aos='fade-down'
                             />
 
                             { renderLink( primary_button.bp_url, primary_button.text, `button ${ primaryButtonClass }` ) }
                             { renderLink( secondary_button.bs_url, secondary_button.text, `button ${ secondaryButtonClass }` ) } 
                     </div>
 
-                    <div className="hero__featured">
+                    <div className="hero__featured" data-aos='fade-down'>
                         <div className="hero__featured-wrap">                                   
                             <Img 
                                 fluid={ featured_media.localFile.childImageSharp.fluid } 

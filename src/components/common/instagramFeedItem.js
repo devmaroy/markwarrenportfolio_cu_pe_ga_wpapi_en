@@ -6,7 +6,7 @@ import addIcon from '../../images/icons/add.svg';
 
 const InstagramFeedItem = ( { id, imgSrc, imgAlt } ) => {
     return (
-        <div className="instagram-feed-item">
+        <div className="instagram-feed-item" data-aos='slide-left'>
             <a href={ `https://instagram.com/p/${ id }` } target="_blank" rel="noopener noreferrer">
                 <Img fluid={ imgSrc } alt={ imgAlt } className="instagram-feed-item__img" />
                 

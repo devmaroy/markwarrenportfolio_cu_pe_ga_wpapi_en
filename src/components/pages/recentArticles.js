@@ -31,7 +31,7 @@ const RecentArticles = ( { data } ) => {
                     <Heading main="My Recent Articles" sub="Blog" />
                     
                     {
-                        posts.map( ( { node: post } ) => (
+                        posts.map( ( { node: post }, index ) => (
                             <SideArticle 
                                 key={ post.id }
                                 imgSrc={ post.featured_media.localFile.childImageSharp.fluid }
@@ -40,6 +40,8 @@ const RecentArticles = ( { data } ) => {
                                 slug={ post.slug }
                                 categories={ post.categories }
                                 date={ post.date }
+                                data-aos='fade-up' 
+                                data-aos-delay={ 100 * index }
                             />
                         ))
                     }
