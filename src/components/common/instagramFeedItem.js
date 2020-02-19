@@ -4,9 +4,14 @@ import Img from 'gatsby-image';
 import addIcon from '../../images/icons/add.svg';
 
 
-const InstagramFeedItem = ( { id, imgSrc, imgAlt } ) => {
+const InstagramFeedItem = ( { id, imgSrc, imgAlt, isAnimated } ) => {
+    const opts = {};
+    if ( isAnimated ) {
+        opts['data-aos'] = 'slide-left';
+    }
+
     return (
-        <div className="instagram-feed-item" data-aos='slide-left'>
+        <div className="instagram-feed-item" { ...opts }>
             <a href={ `https://instagram.com/p/${ id }` } target="_blank" rel="noopener noreferrer">
                 <Img fluid={ imgSrc } alt={ imgAlt } className="instagram-feed-item__img" />
                 
@@ -19,10 +24,15 @@ const InstagramFeedItem = ( { id, imgSrc, imgAlt } ) => {
 };
 
 
+InstagramFeedItem.defaultProps = {
+    isAnimated: true
+}
+
 InstagramFeedItem.propTypes = {
     id: PropTypes.string.isRequired,
     imgSrc: PropTypes.object.isRequired,
     imgAlt: PropTypes.string.isRequired,
+    isAnimated: PropTypes.bool,
 };
 
 

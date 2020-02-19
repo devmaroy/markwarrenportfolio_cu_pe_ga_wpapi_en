@@ -34,12 +34,13 @@ const InstagramFeed = ( { data } ) => {
 
             <div className="blog-sidebar-instagram-feed__list">
                 {
-                    instagramFeed.map(( { node: feedItem }) => (
+                    instagramFeed.map( ( { node: feedItem } ) => (
                         <InstagramFeedItem 
                             key={ feedItem.id }
                             id={ feedItem.id }
                             imgSrc={ feedItem.localFile.childImageSharp.fluid } 
                             imgAlt="Instagram feed" 
+                            isAnimated={ false }
                         />
                     ))
                 }
