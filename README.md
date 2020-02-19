@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://markwarrenportfolio.netlify.com">
-        <img alt="Gatsby" src="src/images/logo.png" width="80" />
+        <img alt="Gatsby" src="src/images/logo.svg" width="80" />
     </a>
 </p>
 
@@ -89,6 +89,7 @@ A quick look at the top-level files and directories you'll see in my project.
     ├── package.json
     ├── screenshot.png
     ├── yarn.lock
+    ├── .env.example
     └── README.md
 
 <br>
@@ -115,7 +116,9 @@ A quick look at the top-level files and directories you'll see in my project.
 
 11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for project.
 
-12. **`README.md`**: A text file containing useful reference information about project.
+12. **`.env.example`**: This file is an example for .env file you need to create if you want to run this project.
+
+13. **`README.md`**: A text file containing useful reference information about project.
 
 <br>
 
