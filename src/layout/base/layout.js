@@ -19,7 +19,7 @@ import Footer from '../footer/footer';
 library.add( fab, faAngleDoubleLeft, faCaretUp, faCheckCircle, faTimesCircle );
 
 // Initialize AOS Library
-AOS.init( { duration: 2000 } );
+typeof document !== 'undefined' && AOS.init( { duration: 2000 } );
 
 
 const Layout = ( { children } ) => {
