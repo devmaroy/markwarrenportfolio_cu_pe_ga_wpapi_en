@@ -1,49 +1,71 @@
-# Mark Warren Portfolio
+<p align="center">
+    <a href="https://markwarrenportfolio-mmproj.netlify.com">
+        <img alt="Gatsby" src="src/images/logo.svg" width="80" />
+    </a>
+</p>
 
-
-This project is powered by **Gatsby** and **WordPress**. You can modify and use this project or certain components if you wish
-
+<h1 align="center">
+    Mark Warren Portfolio
+</h1>
 
 <br>
-
 
 ![](screenshot.png)
 
 
 <br>
+****
+This project is powered by **Gatsby** and **WordPress**. You can modify and use this project or certain components if you wish.
 
-## Installation ##
+For any questions feel free to contact me at hello@devmaroy.com
 
-Use these commands to install the dependencies and start the server.
+<br />
+
+
+
+<br>
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Quick Start](#quick-start)
+- [Structure](#structure)
+- [Live Example](#live-example)
+- [Contact](#contact)
+
+
+<br>
+
+
+
+<br>
+
+## Quick Start
 
 1. **Clone from Github**
-
     ```
-    $ git clone git@github.com:devmaroy/markwarrenportfolio.git
+    git clone git@github.com:devmaroy/markwarrenportfolio.git
     ```
 2. **Install dependencies**
    ```
-   $ yarn install / npm install
+   yarn install / npm install
    ```
-3. **Navigate into your directory where you cloned repository**
+3. **Run Gatsby command**
+   
+   Navigate into your directory where you cloned repository and start it up.
     ```
-    $ cd my-folder
+    cd my-folder
+
+    gatsby develop
     ```
-4. **Open .env file and set your own settings**
 
-    You will need a website where data lives (WP site with REST API) - **API_URL**
-
-    Disquis chat ID (reqister new if you dont have one) - **GATSBY_DISQUS_NAME**
-
-    Instagram username to fetch images - **INSTAGRAM_FEED_USERNAME**
-
-5. **Start it up**
-    ```
-    $ gatsby develop
-    ```
 <br>
 
 **Your site is now running at `http://localhost:8000`!**
+
+
+<br>
+
 
 
 <br>
@@ -88,26 +110,34 @@ A quick look at the top-level files and directories you'll see in my project.
 
 8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-9.   **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of npm dependencies that were installed for project. **(You won’t change this file directly).**
+9.   **`LICENSE`**: Gatsby is licensed under the MIT license.
 
-10. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for project.
+10.  **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of npm dependencies that were installed for project. **(You won’t change this file directly).**
 
-11. **`.env.example`**: This file is an example for .env file you need to create if you want to run this project.
+11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for project.
 
-12. **`README.md`**: A text file containing useful reference information about project.
+12. **`.env.example`**: This file is an example for .env file you need to create if you want to run this project.
+
+13. **`README.md`**: A text file containing useful reference information about project.
+
+<br>
+
 
 
 <br>
 
-<hr>
+##  Live Example 
+🔗[markwarrenportfolio-mmproj.netlify.com](https://markwarrenportfolio-mmproj.netlify.com)
+
 
 <br>
 
-###  Live example: 
-[markwarrenportfolio-mmproj.netlify.com](https://markwarrenportfolio-mmproj.netlify.com)
+
 
 <br>
 
-Created by **[@devmaroy](twitter.com/devmaroy)** feel free to contact me 
+## Contact
 
-E-mail: **[hello@devmaroy.com](hello@devmaroy.com)**
+Created by **[@devmaroy](twitter.com/devmaroy)** - feel free to contact me
+
+via e-mail **[hello@devmaroy.com](hello@devmaroy.com)**
