@@ -34,6 +34,8 @@ Use these commands to install the dependencies and start the server.
 
     You will need a website where data lives (WP site with REST API) - **API_URL**
 
+    And also the protocol the website uses (https or http) (WP site with REST API) - **API_PROTOCOL**
+
     Disquis chat ID (reqister new if you dont have one) - **GATSBY_DISQUS_NAME**
 
     Instagram username to fetch images - **INSTAGRAM_FEED_USERNAME**
