@@ -1,3 +1,4 @@
+![](src/images/logo.svg)
 # Mark Warren Portfolio
 
 
