@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://markwarrenportfolio.netlify.com">
+    <a href="https://markwarrenportfolio-mmproj.netlify.com">
         <img alt="Gatsby" src="src/images/logo.svg" width="80" />
     </a>
 </p>
@@ -44,7 +44,7 @@ For any questions feel free to contact me at marek@matejovic.cz
 
 1. **Clone from Github**
     ```
-    git clone git@github.com:mmatejovic/markwarrenportfolio.git
+    git clone git@github.com:devmaroy/markwarrenportfolio.git
     ```
 2. **Install dependencies**
    ```
@@ -127,7 +127,7 @@ A quick look at the top-level files and directories you'll see in my project.
 <br>
 
 ##  Live Example 
-🔗[markwarrenportfolio.netlify.com](https://markwarrenportfolio.netlify.com)
+🔗[markwarrenportfolio-mmproj.netlify.com](https://markwarrenportfolio-mmproj.netlify.com)
 
 
 <br>
@@ -138,6 +138,6 @@ A quick look at the top-level files and directories you'll see in my project.
 
 ## Contact
 
-Created by **[@mmatejovic](twitter.com/mmatejovic)** - feel free to contact me
+Created by **[@devmaroy](twitter.com/devmaroy)** - feel free to contact me
 
-via e-mail **[marek@matejovic.cz](marek@matejovic.cz)**
+via e-mail **[hello@devmaroy.com](hello@devmaroy.com)**
