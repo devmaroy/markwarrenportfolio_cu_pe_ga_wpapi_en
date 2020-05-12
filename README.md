@@ -17,7 +17,7 @@
 
 This project is powered by **Gatsby** and **WordPress**. You can modify and use this project or certain components if you wish.
 
-For any questions feel free to contact me at marek@matejovic.cz
+For any questions feel free to contact me at hello@devmaroy.com
 
 <br />
 
