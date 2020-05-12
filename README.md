@@ -109,6 +109,6 @@ A quick look at the top-level files and directories you'll see in my project.
 
 <br>
 
-Created by **[@devmaroy](twitter.com/devmaroy)** feel free to contact me 
+Created by **[@devmaroy](https://twitter.com/devmaroy)** feel free to contact me 
 
-E-mail: **[hello@devmaroy.com](hello@devmaroy.com)**
+E-mail: **[hello@devmaroy.com](hello@devmaroy.com)****
