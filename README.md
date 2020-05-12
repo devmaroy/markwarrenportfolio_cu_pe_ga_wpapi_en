@@ -1,5 +1,5 @@
 ![](src/images/logo.svg)
-# Mark Warren Portfolio
+# **Mark Warren Portfolio**
 
 
 This project is powered by **Gatsby** and **WordPress**. You can modify and use this project or certain components if you wish
