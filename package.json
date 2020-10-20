@@ -1,9 +1,11 @@
 {
   "name": "markwarrenportfolio",
   "private": true,
-  "description": "Mark Warren - Portfolio",
+  "license": "UNLICENSED",
+  "keywords": [],
+  "description": "Portfolio website for Mark Warren",
   "version": "0.1.0",
-  "author": "Marek Matejovic",
+  "author": "Marek Matejovic <hello@devmaroy.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-brands-svg-icons": "^5.12.0",
@@ -42,10 +44,6 @@
   "devDependencies": {
     "prettier": "^1.19.1"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -56,9 +54,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/devmaroy/markwarrenportfolio_cu_pe_ga_wpapi_en"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/devmaroy/markwarrenportfolio_cu_pe_ga_wpapi_en/issues",
+    "email": "bugs@devmaroy.com"
   }
 }

@@ -1,90 +1,80 @@
 /*------------------------------------*\
-    # Project  - Mark Warren Portfolio
+    # Project  - Portfolio website for Mark Warren
     # Author   - Marek Matejovic <hello@devmaroy.com>
-    # Website  - https://markwarrenportfolio-mmproj.netlify.app/ 
+    # Website  - https://markwarrenportfolio.marekmatejovic.com/ 
     # License  - None. Feel free to do whatever you want.
 \*------------------------------------*/
 
-
 // Utilities
-@import './utilities/variables';
-@import './utilities/mixins';
-
-
+@import "./utilities/variables";
+@import "./utilities/mixins";
 
 // Base
-@import 'normalize'; @include normalize();
-@import './wordpresscorestyles.css';
-@import './base/base';
-
+@import "normalize";
+@include normalize();
+@import "./wordpresscorestyles.css";
+@import "./base/base";
 
 // Components
 
 // Common
-@import './components/common/heading';
-@import './components/common/cta';
-@import './components/common/buttons';
-@import './components/common/cards';
-@import './components/common/form';
-@import './components/common/loading';
-@import './components/common/pagination';
-@import './components/common/side-article';
-@import './components/common/instagram-feed-item';
-@import './components/common/social';
-@import './components/common/newsletter';
-@import './components/common/share-links';
-@import './components/common/feed-item';
-@import './components/common/action-form';
-
+@import "./components/common/heading";
+@import "./components/common/cta";
+@import "./components/common/buttons";
+@import "./components/common/cards";
+@import "./components/common/form";
+@import "./components/common/loading";
+@import "./components/common/pagination";
+@import "./components/common/side-article";
+@import "./components/common/instagram-feed-item";
+@import "./components/common/social";
+@import "./components/common/newsletter";
+@import "./components/common/share-links";
+@import "./components/common/feed-item";
+@import "./components/common/action-form";
 
 // Pages
-@import './components/pages/hero';
-@import './components/pages/about';
-@import './components/pages/services';
-@import './components/pages/portfolio';
-@import './components/pages/testimonials';
-@import './components/pages/contact';
-@import './components/pages/recent-articles';
-@import './components/pages/instagram-feed';
-
+@import "./components/pages/hero";
+@import "./components/pages/about";
+@import "./components/pages/services";
+@import "./components/pages/portfolio";
+@import "./components/pages/testimonials";
+@import "./components/pages/contact";
+@import "./components/pages/recent-articles";
+@import "./components/pages/instagram-feed";
 
 // Blog
-@import './components/blog/blog-base';
-
+@import "./components/blog/blog-base";
 
 // Blog - Main
-@import './components/blog/main/main';
-
+@import "./components/blog/main/main";
 
 // Blog - Sidebar
-@import './components/blog/sidebar/sidebar';
-@import './components/blog/sidebar/heading';
-@import './components/blog/sidebar/search/search-form';
-@import './components/blog/sidebar/search/search-results';
-@import './components/blog/sidebar/recent-articles';
-@import './components/blog/sidebar/categories';
-@import './components/blog/sidebar/tags';
-@import './components/blog/sidebar/newsletter';
-@import './components/blog/sidebar/instagram-feed';
-
+@import "./components/blog/sidebar/sidebar";
+@import "./components/blog/sidebar/heading";
+@import "./components/blog/sidebar/search/search-form";
+@import "./components/blog/sidebar/search/search-results";
+@import "./components/blog/sidebar/recent-articles";
+@import "./components/blog/sidebar/categories";
+@import "./components/blog/sidebar/tags";
+@import "./components/blog/sidebar/newsletter";
+@import "./components/blog/sidebar/instagram-feed";
 
 // Post
-@import './components/post/post';
-@import './components/post/article';
-@import './components/post/taxonomy';
+@import "./components/post/post";
+@import "./components/post/article";
+@import "./components/post/taxonomy";
 
 // Page
-@import './pages/error404';
-
+@import "./pages/error404";
 
 // Layout
 
 // Header
-@import './layout/header/header';
-@import './layout/header/site-logo';
-@import './layout/header/navigation';
-@import './layout/header/menu';
-
+@import "./layout/header/header";
+@import "./layout/header/site-logo";
+@import "./layout/header/navigation";
+@import "./layout/header/menu";
 
 // Footer
-@import './layout/footer/footer';
+@import "./layout/footer/footer";
