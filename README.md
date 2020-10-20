@@ -1,4 +1,4 @@
-<img src="src/images/logo/logo.png" width="100">
+<img src="src/images/logo.svg" width="100">
 
 # **Portfolio website for Mark Warren**
 
