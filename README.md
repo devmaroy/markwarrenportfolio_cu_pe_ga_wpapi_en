@@ -55,9 +55,8 @@ A quick look at the top-level files and directories you'll see in my project.
     .
     ├── node_modules
     ├── src
+    ├── utils
     ├── .gitignore
-    ├── .prettierignore
-    ├── .prettierrc
     ├── gatsby-browser.js
     ├── gatsby-config.js
     ├── gatsby-node.js
@@ -77,23 +76,23 @@ A quick look at the top-level files and directories you'll see in my project.
 
 3.  **`/utils`**: This directory will contain all of the helpers functions and files for better code management. The main use case here is to separate logic into multiple files instead of one (especially gatsby-node can get large) and few helper functions.
 
-4.  **`.prettierignore`**: Configuration file for prettier - for files to ignore.
+4.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
-5.  **`.prettierrc`**: Configuration file for prettier.
+5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
-6.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where is information about site (metadata) like the site title and description, Gatsby plugins, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
 
-7.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-8.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where is information about site (metadata) like the site title and description, Gatsby plugins, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-9.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+9.  **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of npm dependencies that were installed for project. **(You won’t change this file directly).**
 
-10. **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+10. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for project.
 
-11. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of npm dependencies that were installed for project. **(You won’t change this file directly).**
+11. **`screenshot.png`**: Screenshots of the final website.
 
-12. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for project.
+12. **`yarn.lock`**: There is an identifier for every dependency and sub dependency that is used for a project.
 
 13. **`.env.example`**: This file is an example for .env file you need to create if you want to run this project.
 
